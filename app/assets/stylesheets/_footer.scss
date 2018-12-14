@@ -3,20 +3,20 @@
   background-position: center;
   // background-repeat: no-repeat;
   width:100vw;
-  .footerImageBox{
+  &Box{
     display:flex;
     width:55vw;
     margin:0 auto;
-    .footerImageBoxLeft{
+    &Left{
       color:white;
       padding-top:40px;
-      .footerImageBoxLeftTitle{
+      &Title{
         font-size: 24px;
         font-weight: bold;
         text-shadow: 0 0 5px rgba(0,0,0,0.4);
         cursor: auto;
       }
-      .footerImageBoxLeftText{
+      &Text{
         font-size: 35px;
         text-shadow: 0 0 5px rgba(0,0,0,0.4);
         border-style: solid;
@@ -25,23 +25,23 @@
         margin-block-end: 1em;
 
       }
-      .footerImageBoxLeftIcon{
-        .footerImageBoxLeftIconLeft{
+      &Icon{
+        &Left{
           width:68px;
           height:68px;
         }
-        .footerImageBoxLeftIconMiddle{
+        &Middle{
           padding-bottom:12px;
           padding-left: 24px;
         }
-        .footerImageBoxLeftIconRight{
+        &Right{
           padding-bottom:12px;
           padding-left: 24px;
         }
       }
     }
-    .footerImageBoxRight{
-      .footerImageBoxRightImage{
+    &Right{
+      &Image{
         height:255px;
         width:300px;
         padding-left: 30px;
@@ -49,6 +49,7 @@
     }
   }
 }
+
 .footer a{
   color:white;
   font-size: 15px;
@@ -62,52 +63,52 @@
   background-color: black;
   color:white;
   padding:60px 0;
-  .footerBox{
+  &Box{
   display:flex;
   justify-content: space-around;
   width:70vw;
   margin:0 auto;
   padding-bottom: 30px;
-    .footerFirst{
+    &First{
       width : calc(100vw / 4) ;
       text-align: center;
-      .footerFirstTitle{
+      &Title{
         padding-bottom:20px ;
         font-weight: bold;
       }
     }
-    .footerSecond{
+    &Second{
       width : calc(100vw / 4) ;
       text-align: center;
-      .footerSecondTitle{
+      &Title{
         padding-bottom:20px ;
         font-weight: bold;
       }
     }
-    .footerThird{
+    &Third{
       width : calc(100vw / 4) ;
       text-align: center;
-      .footerThirdTitle{
+      &Title{
         padding-bottom:20px ;
         font-weight: bold;
       }
     }
-    .footerForth{
+    &Forth{
       width : calc(100vw / 4) ;
       text-align: center;
-      .footerForthTitle{
+      &Title{
         padding-bottom:20px ;
         font-weight: bold;
       }
-      .footerForthContentUs{
+      &ContentUs{
         display:flex;
         justify-content: center;
       }
-      .footerForthContentGb{
+      &ContentGb{
         display:flex;
         justify-content: center;
       }
-      .footerForthContentJp{
+      &ContentJp{
         display:flex;
         justify-content: center;
       }
@@ -128,7 +129,7 @@
     .footerLastIcon{
       display:inline;
     }
-    .footerCopyRight{
+    &CopyRight{
       font-size: 14px;
     }
 }

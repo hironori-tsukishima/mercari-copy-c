@@ -3,37 +3,37 @@
     background: url(https://www.mercari.com/jp/assets/img/common/jp/top/main_bg_pc.jpg);
     background-position: center;
     background-size: cover;
-    .bodyIcatchImageBox{
+    &Box{
       height:390px;
       margin:0 auto;
       display:flex;
       justify-content: center;
-      .bodyIcatchImageBoxLeft{
+      &Left{
         padding-top: 40px;
-        .bodyIcatchImageBoxLeftTitle{
+        &Title{
           font-size: 60px;
           font-weight: bold;
           letter-spacing: 3px;
         }
-        .bodyIcatchImageBoxLeftText{
+        &Text{
           font-size: 18px;
           letter-spacing: 1px;
         }
-        .bodyIcatchImageBoxLeftIcons{
+        &Icons{
           display: flex;
           padding-top: 20px;
-          .bodyIcatchImageBoxLeftIconApp{
+          &App{
             width:170px;
             height:50px;
           }
-          .bodyIcatchImageBoxLeftIconGoogle{
+          &Google{
             width:170px;
             height:50px;
             padding-left: 10px;
           }
         }
       }
-      .bodyIcatchImageBoxRightImage{
+      &RightImage{
         height:100%;
       }
     }
@@ -45,13 +45,13 @@
     margin:0 auto;
     text-align: center;
     background-color: #f5f5f5;
-    .bodyPickupTitle{
+    &Title{
       text-align: center;
       font-size: 28px;
       font-weight: bold;
       padding-top: 80px;
     }
-    .bodyPickupLinks{
+    &Links{
       text-align: center;
       font-size: 22px;
       font-weight: bold;
@@ -60,24 +60,24 @@
       color:#3300F8;
       text-decoration:none;
     }
-    .bodyPickupContainers{
+    &Containers{
       padding-top: 20px;
-      .bodyPickupContainer{
+      &Container{
         display:flex;
         justify-content: space-around;
         width:65vw;
         margin:0 auto;
-        .bodyPickupContainerBox{
-          .bodyPickupContainerBoxTop{
+        &Box{
+          &Top{
             height:213px;
             width:213px;
             background-color: black;
           }
-          .bodyPickupContainerBoxBottom{
+          &Bottom{
             height:110px;
             width:213px;
             background-color: white;
-            .bodyPickupContainerBoxBottomTop{
+            &Top{
               font-size: 16px;
               color:#333;
               padding-top:20px;
@@ -85,15 +85,15 @@
               padding:16px 16px 0 16px;
               text-align: left;
             }
-            .bodyPickupContainerBoxBottomBottom{
+            &Bottom{
               padding:0 16px 16px 16px;
-              .bodyPickupContainerBoxBottomBottomLike{
-                .bodyPickupContainerBoxBottomBottomLikeIcon{
+              &Like{
+                &Icon{
                   float:right;
                   font-size: 20px;
                   color:#e5e5e5;
                 }
-                .bodyPickupContainerBoxBottomBottomLikeNum{
+                &Num{
                   float:right;
                   font-size: 16px;
                   color:#333;
@@ -101,13 +101,13 @@
                   padding-left: 5px;
                 }
               }
-              .bodyPickupContainerBoxBottomBottomPrice{
+              &Price{
                 text-align: left;
                 font-weight: 600;
                 font-size: 20px;
                 color:#333;
               }
-              .bodyPickupContainerBoxBottomBottomTax{
+              &Tax{
                 font-size: 10px;
                 color:333333;
                 text-align: left;

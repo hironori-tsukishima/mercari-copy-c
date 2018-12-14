@@ -1,21 +1,21 @@
 .header
-  .topHeader
-    .topHeaderLeft
+  .headerTop
+    .headerTopLeft
       = embedded_svg("logo.svg", class: "headerLogo")
-    .topHeaderRight
+    .headerTopRight
       %input{placeholder:"キーワードから探す", :type => "text",class: "searchVer"}
 
-  .bottomHeader
-    .bottomHeaderleft
-      .bottomHeaderLeftCategory カテゴリーから探す
-      .bottomHeaderLeftBrand ブランドから探す
-    .bottomHeaderRight
-      .avatar
+  .headerBottom
+    .headerBottomLeft
+      .headerBottomLeftCategory カテゴリーから探す
+      .headerBottomLeftBrand ブランドから探す
+    .headerBottomRight
+      .headerBottomRightAvatar
       .bottomHeaderRightMypage マイページ
       .bottomHeaderRightInfo
         = fa_icon "bell-o",class: "fa-bell-o",id: "Info"
         お知らせ
-      .bottomHeaderRightTodo
+      .headerBottomRightTodo
         = fa_icon "fa-check",class: "fa-check",id: "Info"
         やることリスト
 

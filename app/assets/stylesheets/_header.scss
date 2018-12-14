@@ -2,14 +2,14 @@
   width:80vw;
   margin:0 auto;
   padding-top: 5px;
-  .topHeader{
+  &Top{
     display:flex;
-    .topHeaderLeft{
+    &Left{
       .headerLogo{
         width: 134px;
       }
     }
-    .topHeaderRight{
+    &Right{
       .searchVer{
         background-color: #F5F5F5;
         border-radius: 3px ;
@@ -23,40 +23,40 @@
     }
   }
 
-  .bottomHeader{
+  &Bottom{
     display:flex;
     padding-top: 15px;
     vertical-align: middle;
     height:30px;
     line-height: 30px;
     width:inherit;
-    .bottomHeaderleft{
+    &Left{
       display:flex;
       justify-content: flex-start;
       font-size: 14px;
       width:370px;
-      .bottomHeaderLeftBrand{
+      &Brand{
         padding-left: 16px;
       }
     }
-    .bottomHeaderRight{
+    &Right{
       display: flex;
       justify-content: flex-end;
       width:inherit;
       font-size: 14px;
-      .avatar{
+      &avatar{
         height:30px;
         width:30px;
         border-radius: 50%;
         background-color: black;
       }
-      .bottomHeaderRightMypage{
+      &Mypage{
         padding-left: 16px;
       }
-      .bottomHeaderRightInfo{
+      &Info{
         padding-left: 16px;
       }
-      .bottomHeaderRightTodo{
+      &Todo{
         padding-left: 16px;
       }
     }
