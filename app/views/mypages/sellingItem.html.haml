@@ -17,7 +17,7 @@
             出品を一旦定時する
       .wrapperSellingItemSettingDelete
         .wrapperSellingItemSettingDeleteBtn
-          =link_to mypages_info_path, class: "wrapperSellingItemSettingDeleteBtn" do
+          =link_to item_path(@item), method: :delete, class: "wrapperSellingItemSettingDeleteBtn" do
             この商品を削除する
 
     .wrapperSellingItemCommet

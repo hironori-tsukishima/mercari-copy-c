@@ -47,7 +47,50 @@
       .exhibitionItemBody {
         background-position: center 40px;
         background-size: cover;
-        .exhibitionItemBodyList {
+        &Link {
+          text-decoration: none;
+          color: darken($gray, 70%);
+        }
+        &Container {
+          &Item {
+            display: flex;
+            border: 1px solid $back-gray;
+            padding: 10px 20px 10px;
+            position: relative;
+            &Image {
+              width: 50px;
+              height: 50px;
+              img {
+                width: 50px;
+                height: 50px;
+              }
+            }
+            &Name {
+              width: 500px;
+              margin-left: 20px;
+              line-height: 30px;
+              &Bottom {
+                font-size: 14px;
+                &Alert {
+                  margin-left: 5px;
+                  background: $button-blue;
+                  color: white;
+                  font-size: 11px;
+                  padding: 5px;
+                  border-radius: 3px;
+                  font-weight: bold;
+                }
+                &Tail {
+                  position: absolute;
+                  top: 25px;
+                  right: 20px;
+                  font-weight: bold;
+                }
+              }
+            }
+          }
+        }
+        &Nothing {
           padding: 160px 0 60px;
           text-align: center;
           font-size: 16px;

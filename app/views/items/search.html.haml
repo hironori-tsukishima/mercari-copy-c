@@ -1,0 +1,34 @@
+%nav.searchItem
+  %ul.searchItemList
+    %li.searchItemListToppageLink
+      = link_to "メルカリ", toppages_path, class: "searchItemLinkToppage",style: "text-decoration: none;"
+      = fa_icon 'fa-angle-right', class: 'fa-angle-right'
+    %li.searchItemListKeyword
+      = @keyword
+.searchItemWrapper
+  .searchItemNav
+    = render 'searchNav'
+  .searchItemMain
+    .searchItemMainHeader
+      - if @items.any?
+        %h2.searchItemMainHeaderText 検索結果〇〇件
+      - if @items.nil?
+        %h2.searchItemMainHeaderText 検索結果 0件
+        %p 該当する商品が見つかりません。商品は毎日増えていますので、これからの出品に期待してください。
+        %h3 新着商品
+    .searchItemMainBody
+      - @items.each do |item|
+        .searchItemMainBodyItemBox
+          .searchItemMainBodyItemBoxImage
+            = image_tag item.item_images.first.image, size: '160x160'
+          .searchItemMainBodyItemInfo
+            %h3
+              = item.name
+            .searchItemMainBodyItemInfoBottom
+              .searchItemMainBodyItemInfoBottomPrice
+                .searchItemMainBodyItemInfoBottomPriceProduct
+                  = "¥ #{item.price}"
+                %p (税込)
+              .searchItemMainBodyItemInfoBottomLike
+                = fa_icon 'fa-heart', class: 'fa-heart'
+                3

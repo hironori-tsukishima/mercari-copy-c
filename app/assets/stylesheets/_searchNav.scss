@@ -1,0 +1,296 @@
+.searchNav{
+  padding-right: 50px;
+  .searchNavLists{
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-conbtent: center;
+    background-color: $gray;
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    .searchNavListsChoice{
+      select{
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 280px;
+        height: 48px;
+        padding: 0 16px;
+        border-style: solid;
+        border-width: 0;
+        border: 1px solid #ccc;
+        background-color: white;
+      }
+    }
+    .searchNavListsSearch{
+      padding: 16px;
+      margin-top: 40px;
+      background-color: white;
+      h3{
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .searchNavListsSearchKeyword{
+        // display: block;
+        label{
+          font-weight: 550;
+        }
+        input{
+          width: 214px;
+          height: 28px;
+          padding: 10px 16px 8px;
+          margin-top: 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+        }
+      }
+      .searchNavListsSearchCategory{
+        margin-top: 40px;
+        label{
+          font-weight: 550;
+        }
+
+        select{
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 248px;
+        height: 48px;
+        padding: 0 16px;
+        border-style: solid;
+        border-width: 0;
+        border: 1px solid #ccc;
+        background-color: white;
+        }
+      }
+      .searchNavListsSearchBrand{
+        margin-top: 40px;
+        label{
+          font-weight: 550;
+        }
+        input{
+          width: 214px;
+          height: 28px;
+          padding: 10px 16px 8px;
+          margin-top: 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+        }
+      }
+
+      .searchNavListsSearchSize{
+        margin-top: 40px;
+        label{
+          font-weight: 550;
+        }
+        select{
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 248px;
+        height: 48px;
+        padding: 0 16px;
+        border-style: solid;
+        border-width: 0;
+        border: 1px solid #ccc;
+        background-color: white;
+        }
+      }
+
+      .searchNavListsSearchPrice{
+        margin-top: 40px;
+        label{
+          font-weight: 550;
+        }
+        select{
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 248px;
+        height: 48px;
+        padding: 0 16px;
+        border-style: solid;
+        border-width: 0;
+        border: 1px solid #ccc;
+        background-color: white;
+        }
+        .searchNavListsSearchPriceInput{
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          input{
+          width: 77px;
+          height: 28px;
+          padding: 10px 16px 8px;
+          margin-top: 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          }
+          span{
+            width:24px;
+            height:14px;
+            display: inline-block;
+            width: 10%;
+            font-size: 14px;
+            text-align: center;
+            padding-top: 20px;
+          }
+        }
+      }
+
+      .searchNavListsSearchState{
+        margin-top: 40px;
+        label{
+          font-weight: 550;
+          .searchNavListsSearchStateCheckBox{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            &All{
+              width: 119px;
+              input{
+                width: 16px;
+                height: 16px;
+              }
+              label{
+                font-size: 14px;
+                font-weight: 400;
+                vertical-align: middle;
+                cursor: pointer;
+              }
+            }
+            &New{
+              width: 119px;
+              input{
+                width: 16px;
+                height: 16px;
+              }
+              label{
+                font-size: 14px;
+                font-weight: 400;
+                vertical-align: middle;
+                cursor: pointer;
+              }
+            }
+            &CloseToUnused{
+              width: 119px;
+              input{
+                width: 16px;
+                height: 16px;
+              }
+              label{
+                font-size: 14px;
+                font-weight: 400;
+                vertical-align: middle;
+                cursor: pointer;
+              }
+            }
+            &ScratchLight{
+              width: 119px;
+              input{
+                width: 16px;
+                height: 16px;
+              }
+              label{
+                font-size: 14px;
+                font-weight: 400;
+                vertical-align: middle;
+                cursor: pointer;
+              }
+            }
+            &ScratchHeavy{
+              width: 119px;
+              input{
+                width: 16px;
+                height: 16px;
+              }
+              label{
+                font-size: 14px;
+                font-weight: 400;
+                vertical-align: middle;
+                cursor: pointer;
+              }
+            }
+            &Scratch{
+              width: 119px;
+              input{
+                width: 16px;
+                height: 16px;
+              }
+              label{
+                font-size: 14px;
+                font-weight: 400;
+                vertical-align: middle;
+                cursor: pointer;
+              }
+            }
+            &Bed{
+              width: 119px;
+              input{
+                width: 16px;
+                height: 16px;
+              }
+              label{
+                font-size: 14px;
+                font-weight: 400;
+                vertical-align: middle;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+
+      .searchNavListsSearchBurden{
+        margin-top: 40px;
+        label{
+          font-weight: 550;
+        }
+      }
+
+      .searchNavListsSearchStatus{
+        margin-top: 40px;
+        label{
+          font-weight: 550;
+        }
+      }
+      .searchNavListsSearchBtn{
+        height: 50px;
+        padding-top: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        &Clear{
+          width: 109px;
+          height: 48px;
+          background: #aaa;
+          border: 1px solid #aaa;
+          color: #fff;
+          display: block;
+          cursor: pointer;
+          text-align: center;
+          font-size: 15px;
+          margin-right: 10px;
+        }
+        &Complete{
+          width: 109px;
+          height: 48px;
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          color: #fff;
+          display: block;
+          cursor: pointer;
+          text-align: center;
+          font-size: 15px;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

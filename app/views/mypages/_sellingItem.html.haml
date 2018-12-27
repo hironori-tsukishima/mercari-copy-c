@@ -1,0 +1,21 @@
+- if items.exists?
+  - items.each do |item|
+    =link_to "/mypages/sellingItem/#{item.id}", data: {"turbolinks" => false}, class: "exhibitionItemBodyLink" do
+      %li.exhibitionItemBodyContainerItem
+        .exhibitionItemBodyContainerItemImage
+          = image_tag item.item_images.first.image
+        .exhibitionItemBodyContainerItemName
+          = item.name
+          .exhibitionItemBodyContainerItemNameBottom
+            =fa_icon 'fa-heart', class: 'fa-heart-o'
+            4
+            %span
+              =fa_icon 'fa-comment', class: 'fa-comment-o'
+              2
+              %span.exhibitionItemBodyContainerItemNameBottomAlert
+                出品中
+            %span.exhibitionItemBodyContainerItemNameBottomTail
+              ＞
+- else
+  %li.exhibitionItemBodyNothing
+    出品中の商品はありません

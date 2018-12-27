@@ -1,0 +1,83 @@
+.searchItemWrapper {
+  padding: 40px 100px;
+  margin: auto 0;
+  background: $gray;
+  display: flex;
+  .searchItemNav {
+  }
+  .searchItemMain{
+
+    .searchItemMainHeader{
+      h2 {
+        font-weight: 400;
+        font-size: 22px;
+        margin-bottom: 8px;
+      }
+    }
+    .searchItemMainBody{
+      width: 700px;
+      height: 3480px;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      .searchItemMainBodyItemBox{
+        width: 160px;
+        height: 270px;
+        background-color: white;
+        margin: 15px 15px 0 0;
+        .searchItemMainBodyItemBoxImage{
+          background-size: contain;
+        }
+        .searchItemMainBodyItemInfo{
+          width: 128px;
+          height: 78px;
+          padding: 16px;
+          h3{
+            width: 128px;
+            height: 48px;
+          }
+          &Bottom{
+            display: flex;
+            &Price{
+              display: flex;
+              flex-direction: column;
+              &Product{
+                font-weight: bold;
+              }
+              p{
+                font-size: 5px;
+              }
+            }
+            &Like{
+            position: relative;
+            left: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.searchItem{
+  ul{
+    height: 49px;
+    position: relative;
+    border-top: 1px solid #eee;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+    background: #fff;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    .searchItemListToppageLink{
+      margin: 14px 14px 14px 100px;
+      text-decoration: none;
+      font-size: 13px;
+      color: black;
+    }
+    .searchItemListKeyword{
+      font-size: 13px;
+      margin-top: 14px;
+    }
+  }
+}

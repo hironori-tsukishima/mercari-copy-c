@@ -4,7 +4,6 @@
   .exhibitionItemMain
     .exhibitionItemTitle
       %h1 出品した商品
-
       %ul.exhibitionItemHeader
         %li.exhibitionItemHeaderList.exhibitionItemHeaderLeft
           = link_to mypages_exhibitionItemSelling_path, class: "exhibitionItemLeftLink" do
@@ -16,8 +15,7 @@
           = link_to mypages_exhibitionItemSold_path, class: "exhibitionItemRightLink" do
             返却済み
       %ul.exhibitionItemBody
-        %li.exhibitionItemBodyList 出品中の商品はありません
-
+        =render "mypages/sellingItem", items: @items
     .exhibitionItemPage
       %ul.exhibitionItemPageFooter
         %li.exhibitionItemPageFooterList.exhibitionItemPageFooterLeft

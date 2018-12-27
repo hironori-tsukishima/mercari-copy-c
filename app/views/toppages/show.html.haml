@@ -5,11 +5,11 @@
     .wrapperShowItemDetail
       .wrapperShowItemDetailHidden
         .wrapperShowItemDetailLeft
-          - @image.each do |photo|
+          - @images.each do |photo|
             .wrapperShowItemDetailLeftThumbnail
-             = image_tag(photo.image)
+              = image_tag(photo.image)
         .wrapperShowItemDetailLeftimages
-          - @image.each do |photo|
+          - @images.each do |photo|
             .wrapperShowItemDetailLeftimagesImage
               = image_tag(photo.image)
       .wrapperShowItemDetailRight
@@ -18,8 +18,8 @@
             %tr
               %th.tableLeft 出品者
               %th.tableRight
-                / =current_user.nickname
-                = link_to "ぽくぽく坊や","#",class: "tableLinks"
+                = link_to root_path,class: "tableLinks" do
+                  = @item.seller.nickname
                 %br
                 = fa_icon "fa-smile-o ",class: "fa-smile-o"
                 675
@@ -97,7 +97,8 @@
         .wrapperShowCommentsShowLeftSeller
           出品者
       .wrapperShowCommentsShowRight
-        .wrapperShowCommentsShowRightName ぽくぽく坊や
+        .wrapperShowCommentsShowRightName
+          = @item.seller.nickname
         .wrapperShowCommentsShowRightContent
           .wrapperShowCommentsShowRightContentTop 商品の到着を楽しみにしております。
           .wrapperShowCommentsShowRightContentBottom
@@ -126,66 +127,21 @@
         %img{src: "https://i.gyazo.com/396c6d27029cbc59ca4f7ba817365a72.png"}
         %img{src: "https://i.gyazo.com/d137354c50cb607ce6153fb2c8fa5265.png"}
   .wrapperShowUsersItems
-    .wrapperShowUsersItemsHead ぽくぽく坊やさんのその他の出品
+    .wrapperShowUsersItemsHead
+      = link_to root_path, class: "wrapperShowUsersItemsHead" do
+        = "#{@item.seller.nickname}さんのその他の出品"
     .wrapperShowUsersItemscontainer
-      .wrapperShowUsersItem
-        .wrapperShowUsersItemImage
-        .wrapperShowUsersItemBody
-          .wrapperShowUsersItemBodyTitle 放送が終わってから10分以内にお問い合わせいただいた方、先着５名様に限り舎人のとろろがこのお値段です！
-          .wrapperShowUsersItemBodyDetails
-            .wrapperShowUsersItemBodyDetailsPrice ¥40,000
-            .wrapperShowUsersItemBodyDetailsLikes
-              .wrapperShowUsersItemLikesIcon.far.fa-heart
-              .wrapperShowUsersItemLikesCount 100
-            .wrapperShowUsersItemBodyDetailsTax (税込)
-      .wrapperShowUsersItem
-        .wrapperShowUsersItemImage
-        .wrapperShowUsersItemBody
-          .wrapperShowUsersItemBodyTitle 放送が終わってから10分以内にお問い合わせいただいた方、先着５名様に限り舎人のとろろがこのお値段です！
-          .wrapperShowUsersItemBodyDetails
-            .wrapperShowUsersItemBodyDetailsPrice ¥40,000
-            .wrapperShowUsersItemBodyDetailsLikes
-              .wrapperShowUsersItemLikesIcon.far.fa-heart
-              .wrapperShowUsersItemLikesCount 100
-            .wrapperShowUsersItemBodyDetailsTax (税込)
-      .wrapperShowUsersItem
-        .wrapperShowUsersItemImage
-        .wrapperShowUsersItemBody
-          .wrapperShowUsersItemBodyTitle 放送が終わってから10分以内にお問い合わせいただいた方、先着５名様に限り舎人のとろろがこのお値段です！
-          .wrapperShowUsersItemBodyDetails
-            .wrapperShowUsersItemBodyDetailsPrice ¥40,000
-            .wrapperShowUsersItemBodyDetailsLikes
-              .wrapperShowUsersItemLikesIcon.far.fa-heart
-              .wrapperShowUsersItemLikesCount 100
-            .wrapperShowUsersItemBodyDetailsTax (税込)
-      .wrapperShowUsersItem
-        .wrapperShowUsersItemImage
-        .wrapperShowUsersItemBody
-          .wrapperShowUsersItemBodyTitle 放送が終わってから10分以内にお問い合わせいただいた方、先着５名様に限り舎人のとろろがこのお値段です！
-          .wrapperShowUsersItemBodyDetails
-            .wrapperShowUsersItemBodyDetailsPrice ¥40,000
-            .wrapperShowUsersItemBodyDetailsLikes
-              .wrapperShowUsersItemLikesIcon.far.fa-heart
-              .wrapperShowUsersItemLikesCount 100
-            .wrapperShowUsersItemBodyDetailsTax (税込)
-      .wrapperShowUsersItem
-        .wrapperShowUsersItemImage
-        .wrapperShowUsersItemBody
-          .wrapperShowUsersItemBodyTitle 放送が終わってから10分以内にお問い合わせいただいた方、先着５名様に限り舎人のとろろがこのお値段です！
-          .wrapperShowUsersItemBodyDetails
-            .wrapperShowUsersItemBodyDetailsPrice ¥40,000
-            .wrapperShowUsersItemBodyDetailsLikes
-              .wrapperShowUsersItemLikesIcon.far.fa-heart
-              .wrapperShowUsersItemLikesCount 100
-            .wrapperShowUsersItemBodyDetailsTax (税込)
-      .wrapperShowUsersItem
-        .wrapperShowUsersItemImage
-        .wrapperShowUsersItemBody
-          .wrapperShowUsersItemBodyTitle 放送が終わってから10分以内にお問い合わせいただいた方、先着５名様に限り舎人のとろろがこのお値段です！
-          .wrapperShowUsersItemBodyDetails
-            .wrapperShowUsersItemBodyDetailsPrice ¥40,000
-            .wrapperShowUsersItemBodyDetailsLikes
-              .wrapperShowUsersItemLikesIcon.far.fa-heart
-              .wrapperShowUsersItemLikesCount 100
-            .wrapperShowUsersItemBodyDetailsTax (税込)
-  
+      - @anotheritems.each do |item|
+        .wrapperShowUsersItem
+          .wrapperShowUsersItemImage
+            = image_tag item.item_images.first.image
+          .wrapperShowUsersItemBody
+            .wrapperShowUsersItemBodyTitle
+              = item.name
+            .wrapperShowUsersItemBodyDetails
+              .wrapperShowUsersItemBodyDetailsPrice
+                = item.price
+              .wrapperShowUsersItemBodyDetailsLikes
+                .wrapperShowUsersItemLikesIcon.far.fa-heart
+                .wrapperShowUsersItemLikesCount 100
+              .wrapperShowUsersItemBodyDetailsTax (税込)

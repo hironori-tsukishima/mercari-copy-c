@@ -571,6 +571,9 @@ th{
   &Head{
     font-size:25px;
     color:#0099e8;
+    a{
+      text-decoration: none;
+    }
   }
   &container{
     width:700px;
@@ -585,12 +588,16 @@ th{
     margin-bottom: 20px;
     &Image{
       height: 220px;
-      background-color: yellow;
+      img{
+        width:220px;
+        height:220px;
+      }
     }
     &Body{
       height: 110px;
       padding:16px;
       box-sizing: border-box;
+      background-color: $white;
       &Title{
         font-size: 16px;
         height:48px;

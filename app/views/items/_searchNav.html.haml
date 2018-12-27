@@ -1,0 +1,124 @@
+%nav.searchNav
+  %form.searchNavLists
+    .searchNavListsChoice
+      %select
+        %option{value: "並び替え"}並び替え
+        %option{value: "価格の安い順"}価格の安い順
+        %option{value: "価格の高い順"}価格の高い順
+        %option{value: "出品の古い順"}出品の古い順
+        %option{value: "出品の新しい順"}出品の新しい順
+        %option{value: "いいね！多い順"}いいね！多い順
+
+    .searchNavListsSearch
+      %h3 詳細検索
+      .searchNavListsSearchKeyword
+        %label
+          = fa_icon 'fa-plus', class: 'fa-plus'
+          キーワードを追加する
+        %input{name: "keyword", placeholder: "例）値下げ", type: "text", value: ""}
+
+      .searchNavListsSearchCategory
+        %label
+          = fa_icon 'fa-plus', class: 'fa-plus'
+          カテゴリーを選択する
+        %select
+          %option{value: ""}すべて
+          %option{value: ""}レディース
+          %option{value: ""}メンズ
+          %option{value: ""}ベビー・キッズ
+          %option{value: ""}インテリア・お住まい・小物
+          %option{value: ""}本・音楽・ゲーム
+          %option{value: ""}おもちゃ・ボビー・グッズ
+          %option{value: ""}コスメ・香水・美容
+          %option{value: ""}家電・スマホ・カメラ
+          %option{value: ""}スポーツ・レジャー
+          %option{value: ""}ハンドメイド
+          %option{value: ""}チケット
+          %option{value: ""}自動車・オートバイ
+          %option{value: ""}その他
+      .searchNavListsSearchBrand
+        %label
+          = fa_icon 'fa-plus', class: 'fa-plus'
+          ブランド名から探す
+        %input{name: "keyword", placeholder: "例）ジャンル", type: "text", value: ""}
+
+      .searchNavListsSearchSize
+        %label
+          = fa_icon 'fa-plus', class: 'fa-plus'
+          サイズを選択する
+        %select
+          %option{value: ""}すべて
+          %option{value: ""}洋服のサイズ
+          %option{value: ""}メンズ靴のサイズ
+          %option{value: ""}レディース靴のサイズ
+          %option{value: ""}スカートのサイズ
+          %option{value: ""}キッズ服のサイズ
+          %option{value: ""}ベビーキッズ靴のサイズ
+          %option{value: ""}ベビー服のサイズ
+          %option{value: ""}テレビのサイズ
+          %option{value: ""}カメラレンズのサイズ
+          %option{value: ""}オートバイとのサイズ
+          %option{value: ""}ヘルメットのサイズ
+          %option{value: ""}タイヤのサイズ
+          %option{value: ""}スキーのサイズ
+          %option{value: ""}スノーボードのサイズ
+      .searchNavListsSearchPrice
+        %label
+          = fa_icon 'fa-plus', class: 'fa-plus'
+          価格
+        %select
+          %option{value: ""}選択してください
+          %option{value: ""}300 ~ 1000
+          %option{value: ""}1000 ~ 5000
+          %option{value: ""}5000 ~ 10000
+          %option{value: ""}10000 ~ 30000
+          %option{value: ""}30000 ~ 50000
+          %option{value: ""}50000 ~
+        .searchNavListsSearchPriceInput
+          %input{name: "keyword", placeholder: "¥ Min", type: "text", value: ""}
+          %span ~
+          %input{name: "keyword", placeholder: "¥ Max", type: "text", value: ""}
+
+      .searchNavListsSearchState
+        %label
+          = fa_icon 'fa-plus', class: 'fa-plus'
+          商品の状況
+          .searchNavListsSearchStateCheckBox
+            .searchNavListsSearchStateCheckBoxAll
+              %input{type: "checkbox"}
+              %label すべて
+            .searchNavListsSearchStateCheckBoxNew
+              %input{type: "checkbox"}
+              %label 新品、未使用
+            .searchNavListsSearchStateCheckBoxCloseToUnused
+              %input{type: "checkbox"}
+              %label 未使用に近い
+            .searchNavListsSearchStateCheckBoxScratchLight
+              %input{type: "checkbox"}
+              %label 目立った傷や汚れなし
+            .searchNavListsSearchStateCheckBoxScratchHeavy
+              %input{type: "checkbox"}
+              %label やや傷や汚れあり
+            .searchNavListsSearchStateCheckBoxScratch
+              %input{type: "checkbox"}
+              %label 傷や汚れあり
+            .searchNavListsSearchStateCheckBoxBed
+              %input{type: "checkbox"}
+              %label 全体的に状態が悪い
+      .searchNavListsSearchBurden
+        %label
+          = fa_icon 'fa-plus', class: 'fa-plus'
+          配送料の負担
+      .searchNavListsSearchStatus
+        %label
+          = fa_icon 'fa-plus', class: 'fa-plus'
+          販売状況
+
+      .searchNavListsSearchBtn
+        %button.searchNavListsSearchBtnClear クリア
+        %button.searchNavListsSearchBtnComplete 完了
+
+
+
+
+

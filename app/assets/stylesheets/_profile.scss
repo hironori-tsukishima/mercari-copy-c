@@ -1,0 +1,56 @@
+.profileWrapper {
+  background: $back-gray;
+  display: flex;
+  padding: 50px 0 50px;
+  .profileWrapperNav {
+    margin: 0 50px 0 230px;
+  }
+  &Main {
+    width: 700px;
+    height: 580px;
+    background: white;
+    text-align: center;
+    .profileHeaderTitle {
+      height: 50px;
+      line-height: 50px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .profileInner {
+      &Top {
+        height: 150px;
+        display: flex;
+        background-image: url(https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?40116333);
+        &Icon {
+          margin: 65px 20px 0 200px;
+          border-radius: 50%;
+          height: 60px;
+        }
+        &Name {
+          margin-top: 35px;
+          height: 45px;
+          width: 230px;
+          border-radius: 5px;
+        }
+      }
+      &Bottom {
+        &Form {
+          width: 95%;
+          height: 220px;
+          border: 1px solid darken($line-gray, 20%);
+          margin: 50px auto 20px;
+        }
+        &Btn {
+          width: 95%;
+          height: 50px;
+          background: $button-red;
+          margin: 0 auto;
+          color: $white;
+          text-decoration: none;
+          font-size: 14px;
+          line-height: 50px;
+        }
+      }
+    }
+  }
+}

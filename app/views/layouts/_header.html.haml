@@ -4,7 +4,11 @@
       =link_to root_path do
         = image_tag("logo.svg", class: "headerLogo")
     .headerTopRight
-      %input{placeholder:"キーワードから探す", :type => "text",class: "searchVer"}
+      = form_tag('/items/search', method: :get, id: "newKeyword") do
+        %input.searchBox{name: "keyword", placeholder: "キーワードから探す", type: "text", value: ""}/
+        %button.searchBoxBtn{type: "submit"}
+          = fa_icon 'fa-search', class: 'fa-search'
+
   .headerBottom
     .headerBottomLeft
       .headerBottomLeftCategory カテゴリーから探す

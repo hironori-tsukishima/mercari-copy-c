@@ -21,193 +21,26 @@
     %h2.bodyPickupTitle
       ピックアップカテゴリー
     =link_to "レディース新着アイテム", "#",class: "bodyPickupLinks"
-    .bodyPickupContainers
-      .bodyPickupContainersContainer
-        - @items.each do |item|
-          .bodyPickupContainersContainerBox
-            .bodyPickupContainersContainerBoxTop
-              = image_tag item.item_images.first.image, size: '213x213'
-            .bodyPickupContainersContainerBoxBottom
-              %h3.bodyPickupContainersContainerBoxBottomTop
-                = item.name
-              .bodyPickupContainersContainerBoxBottomBottom
-                .bodyPickupContainersContainerBoxBottomBottomLike
-                  .bodyPickupContainersContainerBoxBottomBottomLikeNum
-                    16
-                  .bodyPickupContainersContainerBoxBottomBottomLikeIcon
-                    = fa_icon "fa-heart-o",class: "fa-heart-o"
-                .bodyPickupContainersContainerBoxBottomBottomPrice
-                  = "¥ #{item.price}"
-
-                .bodyPickupContainersContainerBoxBottomBottomTax (税込)
-      .bodyPickupContainerSeeAll
-        =link_to "すべての商品を見る", "#",class: "SeeAll"
+    = render partial: 'layouts/toppage_index'
 
 
     =link_to "メンズ新着アイテム", "#",class: "bodyPickupLinks"
-    .bodyPickupContainers
-      .bodyPickupContainersContainer
-        - @items.each do |item|
-          .bodyPickupContainersContainerBox
-            .bodyPickupContainersContainerBoxTop
-              = image_tag item.item_images.first.image, size: '213x213'
-            .bodyPickupContainersContainerBoxBottom
-              %h3.bodyPickupContainersContainerBoxBottomTop
-                = item.name
-              .bodyPickupContainersContainerBoxBottomBottom
-                .bodyPickupContainersContainerBoxBottomBottomLike
-                  .bodyPickupContainersContainerBoxBottomBottomLikeNum
-                    16
-                  .bodyPickupContainersContainerBoxBottomBottomLikeIcon
-                    = fa_icon "fa-heart-o",class: "fa-heart-o"
-                .bodyPickupContainersContainerBoxBottomBottomPrice
-                  = "¥ #{item.price}"
-
-                .bodyPickupContainersContainerBoxBottomBottomTax (税込)
-      .bodyPickupContainerSeeAll
-        =link_to "すべての商品を見る", "#",class: "SeeAll"
-
+    = render partial: 'layouts/toppage_index'
 
     =link_to "キッズ・ベビー新着アイテム", "#",class: "bodyPickupLinks"
-    .bodyPickupContainers
-      .bodyPickupContainersContainer
-        - @items.each do |item|
-          .bodyPickupContainersContainerBox
-            .bodyPickupContainersContainerBoxTop
-              = image_tag item.item_images.first.image, size: '213x213'
-            .bodyPickupContainersContainerBoxBottom
-              %h3.bodyPickupContainersContainerBoxBottomTop
-                = item.name
-              .bodyPickupContainersContainerBoxBottomBottom
-                .bodyPickupContainersContainerBoxBottomBottomLike
-                  .bodyPickupContainersContainerBoxBottomBottomLikeNum
-                    16
-                  .bodyPickupContainersContainerBoxBottomBottomLikeIcon
-                    = fa_icon "fa-heart-o",class: "fa-heart-o"
-                .bodyPickupContainersContainerBoxBottomBottomPrice
-                  = "¥ #{item.price}"
-
-                .bodyPickupContainersContainerBoxBottomBottomTax (税込)
-      .bodyPickupContainerSeeAll
-        =link_to "すべての商品を見る", "#",class: "SeeAll"
-
+    = render partial: 'layouts/toppage_index'
 
     =link_to "コスメ・香水・美容 新着アイテム", "#",class: "bodyPickupLinks"
-    .bodyPickupContainers
-      .bodyPickupContainersContainer
-        - @items.each do |item|
-          .bodyPickupContainersContainerBox
-            .bodyPickupContainersContainerBoxTop
-              = image_tag item.item_images.first.image, size: '213x213'
-            .bodyPickupContainersContainerBoxBottom
-              %h3.bodyPickupContainersContainerBoxBottomTop
-                = item.name
-              .bodyPickupContainersContainerBoxBottomBottom
-                .bodyPickupContainersContainerBoxBottomBottomLike
-                  .bodyPickupContainersContainerBoxBottomBottomLikeNum
-                    16
-                  .bodyPickupContainersContainerBoxBottomBottomLikeIcon
-                    = fa_icon "fa-heart-o",class: "fa-heart-o"
-                .bodyPickupContainersContainerBoxBottomBottomPrice
-                  = "¥ #{item.price}"
-
-                .bodyPickupContainersContainerBoxBottomBottomTax (税込)
-      .bodyPickupContainerSeeAll
-        =link_to "すべての商品を見る", "#",class: "SeeAll"
+    = render partial: 'layouts/toppage_index'
 
 
     %h2.bodyPickupTitle
       ピックアップブランド
     =link_to "シャネル新着アイテム", "#",class: "bodyPickupLinks"
-    .bodyPickupContainers
-      .bodyPickupContainersContainer
-        - @items.each do |item|
-          .bodyPickupContainersContainerBox
-            .bodyPickupContainersContainerBoxTop
-              = image_tag item.item_images.first.image, size: '213x213'
-            .bodyPickupContainersContainerBoxBottom
-              %h3.bodyPickupContainersContainerBoxBottomTop
-                = item.name
-              .bodyPickupContainersContainerBoxBottomBottom
-                .bodyPickupContainersContainerBoxBottomBottomLike
-                  .bodyPickupContainersContainerBoxBottomBottomLikeNum
-                    16
-                  .bodyPickupContainersContainerBoxBottomBottomLikeIcon
-                    = fa_icon "fa-heart-o",class: "fa-heart-o"
-                .bodyPickupContainersContainerBoxBottomBottomPrice
-                  = "¥ #{item.price}"
-
-                .bodyPickupContainersContainerBoxBottomBottomTax (税込)
-      .bodyPickupContainerSeeAll
-        =link_to "すべての商品を見る", "#",class: "SeeAll"
-
-
+    = render partial: 'layouts/toppage_index'
     =link_to "ルイヴィトン新着アイテム", "#",class: "bodyPickupLinks"
-    .bodyPickupContainers
-      .bodyPickupContainersContainer
-        - @items.each do |item|
-          .bodyPickupContainersContainerBox
-            .bodyPickupContainersContainerBoxTop
-              = image_tag item.item_images.first.image, size: '213x213'
-            .bodyPickupContainersContainerBoxBottom
-              %h3.bodyPickupContainersContainerBoxBottomTop
-                = item.name
-              .bodyPickupContainersContainerBoxBottomBottom
-                .bodyPickupContainersContainerBoxBottomBottomLike
-                  .bodyPickupContainersContainerBoxBottomBottomLikeNum
-                    16
-                  .bodyPickupContainersContainerBoxBottomBottomLikeIcon
-                    = fa_icon "fa-heart-o",class: "fa-heart-o"
-                .bodyPickupContainersContainerBoxBottomBottomPrice
-                  = "¥ #{item.price}"
-
-                .bodyPickupContainersContainerBoxBottomBottomTax (税込)
-      .bodyPickupContainerSeeAll
-        =link_to "すべての商品を見る", "#",class: "SeeAll"
-
-
+    = render partial: 'layouts/toppage_index'
     =link_to "シュプリーム新着アイテム", "#",class: "bodyPickupLinks"
-    .bodyPickupContainers
-      .bodyPickupContainersContainer
-        - @items.each do |item|
-          .bodyPickupContainersContainerBox
-            .bodyPickupContainersContainerBoxTop
-              = image_tag item.item_images.first.image, size: '213x213'
-            .bodyPickupContainersContainerBoxBottom
-              %h3.bodyPickupContainersContainerBoxBottomTop
-                = item.name
-              .bodyPickupContainersContainerBoxBottomBottom
-                .bodyPickupContainersContainerBoxBottomBottomLike
-                  .bodyPickupContainersContainerBoxBottomBottomLikeNum
-                    16
-                  .bodyPickupContainersContainerBoxBottomBottomLikeIcon
-                    = fa_icon "fa-heart-o",class: "fa-heart-o"
-                .bodyPickupContainersContainerBoxBottomBottomPrice
-                  = "¥ #{item.price}"
-                .bodyPickupContainersContainerBoxBottomBottomTax (税込)
-      .bodyPickupContainerSeeAll
-        =link_to "すべての商品を見る", "#",class: "SeeAll"
-
-
+    = render partial: 'layouts/toppage_index'
     =link_to "ナイキ新着アイテム", "#",class: "bodyPickupLinks"
-    .bodyPickupContainers
-      .bodyPickupContainersContainer
-        - @items.each do |item|
-          .bodyPickupContainersContainerBox
-            .bodyPickupContainersContainerBoxTop
-              = image_tag item.item_images.first.image, size: '213x213'
-            .bodyPickupContainersContainerBoxBottom
-              %h3.bodyPickupContainersContainerBoxBottomTop
-                = item.name
-              .bodyPickupContainersContainerBoxBottomBottom
-                .bodyPickupContainersContainerBoxBottomBottomLike
-                  .bodyPickupContainersContainerBoxBottomBottomLikeNum
-                    16
-                  .bodyPickupContainersContainerBoxBottomBottomLikeIcon
-                    = fa_icon "fa-heart-o",class: "fa-heart-o"
-                .bodyPickupContainersContainerBoxBottomBottomPrice
-                  = "¥ #{item.price}"
-
-                .bodyPickupContainersContainerBoxBottomBottomTax (税込)
-      .bodyPickupContainerSeeAll
-        =link_to "すべての商品を見る", "#",class: "SeeAll"
+    = render partial: 'layouts/toppage_index'

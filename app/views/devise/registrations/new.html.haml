@@ -31,7 +31,7 @@
               %span.formRequire 必須
             = f.password_field :password_confirmation,class: "formGroupForm", autocomplete: "off", placeholder: "  6文字以上"
           .formGroupRecapcha
-            = image_tag "https://i.gyazo.com/350793c219cd5a2cc3bc30d342e09c43.png", class: "formGroupRecapcha"
+            = recaptcha_tags
           .formGroupButton
             = f.submit "登録する", class: "formGroupButton"
   .signup
@@ -44,5 +44,3 @@
         %image.footerlogo{:src => "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?562024368"}
           %p
             %small ©︎2018 Merecari
-
-

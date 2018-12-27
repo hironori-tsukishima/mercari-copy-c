@@ -3,7 +3,6 @@
   .registrationMain {
     margin: 0 auto;
     width: 700px;
-    height: 800px;
     background: $white;
     &Top {
       text-align: center;
@@ -16,7 +15,7 @@
       }
     }
     &Inner {
-      padding: 0 200px;
+      padding: 0 200px 50px;
       .formGroup {
         &Title {
         }
@@ -35,7 +34,7 @@
           height: 50px;
           color: $white;
           display: block;
-          margin: 60px auto 0px;
+          margin: 60px auto 0;
           background: $button-red;
         }
       }

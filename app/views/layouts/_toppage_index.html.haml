@@ -1,0 +1,6 @@
+.bodyPickupContainers
+  .bodyPickupContainersContainer
+    = render partial: 'layouts/toppage_index_render', collection: @items, as: "item"
+
+  .bodyPickupContainerSeeAll
+    =link_to "すべての商品を見る", "#",class: "SeeAll"

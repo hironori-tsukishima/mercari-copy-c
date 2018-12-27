@@ -1,19 +1,15 @@
 .wrapperSellingItemInfo
   %h1.wrapperSellingItemName
-    = item.name
+    = @item.name
   .wrapperSellingItemInfolLeftRight
     .wrapperSellingItemInfolLeft
-      .wrapperSellingItemInfoLeftMainimage
-        = image_tag '1.jpeg', size: '300x300', class: 'dog1'
-      .wrapperSellingItemInfoLeftSubimage
-        .wrapperSellingItemInfoLeftSubimages
-          = image_tag '2.jpeg', size: '75x75', class: 'dog2'
-        .wrapperSellingItemInfoLeftSubimages
-          = image_tag '3.jpeg', size: '75x75', class: 'dog3'
-        .wrapperSellingItemInfoLeftSubimages
-          = image_tag '4.jpeg', size: '75x75', class: 'dog4'
-        .wrapperSellingItemInfoLeftSubimages
-          = image_tag '5.jpeg', size: '75x75', class: 'dog5'
+      .wrapperSellingItemInfolLeftHidden
+        .wrapperSellingItemInfoLeftMainimage
+          - @images.each do |image|
+            = image_tag image.image
+        .wrapperSellingItemInfoLeftSubimage
+          - @images.each do |image|
+            = image_tag image.image,class: "wrapperSellingItemInfoLeftSubimages"
     .wrapperSellingItemInfoRight
       .wrapperSellingItemInfoRightTable
         %table{:border => "1"}
@@ -38,13 +34,16 @@
             %td.tableRight S
           %tr
             %td.tableLeft 商品の状態
-            %td.tableRight 未使用
+            %td.tableRight
+              = @item.status
           %tr
             %td.tableLeft 配送料の負担
-            %td.tableRight 送料込み(出品者負担)
+            %td.tableRight
+              = @item.shipping_fare
           %tr
             %td.tableLeft 配送の方法
-            %td.tableRight らくらくメルカリ便
+            %td.tableRight
+              = @item.shipping_method
           %tr
             %td.tableLeft 配送元地域
             %td.tableRight
@@ -53,7 +52,11 @@
             %td.tableLeft 発送日の目安
             %td.tableRight 2~3日で発送
   .wrapperSellingItemInfoPriceBox
-    .wrapperSellingItemInfoPrice ¥ item.price
+    .wrapperSellingItemInfoPrice
+      ¥
+      %span
+        = @item.price
     .wrapperSellingItemInfoTax (税込)
     .wrapperSellingItemInfoFare 送料込み
-  .wrapperSellingItemInfoDescription 猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん猫ちゃん
+  .wrapperSellingItemInfoDescription
+    = @item.explaination
