@@ -1,6 +1,7 @@
 class ToppagesController < ApplicationController
 
   def index
+    # @q = Item.ransack(params[:q])
     @items = Item.all.order("created_at DESC").limit(4)
   end
 

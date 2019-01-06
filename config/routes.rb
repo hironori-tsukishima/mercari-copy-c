@@ -4,6 +4,7 @@
   resources :items , only: [:new , :create, :destroy]
   get 'items/purchase'
   resources :toppages , only: [:index, :show]
+  # resources :items, only: %w(index search)
   get 'mypages/main' => 'mypages#main'
   get 'mypages/logout' => 'mypages#logout'
   get 'mypages/card' => 'mypages#card'

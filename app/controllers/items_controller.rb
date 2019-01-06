@@ -34,11 +34,16 @@ class ItemsController < ApplicationController
 
   def search
     @items = Item.where('name LIKE(?) OR price LIKE(?) OR explaination LIKE(?)', "%#{params[:keyword]}%", "%#{params[:keyword]}%", "%#{params[:keyword]}%").limit(20)
-
-    # @items = Item.page(params[:page]).per(5).order("created_at DESC")
-    # @keyword = params[:keyword]
-    # @search = Item.ransack(params[:q])  #追加
-    # @result = @search.result
+    @q = Item.ransack(params[:q])
+    @itemSearch = @q.result.page(params[:page])
+    # @lowPrice.sorts = 'price DESC'
+    @largeCategory_id = LargeCategory.where(params[:id])
+    @middleCategory_id = MiddleCategory.where(params[:id])
+    @smallCategory_id = SmallCategory.where(params[:id])
+    gon.largeCategory_id = LargeCategory.where(params[:id])
+    gon.middleCategory_id = MiddleCategory.where(params[:id])
+    gon.smallCategory_id = SmallCategory.where(params[:id])
+    # binding.pry
   end
 
   def destroy

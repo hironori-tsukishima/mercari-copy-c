@@ -1,124 +1,135 @@
 %nav.searchNav
   %form.searchNavLists
-    .searchNavListsChoice
-      %select
-        %option{value: "並び替え"}並び替え
-        %option{value: "価格の安い順"}価格の安い順
-        %option{value: "価格の高い順"}価格の高い順
-        %option{value: "出品の古い順"}出品の古い順
-        %option{value: "出品の新しい順"}出品の新しい順
-        %option{value: "いいね！多い順"}いいね！多い順
+    = search_form_for @q, url: items_search_path do |f|
+      .searchNavListsChoice
+        %select
+          %option{value: "0"}並び替え
+          %option{value: "1"}価格の安い順
+          / = link_to '価格の安い順', items_search_path(sort: @lowPrice.sorts)
+          %option{value: "2"}価格の高い順
+          = sort_link(@q, :price, '価格の高い順', default_order: :asc)
+          %option{value: "3"}出品の古い順
+          %option{value: "4"}出品の新しい順
+          %option{value: "5"}いいね！多い順
 
-    .searchNavListsSearch
-      %h3 詳細検索
-      .searchNavListsSearchKeyword
-        %label
+      .searchNavListsSearch
+        %h3 詳細検索
+        .searchNavListsSearchKeyword
           = fa_icon 'fa-plus', class: 'fa-plus'
           キーワードを追加する
-        %input{name: "keyword", placeholder: "例）値下げ", type: "text", value: ""}
+          = f.search_field :name_or_price_or_explaination_cont, placeholder: "例）値下げ", type: "text"
+          / %input{name: "keyword", placeholder: "例）値下げ", type: "text", value: ""}
+        .searchNavListsSearchCategory
+          %label
+            = fa_icon 'fa-plus', class: 'fa-plus'
+            カテゴリーを選択する
+          %select.searchNavListsSearchLargeCategory#largeCategory
+            %option{value: "0"}すべて
+            - largecategory_id.each do |largeCategory|
+              %option.largeCategoryId{ data: {id: largeCategory.id}} #{largeCategory.name}
+        .searchNavListsSearchBrand
+          %label
+            = fa_icon 'fa-plus', class: 'fa-plus'
+            ブランド名から探す
+          / = f.search_field :brand_eq, class: "searchBrand", placeholder: "例）ジャンル", class: "searchNavListsSearchBrandBox"
+        .searchNavListsSearchSize
+          %label
+            = fa_icon 'fa-plus', class: 'fa-plus'
+            サイズを選択する
+          %select.searchNavListsSearchSizeBox
+            %option{value: "0"}すべて
+            %option{value: "1"}洋服のサイズ
+            %option{value: "2"}メンズ靴のサイズ
+            %option{value: "3"}レディース靴のサイズ
+            %option{value: "4"}スカートのサイズ
+            %option{value: "5"}キッズ服のサイズ
+            %option{value: "6"}ベビーキッズ靴のサイズ
+            %option{value: "7"}ベビー服のサイズ
+            %option{value: "8"}テレビのサイズ
+            %option{value: "9"}カメラレンズのサイズ
+            %option{value: "10"}オートバイとのサイズ
+            %option{value: "11"}ヘルメットのサイズ
+            %option{value: "12"}タイヤのサイズ
+            %option{value: "13"}スキーのサイズ
+            %option{value: "14"}スノーボードのサイズ
+        .searchNavListsSearchPrice
+          %label
+            = fa_icon 'fa-plus', class: 'fa-plus'
+            価格
+          %select.searchNavListsSearchPriceSelect
+            %option{value: "0"}選択してください
+            %option{value: "1"}300 ~ 1000
+            %option{value: "2"}1000 ~ 5000
+            %option{value: "3"}5000 ~ 10000
+            %option{value: "4"}10000 ~ 30000
+            %option{value: "5"}30000 ~ 50000
+            %option{value: "6"}50000 ~
+          %ul.searchNavListsSearchPriceInput
+            %li.searchNavListsSearchPriceInputBox
+              = f.search_field :price_gteq, class: "searchPrice minLimit", placeholder: "¥ Min"
+            %li.searchNavListsSearchPriceInputBox
+              .searchNavListsSearchPriceInputLine ~
+            %li.searchNavListsSearchPriceInputBox
+              = f.search_field :price_lteq, class: "searchPrice maxLimit", placeholder: "¥ Max"
+        .searchNavListsSearchState
+          %label
+            = fa_icon 'fa-plus', class: 'fa-plus'
+            商品の状況
+            .searchNavListsSearchStateCheckBox
+              .searchNavListsSearchStateCheckBoxAll
+                %input{type: "checkbox", class: "searchState"}
+                %label すべて
+              .searchNavListsSearchStateCheckBoxNew
+                = f.check_box :status_eq_any, {multiple: true},"新品、未使用",""
+                新品、未使用
+              .searchNavListsSearchStateCheckBoxCloseToUnused
+                = f.check_box :status_eq_any, {multiple: true},"未使用に近い",""
+                未使用に近い
+              .searchNavListsSearchStateCheckBoxScratchLight
+                = f.check_box :status_eq_any, {multiple: true},"目立った傷や汚れなし",""
+                目立った傷や汚れなし
+              .searchNavListsSearchStateCheckBoxScratchHeavy
+                = f.check_box :status_eq_any, {multiple: true},"やや傷や汚れあり",""
+                やや傷や汚れあり
+              .searchNavListsSearchStateCheckBoxScratch
+                = f.check_box :status_eq_any, {multiple: true},"傷や汚れあり",""
+                傷や汚れあり
+              .searchNavListsSearchStateCheckBoxBed
+                = f.check_box :status_eq_any, {multiple: true},"全体的に状態が悪い",""
+                全体的に状態が悪い
+        .searchNavListsSearchBurden
+          %label
+            = fa_icon 'fa-plus', class: 'fa-pl{class: abc}us'
+            配送料の負担
+            .searchNavListsSearchBurdenCheckBox
+              .searchNavListsSearchBurdenCheckBoxAll
+                %input{type: "checkbox", class: "searchBurden"}
+                %label すべて
+              .searchNavListsSearchBurdenCheckBoxNoFreight
+                = f.check_box :shipping_method_eq_any, {multiple: true},"着払い(購入者負担)",""
+                着払い(購入者負担)
+              .searchNavListsSearchBurdenCheckBoxIncludeFreight
+                = f.check_box :shipping_method_eq_any, {multiple: true},"送料込み(出品者負担)",""
+                送料込み(出品者負担)
+        .searchNavListsSearchSchedule
+          %label
+            = fa_icon 'fa-plus', class: 'fa-plus'
+            販売状況
+            .searchNavListsSearchScheduleCheckBox
+              .searchNavListsSearchScheduleCheckBoxAll
+                %input{type: "checkbox", class: "searchSchedule"}
+                %label すべて
+              .searchNavListsSearchScheduleCheckBoxSale
+                = f.check_box :shipping_shcedule_eq_any, {multiple: true},"販売中",""
+                販売中
+              .searchNavListsSearchScheduleCheckBoxSold
+                = f.check_box :shipping_shcedule_eq_any, {multiple: true},"売り切れ",""
+                売り切れ
 
-      .searchNavListsSearchCategory
-        %label
-          = fa_icon 'fa-plus', class: 'fa-plus'
-          カテゴリーを選択する
-        %select
-          %option{value: ""}すべて
-          %option{value: ""}レディース
-          %option{value: ""}メンズ
-          %option{value: ""}ベビー・キッズ
-          %option{value: ""}インテリア・お住まい・小物
-          %option{value: ""}本・音楽・ゲーム
-          %option{value: ""}おもちゃ・ボビー・グッズ
-          %option{value: ""}コスメ・香水・美容
-          %option{value: ""}家電・スマホ・カメラ
-          %option{value: ""}スポーツ・レジャー
-          %option{value: ""}ハンドメイド
-          %option{value: ""}チケット
-          %option{value: ""}自動車・オートバイ
-          %option{value: ""}その他
-      .searchNavListsSearchBrand
-        %label
-          = fa_icon 'fa-plus', class: 'fa-plus'
-          ブランド名から探す
-        %input{name: "keyword", placeholder: "例）ジャンル", type: "text", value: ""}
-
-      .searchNavListsSearchSize
-        %label
-          = fa_icon 'fa-plus', class: 'fa-plus'
-          サイズを選択する
-        %select
-          %option{value: ""}すべて
-          %option{value: ""}洋服のサイズ
-          %option{value: ""}メンズ靴のサイズ
-          %option{value: ""}レディース靴のサイズ
-          %option{value: ""}スカートのサイズ
-          %option{value: ""}キッズ服のサイズ
-          %option{value: ""}ベビーキッズ靴のサイズ
-          %option{value: ""}ベビー服のサイズ
-          %option{value: ""}テレビのサイズ
-          %option{value: ""}カメラレンズのサイズ
-          %option{value: ""}オートバイとのサイズ
-          %option{value: ""}ヘルメットのサイズ
-          %option{value: ""}タイヤのサイズ
-          %option{value: ""}スキーのサイズ
-          %option{value: ""}スノーボードのサイズ
-      .searchNavListsSearchPrice
-        %label
-          = fa_icon 'fa-plus', class: 'fa-plus'
-          価格
-        %select
-          %option{value: ""}選択してください
-          %option{value: ""}300 ~ 1000
-          %option{value: ""}1000 ~ 5000
-          %option{value: ""}5000 ~ 10000
-          %option{value: ""}10000 ~ 30000
-          %option{value: ""}30000 ~ 50000
-          %option{value: ""}50000 ~
-        .searchNavListsSearchPriceInput
-          %input{name: "keyword", placeholder: "¥ Min", type: "text", value: ""}
-          %span ~
-          %input{name: "keyword", placeholder: "¥ Max", type: "text", value: ""}
-
-      .searchNavListsSearchState
-        %label
-          = fa_icon 'fa-plus', class: 'fa-plus'
-          商品の状況
-          .searchNavListsSearchStateCheckBox
-            .searchNavListsSearchStateCheckBoxAll
-              %input{type: "checkbox"}
-              %label すべて
-            .searchNavListsSearchStateCheckBoxNew
-              %input{type: "checkbox"}
-              %label 新品、未使用
-            .searchNavListsSearchStateCheckBoxCloseToUnused
-              %input{type: "checkbox"}
-              %label 未使用に近い
-            .searchNavListsSearchStateCheckBoxScratchLight
-              %input{type: "checkbox"}
-              %label 目立った傷や汚れなし
-            .searchNavListsSearchStateCheckBoxScratchHeavy
-              %input{type: "checkbox"}
-              %label やや傷や汚れあり
-            .searchNavListsSearchStateCheckBoxScratch
-              %input{type: "checkbox"}
-              %label 傷や汚れあり
-            .searchNavListsSearchStateCheckBoxBed
-              %input{type: "checkbox"}
-              %label 全体的に状態が悪い
-      .searchNavListsSearchBurden
-        %label
-          = fa_icon 'fa-plus', class: 'fa-plus'
-          配送料の負担
-      .searchNavListsSearchStatus
-        %label
-          = fa_icon 'fa-plus', class: 'fa-plus'
-          販売状況
-
-      .searchNavListsSearchBtn
-        %button.searchNavListsSearchBtnClear クリア
-        %button.searchNavListsSearchBtnComplete 完了
-
-
+        .searchNavListsSearchBtn
+          = f.submit "クリア", type: :reset, class: 'searchNavListsSearchBtnClear'
+          = f.submit "完了", class: 'searchNavListsSearchBtnComplete'
+          / = binding.pry
 
 
 
