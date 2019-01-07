@@ -1,0 +1,2 @@
+class KidsBrand < ApplicationRecord
+end

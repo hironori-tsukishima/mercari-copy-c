@@ -1,0 +1,102 @@
+.breadCrumbShowBorder
+.breadCrumbShow
+  %ul.breadcrumb
+  %li.list1{:itemscope => "itemscope", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+    %a{:href => "http://localhost:3000", :itemprop => "url"}
+      %span{:itemprop => "title"} メルカリ
+  %p >
+  %li.list2{:itemscope => "itemscope", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+    %a{:href => "http://localhost:3000/brands/hobby", :itemprop => "url"}
+      %span{:itemprop => "title"}
+        = "ブランド一覧"
+
+.brands
+  .brandWrapper
+    %h2.brandTitle ブランド一覧
+    .brandWrapperContainer
+      .brandWrapperContainerBoxWemens#box レディース
+      .brandWrapperContainerBoxKids#box ベビー・キッズ
+      .brandWrapperContainerBoxHobby#box-main テレビゲーム
+      .brandWrapperContainerBoxWemens#box インテリア・住まい・雑貨
+      .brandWrapperContainerBoxKids#box スポーツ・レジャー
+      .brandWrapperContainerBoxHobby#box スマートフォン・携帯電話
+      .brandWrapperContainerBoxWemens#box 国内自動車車体
+      .brandWrapperContainerBoxKids#box キッチン・食器
+      .brandWrapperContainerBoxHobby#box 時計
+    .brandWrapperScroll
+      - @initial.each do |initial|
+        .brandWrapperScrollCell
+          = initial + " | "
+    %h3.brandWrapperJanre テレビゲーム
+    %h4.brandWrapperInitials
+      .brandWrapperInitialsInitial
+        ウ
+      .brandWrapperInitialsInitialbrands
+        -@brands_u.each do |u|
+          .brandWrapperInitialsInitialbrandsbrand
+            = u.name
+      .brandWrapperInitialsInitial
+        エ
+      .brandWrapperInitialsInitialbrands
+        -@brands_e.each do |e|
+          .brandWrapperInitialsInitialbrandsbrand
+            = e.name
+      .brandWrapperInitialsInitial
+        コ
+      .brandWrapperInitialsInitialbrands
+        -@brands_ko.each do |ko|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ko.name
+      .brandWrapperInitialsInitial
+        サ
+      .brandWrapperInitialsInitialbrands
+        -@brands_sa.each do |sa|
+          .brandWrapperInitialsInitialbrandsbrand
+            = sa.name
+      .brandWrapperInitialsInitial
+        ス
+      .brandWrapperInitialsInitialbrands
+        -@brands_su.each do |su|
+          .brandWrapperInitialsInitialbrandsbrand
+            = su.name
+      .brandWrapperInitialsInitial
+        セ
+      .brandWrapperInitialsInitialbrands
+        -@brands_se.each do |se|
+          .brandWrapperInitialsInitialbrandsbrand
+            = se.name
+      .brandWrapperInitialsInitial
+        ニ
+      .brandWrapperInitialsInitialbrands
+        -@brands_ni.each do |ni|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ni.name
+      .brandWrapperInitialsInitial
+        ネ
+      .brandWrapperInitialsInitialbrands
+        -@brands_ne.each do |ne|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ne.name
+        フ
+      .brandWrapperInitialsInitialbrands
+        -@brands_hu.each do |hu|
+          .brandWrapperInitialsInitialbrandsbrand
+            = hu.name
+      .brandWrapperInitialsInitial
+        ヘ
+      .brandWrapperInitialsInitialbrands
+        -@brands_he.each do |he|
+          .brandWrapperInitialsInitialbrandsbrand
+            = he.name
+      .brandWrapperInitialsInitial
+        マ
+      .brandWrapperInitialsInitialbrands
+        -@brands_ma.each do |ma|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ma.name
+      .brandWrapperInitialsInitial
+        レ
+      .brandWrapperInitialsInitialbrands
+        -@brands_re.each do |re|
+          .brandWrapperInitialsInitialbrandsbrand
+            = re.name

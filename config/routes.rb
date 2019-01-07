@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   get 'items/purchase/:id' => 'items#purchase'
   post 'settlement/create'
   get 'items/search' => 'items#search'
-  get 'items/priceCheap' => 'items#priceCheap'
-  get 'items/priceExpensive' => 'items#priceExpensive'
+  get 'brands/wemens' => 'brands#wemens'
+  get 'brands/kids' => 'brands#kids'
+  get 'brands/hobby' => 'brands#hobby'
+
 end

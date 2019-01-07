@@ -1,0 +1,487 @@
+.breadCrumbShowBorder
+.breadCrumbShow
+  %ul.breadcrumb
+  %li.list1{:itemscope => "itemscope", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+    %a{:href => "http://localhost:3000", :itemprop => "url"}
+      %span{:itemprop => "title"} メルカリ
+  %p >
+  %li.list2{:itemscope => "itemscope", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+    %a{:href => "http://localhost:3000/brands/wemens", :itemprop => "url"}
+      %span{:itemprop => "title"}
+        = "ブランド一覧"
+
+.brands
+  .brandWrapper
+    %h2.brandTitle ブランド一覧
+    .brandWrapperContainer
+      .brandWrapperContainerBoxWemens#box-main レディース
+      .brandWrapperContainerBoxKids#box ベビー・キッズ
+      .brandWrapperContainerBoxHobby#box テレビゲーム
+      .brandWrapperContainerBoxWemens#box インテリア・住まい・雑貨
+      .brandWrapperContainerBoxKids#box スポーツ・レジャー
+      .brandWrapperContainerBoxHobby#box スマートフォン・携帯電話
+      .brandWrapperContainerBoxWemens#box 国内自動車車体
+      .brandWrapperContainerBoxKids#box キッチン・食器
+      .brandWrapperContainerBoxHobby#box 時計
+    .brandWrapperScroll
+      - @initial.each do |initial|
+        .brandWrapperScrollCell
+          = initial + " | "
+    %h3.brandWrapperJanre レディース
+    %h4.brandWrapperInitials
+      .brandWrapperInitialsInitial
+        ア
+      .brandWrapperInitialsInitialbrands
+        -@brands_a.each do |a|
+          .brandWrapperInitialsInitialbrandsbrand
+            = a.name
+      .brandWrapperInitialsInitial
+        イ
+      .brandWrapperInitialsInitialbrands
+        -@brands_i.each do |i|
+          .brandWrapperInitialsInitialbrandsbrand
+            = i.name
+      .brandWrapperInitialsInitial
+        ウ
+      .brandWrapperInitialsInitialbrands
+        -@brands_u.each do |u|
+          .brandWrapperInitialsInitialbrandsbrand
+            = u.name
+      .brandWrapperInitialsInitial
+        エ
+      .brandWrapperInitialsInitialbrands
+        -@brands_e.each do |e|
+          .brandWrapperInitialsInitialbrandsbrand
+            = e.name
+      .brandWrapperInitialsInitial
+        オ
+      .brandWrapperInitialsInitialbrands
+        -@brands_o.each do |o|
+          .brandWrapperInitialsInitialbrandsbrand
+            = o.name
+      .brandWrapperInitialsInitial
+        カ
+      .brandWrapperInitialsInitialbrands
+        -@brands_ka.each do |ka|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ka.name
+      .brandWrapperInitialsInitial
+        ガ
+      .brandWrapperInitialsInitialbrands
+        -@brands_ga.each do |ga|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ga.name
+      .brandWrapperInitialsInitial
+        キ
+      .brandWrapperInitialsInitialbrands
+        -@brands_ki.each do |ki|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ki.name
+      .brandWrapperInitialsInitial
+        ギ
+      .brandWrapperInitialsInitialbrands
+        -@brands_gi.each do |gi|
+          .brandWrapperInitialsInitialbrandsbrand
+            = gi.name
+      .brandWrapperInitialsInitial
+        ク
+      .brandWrapperInitialsInitialbrands
+        -@brands_ku.each do |ku|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ku.name
+      .brandWrapperInitialsInitial
+        グ
+      .brandWrapperInitialsInitialbrands
+        -@brands_gu.each do |gu|
+          .brandWrapperInitialsInitialbrandsbrand
+            = gu.name
+      .brandWrapperInitialsInitial
+        ケ
+      .brandWrapperInitialsInitialbrands
+        -@brands_ke.each do |ke|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ke.name
+      .brandWrapperInitialsInitial
+        ゲ
+      .brandWrapperInitialsInitialbrands
+        -@brands_ge.each do |ge|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ge.name
+      .brandWrapperInitialsInitial
+        コ
+      .brandWrapperInitialsInitialbrands
+        -@brands_ko.each do |ko|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ko.name
+      .brandWrapperInitialsInitial
+        ゴ
+      .brandWrapperInitialsInitialbrands
+        -@brands_go.each do |go|
+          .brandWrapperInitialsInitialbrandsbrand
+            = go.name
+      .brandWrapperInitialsInitial
+        サ
+      .brandWrapperInitialsInitialbrands
+        -@brands_sa.each do |sa|
+          .brandWrapperInitialsInitialbrandsbrand
+            = sa.name
+      .brandWrapperInitialsInitial
+        ザ
+      .brandWrapperInitialsInitialbrands
+        -@brands_za.each do |za|
+          .brandWrapperInitialsInitialbrandsbrand
+            = za.name
+      .brandWrapperInitialsInitial
+        シ
+      .brandWrapperInitialsInitialbrands
+        -@brands_si.each do |si|
+          .brandWrapperInitialsInitialbrandsbrand
+            = si.name
+      .brandWrapperInitialsInitial
+        ジ
+      .brandWrapperInitialsInitialbrands
+        -@brands_ji.each do |ji|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ji.name
+      .brandWrapperInitialsInitial
+        ス
+      .brandWrapperInitialsInitialbrands
+        -@brands_su.each do |su|
+          .brandWrapperInitialsInitialbrandsbrand
+            = su.name
+      .brandWrapperInitialsInitial
+        ズ
+      .brandWrapperInitialsInitialbrands
+        -@brands_zu.each do |zu|
+          .brandWrapperInitialsInitialbrandsbrand
+            = zu.name
+      .brandWrapperInitialsInitial
+        セ
+      .brandWrapperInitialsInitialbrands
+        -@brands_se.each do |se|
+          .brandWrapperInitialsInitialbrandsbrand
+            = se.name
+      .brandWrapperInitialsInitial
+        ゼ
+      .brandWrapperInitialsInitialbrands
+        -@brands_ze.each do |ze|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ze.name
+      .brandWrapperInitialsInitial
+        ソ
+      .brandWrapperInitialsInitialbrands
+        -@brands_so.each do |so|
+          .brandWrapperInitialsInitialbrandsbrand
+            = so.name
+      .brandWrapperInitialsInitial
+        ゾ
+      .brandWrapperInitialsInitialbrands
+        -@brands_zo.each do |zo|
+          .brandWrapperInitialsInitialbrandsbrand
+            = zo.name
+      .brandWrapperInitialsInitial
+        タ
+      .brandWrapperInitialsInitialbrands
+        -@brands_ta.each do |ta|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ta.name
+      .brandWrapperInitialsInitial
+        ダ
+      .brandWrapperInitialsInitialbrands
+        -@brands_da.each do |da|
+          .brandWrapperInitialsInitialbrandsbrand
+            = da.name
+      .brandWrapperInitialsInitial
+        チ
+      .brandWrapperInitialsInitialbrands
+        -@brands_ti.each do |ti|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ti.name
+      .brandWrapperInitialsInitial
+        ツ
+      .brandWrapperInitialsInitialbrands
+        -@brands_tu.each do |tu|
+          .brandWrapperInitialsInitialbrandsbrand
+            = tu.name
+      .brandWrapperInitialsInitial
+        ヅ
+      .brandWrapperInitialsInitialbrands
+        -@brands_du.each do |du|
+          .brandWrapperInitialsInitialbrandsbrand
+            = du.name
+      .brandWrapperInitialsInitial
+        テ
+      .brandWrapperInitialsInitialbrands
+        -@brands_te.each do |te|
+          .brandWrapperInitialsInitialbrandsbrand
+            = te.name
+      .brandWrapperInitialsInitial
+        デ
+      .brandWrapperInitialsInitialbrands
+        -@brands_de.each do |de|
+          .brandWrapperInitialsInitialbrandsbrand
+            = de.name
+      .brandWrapperInitialsInitial
+        ト
+      .brandWrapperInitialsInitialbrands
+        -@brands_to.each do |to|
+          .brandWrapperInitialsInitialbrandsbrand
+            = to.name
+      .brandWrapperInitialsInitial
+        ド
+      .brandWrapperInitialsInitialbrands
+        -@brands_dou.each do |dou|
+          .brandWrapperInitialsInitialbrandsbrand
+            = dou.name
+      .brandWrapperInitialsInitial
+        ナ
+      .brandWrapperInitialsInitialbrands
+        -@brands_na.each do |na|
+          .brandWrapperInitialsInitialbrandsbrand
+            = na.name
+      .brandWrapperInitialsInitial
+        ニ
+      .brandWrapperInitialsInitialbrands
+        -@brands_ni.each do |ni|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ni.name
+      .brandWrapperInitialsInitial
+        ヌ
+      .brandWrapperInitialsInitialbrands
+        -@brands_nu.each do |nu|
+          .brandWrapperInitialsInitialbrandsbrand
+            = nu.name
+      .brandWrapperInitialsInitial
+        ネ
+      .brandWrapperInitialsInitialbrands
+        -@brands_ne.each do |ne|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ne.name
+      .brandWrapperInitialsInitial
+        ノ
+      .brandWrapperInitialsInitialbrands
+        -@brands_no.each do |no|
+          .brandWrapperInitialsInitialbrandsbrand
+            = no.name
+      .brandWrapperInitialsInitial
+        ハ
+      .brandWrapperInitialsInitialbrands
+        -@brands_ha.each do |ha|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ha.name
+      .brandWrapperInitialsInitial
+        バ
+      .brandWrapperInitialsInitialbrands
+        -@brands_ba.each do |ba|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ba.name
+      .brandWrapperInitialsInitial
+        パ
+      .brandWrapperInitialsInitialbrands
+        -@brands_pa.each do |pa|
+          .brandWrapperInitialsInitialbrandsbrand
+            = pa.name
+      .brandWrapperInitialsInitial
+        ヒ
+      .brandWrapperInitialsInitialbrands
+        -@brands_hi.each do |hi|
+          .brandWrapperInitialsInitialbrandsbrand
+            = hi.name
+      .brandWrapperInitialsInitial
+        ビ
+      .brandWrapperInitialsInitialbrands
+        -@brands_bi.each do |bi|
+          .brandWrapperInitialsInitialbrandsbrand
+            = bi.name
+      .brandWrapperInitialsInitial
+        ピ
+      .brandWrapperInitialsInitialbrands
+        -@brands_pi.each do |pi|
+          .brandWrapperInitialsInitialbrandsbrand
+            = pi.name
+      .brandWrapperInitialsInitial
+        フ
+      .brandWrapperInitialsInitialbrands
+        -@brands_hu.each do |hu|
+          .brandWrapperInitialsInitialbrandsbrand
+            = hu.name
+      .brandWrapperInitialsInitial
+        ブ
+      .brandWrapperInitialsInitialbrands
+        -@brands_bu.each do |bu|
+          .brandWrapperInitialsInitialbrandsbrand
+            = bu.name
+      .brandWrapperInitialsInitial
+        プ
+      .brandWrapperInitialsInitialbrands
+        -@brands_pu.each do |pu|
+          .brandWrapperInitialsInitialbrandsbrand
+            = pu.name
+      .brandWrapperInitialsInitial
+        ヘ
+      .brandWrapperInitialsInitialbrands
+        -@brands_he.each do |he|
+          .brandWrapperInitialsInitialbrandsbrand
+            = he.name
+      .brandWrapperInitialsInitial
+        ベ
+      .brandWrapperInitialsInitialbrands
+        -@brands_be.each do |be|
+          .brandWrapperInitialsInitialbrandsbrand
+            = be.name
+      .brandWrapperInitialsInitial
+        ペ
+      .brandWrapperInitialsInitialbrands
+        -@brands_pe.each do |pe|
+          .brandWrapperInitialsInitialbrandsbrand
+            = pe.name
+      .brandWrapperInitialsInitial
+        ホ
+      .brandWrapperInitialsInitialbrands
+        -@brands_ho.each do |ho|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ho.name
+      .brandWrapperInitialsInitial
+        ボ
+      .brandWrapperInitialsInitialbrands
+        -@brands_bo.each do |bo|
+          .brandWrapperInitialsInitialbrandsbrand
+            = bo.name
+      .brandWrapperInitialsInitial
+        ポ
+      .brandWrapperInitialsInitialbrands
+        -@brands_po.each do |po|
+          .brandWrapperInitialsInitialbrandsbrand
+            = po.name
+      .brandWrapperInitialsInitial
+        マ
+      .brandWrapperInitialsInitialbrands
+        -@brands_ma.each do |ma|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ma.name
+      .brandWrapperInitialsInitial
+        ミ
+      .brandWrapperInitialsInitialbrands
+        -@brands_mi.each do |mi|
+          .brandWrapperInitialsInitialbrandsbrand
+            = mi.name
+      .brandWrapperInitialsInitial
+        ム
+      .brandWrapperInitialsInitialbrands
+        -@brands_mu.each do |mu|
+          .brandWrapperInitialsInitialbrandsbrand
+            = mu.name
+      .brandWrapperInitialsInitial
+        メ
+      .brandWrapperInitialsInitialbrands
+        -@brands_me.each do |me|
+          .brandWrapperInitialsInitialbrandsbrand
+            = me.name
+      .brandWrapperInitialsInitial
+        モ
+      .brandWrapperInitialsInitialbrands
+        -@brands_mo.each do |mo|
+          .brandWrapperInitialsInitialbrandsbrand
+            = mo.name
+      .brandWrapperInitialsInitial
+        ヤ
+      .brandWrapperInitialsInitialbrands
+        -@brands_ya.each do |ya|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ya.name
+      .brandWrapperInitialsInitial
+        ユ
+      .brandWrapperInitialsInitialbrands
+        -@brands_yu.each do |yu|
+          .brandWrapperInitialsInitialbrandsbrand
+            = yu.name
+      .brandWrapperInitialsInitial
+        ヨ
+      .brandWrapperInitialsInitialbrands
+        -@brands_yo.each do |yo|
+          .brandWrapperInitialsInitialbrandsbrand
+            = yo.name
+      .brandWrapperInitialsInitial
+        ラ
+      .brandWrapperInitialsInitialbrands
+        -@brands_ra.each do |ra|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ra.name
+      .brandWrapperInitialsInitial
+        リ
+      .brandWrapperInitialsInitialbrands
+        -@brands_ri.each do |ri|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ri.name
+      .brandWrapperInitialsInitial
+        ル
+      .brandWrapperInitialsInitialbrands
+        -@brands_ru.each do |ru|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ru.name
+      .brandWrapperInitialsInitial
+        レ
+      .brandWrapperInitialsInitialbrands
+        -@brands_re.each do |re|
+          .brandWrapperInitialsInitialbrandsbrand
+            = re.name
+      .brandWrapperInitialsInitial
+        ロ
+      .brandWrapperInitialsInitialbrands
+        -@brands_ro.each do |ro|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ro.name
+      .brandWrapperInitialsInitial
+        ワ
+      .brandWrapperInitialsInitialbrands
+        -@brands_wa.each do |wa|
+          .brandWrapperInitialsInitialbrandsbrand
+            = wa.name
+      .brandWrapperInitialsInitial
+        ヴ
+      .brandWrapperInitialsInitialbrands
+        -@brands_vu.each do |vu|
+          .brandWrapperInitialsInitialbrandsbrand
+            = vu.name
+      .brandWrapperInitialsInitial
+        1
+      .brandWrapperInitialsInitialbrands
+        -@brands_1.each do |ichi|
+          .brandWrapperInitialsInitialbrandsbrand
+            = ichi.name
+      .brandWrapperInitialsInitial
+        2
+      .brandWrapperInitialsInitialbrands
+        -@brands_2.each do |nini|
+          .brandWrapperInitialsInitialbrandsbrand
+            = nini.name
+      .brandWrapperInitialsInitial
+        3
+      .brandWrapperInitialsInitialbrands
+        -@brands_3.each do |san|
+          .brandWrapperInitialsInitialbrandsbrand
+            = san.name
+      .brandWrapperInitialsInitial
+        4
+      .brandWrapperInitialsInitialbrands
+        -@brands_4.each do |yon|
+          .brandWrapperInitialsInitialbrandsbrand
+            = yon.name
+      .brandWrapperInitialsInitial
+        5
+      .brandWrapperInitialsInitialbrands
+        -@brands_5.each do |gogo|
+          .brandWrapperInitialsInitialbrandsbrand
+            = gogo.name
+      .brandWrapperInitialsInitial
+        6
+      .brandWrapperInitialsInitialbrands
+        -@brands_6.each do |roku|
+          .brandWrapperInitialsInitialbrandsbrand
+            = roku.name
+      .brandWrapperInitialsInitial
+        8
+      .brandWrapperInitialsInitialbrands
+        -@brands_8.each do |hati|
+          .brandWrapperInitialsInitialbrandsbrand
+            = hati.name

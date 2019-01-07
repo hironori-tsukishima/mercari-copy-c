@@ -1,0 +1,77 @@
+.brands{
+  background-color: $background-gray;
+  padding-bottom: 20px;
+  .brandWrapper{
+    width:50vw;
+    margin:0 auto;
+    .brandTitle{
+      font-size: 22px;
+      font-weight: bold;
+    }
+    &Container{
+      display:flex;
+      flex-wrap: wrap;
+    }
+    &Scroll{
+      display: flex;
+      flex-wrap: wrap;
+      margin-top:40px;
+      &Cell{
+        margin:8px 0 0 5px;
+        font-size: 15px;
+        color:$link_blue;
+      }
+    }
+    &Janre{
+      color:white;
+      background:$focus-red;
+      padding:6px 0 6px 30px;
+      margin-top: 40px;
+      font-size: 22px;
+      font-weight:bold ;
+    }
+    &InitialsInitial{
+      color:black;
+      background:initial-back-gray;
+      padding:6px 0 6px 30px;
+      font-size: 16px;
+      font-weight:bold ;
+    }
+    &InitialsInitialbrands{
+      display: flex;
+      flex-wrap: wrap;
+      background-color: $background-white;
+      padding:6px 0 6px 30px;
+      &brand{
+        width:20vw;
+        margin:20px 0 20px 30px;
+        color:$link_blue;
+      }
+    }
+  }
+  #last{
+  margin-bottom: 20px;
+  }
+}
+
+#box{
+  background-color: white;
+  box-shadow: 2px 2px 3px #EBEBEB;
+  padding: 10px 25px;
+  margin:8px 0 0 10px;
+  border-radius: 5px;
+}
+#box:hover {
+  color:white;
+  background:#EA3732;
+}
+#box-main{
+  background-color: white;
+  box-shadow: 2px 2px 3px #EBEBEB;
+  padding: 10px 25px;
+  margin:8px 0 0 10px;
+  border-radius: 5px;
+  color:white;
+  background:$focus-red;
+}
+

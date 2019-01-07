@@ -1,0 +1,2 @@
+class HobbyBrand < ApplicationRecord
+end
