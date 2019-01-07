@@ -22,35 +22,36 @@
       - if params[:keyword].present?
         - @items.each do |item|
           .searchItemMainBodyItemBox
-            .searchItemMainBodyItemBoxImage
-              = image_tag item.item_images.first.image, size: '160x160'
-            .searchItemMainBodyItemInfo
-              %h3
-                = item.name
-              .searchItemMainBodyItemInfoBottom
-                .searchItemMainBodyItemInfoBottomPrice
-                  .searchItemMainBodyItemInfoBottomPriceProduct
-                    = "¥ #{item.price}"
-                  %p (税込)
-                .searchItemMainBodyItemInfoBottomLike
-                  = fa_icon 'fa-heart', class: 'fa-heart'
-                  3
+            = link_to "/items/purchase/#{item.id}", style: "color:black;", class: "ItemBoxLink" do
+              .searchItemMainBodyItemBoxImage
+                = image_tag item.item_images.first.image, size: '160x160'
+              .searchItemMainBodyItemInfo
+                %h3
+                  = item.name
+                .searchItemMainBodyItemInfoBottom
+                  .searchItemMainBodyItemInfoBottomPrice
+                    %span.searchItemMainBodyItemInfoBottomPriceProduct
+                      = "¥ #{item.price}"
+                    %p (税込)
+                  .searchItemMainBodyItemInfoBottomLike
+                    = fa_icon 'fa-heart', class: 'fa-heart'
+                    3
       - elsif @itemSearch.present?
         - @itemSearch.each do |item|
           .searchItemMainBodyItemBox
-            .searchItemMainBodyItemBoxImage
-              = image_tag item.item_images.first.image, size: '160x160'
-            .searchItemMainBodyItemInfo
-              %h3
-                = item.name
-              .searchItemMainBodyItemInfoBottom
-                .searchItemMainBodyItemInfoBottomPrice
-                  .searchItemMainBodyItemInfoBottomPriceProduct
-                    = "¥ #{item.price}"
-                  %p (税込)
-                .searchItemMainBodyItemInfoBottomLike
-                  = fa_icon 'fa-heart', class: 'fa-heart'
-                  3
-      - else
+            = link_to "/items/purchase/#{item.id}", style: "color:black;", class: "ItemBoxLink" do
+              .searchItemMainBodyItemBoxImage
+                = image_tag item.item_images.first.image, size: '160x160'
+              .searchItemMainBodyItemInfo
+                %h3
+                  = item.name
+                .searchItemMainBodyItemInfoBottom
+                  .searchItemMainBodyItemInfoBottomPrice
+                    %span.searchItemMainBodyItemInfoBottomPriceProduct
+                      = "¥ #{item.price}"
+                    %p (税込)
+                  .searchItemMainBodyItemInfoBottomLike
+                    = fa_icon 'fa-heart', class: 'fa-heart'
+                    3
     .searchItemPage
       / = paginate(@itemsPages)

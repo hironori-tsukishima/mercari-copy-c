@@ -2,7 +2,6 @@
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: "users/registrations" }
   root 'toppages#index'
   resources :items , only: [:new , :create, :destroy]
-  get 'items/purchase'
   resources :toppages , only: [:index, :show]
   # resources :items, only: %w(index search)
   get 'mypages/main' => 'mypages#main'
@@ -23,5 +22,8 @@
   get 'mypages/exhibitionItemTransaction' => 'mypages#exhibitionItemTransaction'
   get 'mypages/exhibitionItemSold' => 'mypages#exhibitionItemSold'
   get 'help_center/index' => 'help_center＃index'
+  get 'items/purchase/:id' => 'items#purchase'
   get 'items/search' => 'items#search'
+  get 'items/priceCheap' => 'items#priceCheap'
+  get 'items/priceExpensive' => 'items#priceExpensive'
 end

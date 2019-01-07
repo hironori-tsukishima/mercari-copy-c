@@ -56,61 +56,72 @@ $(function() {
 
 // サイズ選択時、サイズ表示
   $('.searchNavListsSearchSizeBox').change(function() {
-    var val = $(this).val();
-    console.log(val);
-    var suit = `<div class = "suitSize" id= "suitSizeBox">
-                  <section>
-                  <input type = "checkbox", class = "suitSizeBox">
-                  <label class = suitSizeLabel > XXS以下 </label>
-                  </section>
-                  <section>
-                  <input type = "checkbox", class = "suitSizeBox">
-                  <label class = suitSizeLabel > XS(SS) </label>
-                  </section>
-                  <section>
-                  <input type = "checkbox", class = "suitSizeBox">
-                  <label class = suitSizeLabel > S </label>
-                  </section>
-                  <section>
-                  <input type = "checkbox", class = "suitSizeBox">
-                  <label class = suitSizeLabel > M </label>
-                  </section>
-                  <section>
-                  <input type = "checkbox", class = "suitSizeBox">
-                  <label class = suitSizeLabel > L </label>
-                  </section>
-                  <section>
-                  <input type = "checkbox", class = "suitSizeBox">
-                  <label class = suitSizeLabel > XL(LL) </label>
-                  </section>
-                  <section>
-                  <input type = "checkbox", class = "suitSizeBox">
-                  <label class = suitSizeLabel > 2XL(3L) </label>
-                  </section>
-                  <section>
-                  <input type = "checkbox", class = "suitSizeBox">
-                  <label class = suitSizeLabel > 3XL(4L) </label>
-                  </section>
-                  <section>
-                  <input type = "checkbox", class = "suitSizeBox">
-                  <label class = suitSizeLabel > 4XL(5L)以上 </label>
-                  </section>
-                  <section>
-                  <input type = "checkbox", class = "suitSizeBox">
-                  <label class = suitSizeLabel > FREE SIZE </label>
-                  </section>
-                  <section>
-                </div>`
+    var searchSize_val = $(this).val();
+    beginning = `<div class = "searchSize" id= "searchSizeId">`
+    end = `</div>`
 
-    $("#suitSizeBox").empty();
-    $(".suitSize").remove();
-
-    if( val == 0) {
+    if(val == 0){
+      $("#searchSizeId").empty();
+      $(".suitSize").remove();
     }
 
-    if( val == 1) {
-      $('.searchNavListsSearchSize').append(suit)
-      // console.log(this);
+    if(val == 1){
+      $.each(gon.suitSize, function(i,suitSize){
+        var suitSize_name = suitSize.name
+        string += `<section>
+                <input type = "checkbox", class = "">
+                <label class=>${suitSize.name}</label>
+                </section>`
+        html = beginning + string + end
+        $(".searchNavListsSearchSizeBox").append(html)
+      })
+    }
+
+    if(val == 2){
     }
   })
 })
+    // var suit = `<div class = "suitSize" id= "suitSizeBox">
+    //               <section>
+    //               <input type = "checkbox", class = "suitSizeBox">
+    //               <label class = suitSizeLabel > XXS以下 </label>
+    //               </section>
+    //               <section>
+    //               <input type = "checkbox", class = "suitSizeBox">
+    //               <label class = suitSizeLabel > XS(SS) </label>
+    //               </section>
+    //               <section>
+    //               <input type = "checkbox", class = "suitSizeBox">
+    //               <label class = suitSizeLabel > S </label>
+    //               </section>
+    //               <section>
+    //               <input type = "checkbox", class = "suitSizeBox">
+    //               <label class = suitSizeLabel > M </label>
+    //               </section>
+    //               <section>
+    //               <input type = "checkbox", class = "suitSizeBox">
+    //               <label class = suitSizeLabel > L </label>
+    //               </section>
+    //               <section>
+    //               <input type = "checkbox", class = "suitSizeBox">
+    //               <label class = suitSizeLabel > XL(LL) </label>
+    //               </section>
+    //               <section>
+    //               <input type = "checkbox", class = "suitSizeBox">
+    //               <label class = suitSizeLabel > 2XL(3L) </label>
+    //               </section>
+    //               <section>
+    //               <input type = "checkbox", class = "suitSizeBox">
+    //               <label class = suitSizeLabel > 3XL(4L) </label>
+    //               </section>
+    //               <section>
+    //               <input type = "checkbox", class = "suitSizeBox">
+    //               <label class = suitSizeLabel > 4XL(5L)以上 </label>
+    //               </section>
+    //               <section>
+    //               <input type = "checkbox", class = "suitSizeBox">
+    //               <label class = suitSizeLabel > FREE SIZE </label>
+    //               </section>
+    //               <section>
+    //             </div>`
+
