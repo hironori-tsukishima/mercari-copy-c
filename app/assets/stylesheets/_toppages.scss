@@ -179,7 +179,10 @@
 }
 
 
-
+.indexItems {
+  text-decoration: none;
+  color:black;
+}
 
 
 
@@ -357,6 +360,7 @@
     }
   }
 }
+
 
 
 .fa-heart-o{
@@ -653,4 +657,29 @@ th{
   font-size: 14px;
   color:#BDBDBD;
   padding-top: 20px
+}
+
+// パンくずの記述
+.breadCrumbShowBorder{
+  border-top:solid 1px #e5e5e5;
+  margin-top: 10px;
+}
+.breadCrumbShow{
+  display:flex;
+  list-style: none;
+  width:80vw;
+  margin:0 auto;
+  font-size: 14px;
+  padding:15px 0;
+  a{
+    text-decoration: none;
+    color:#333333;
+  }
+  .list1{
+    padding-right: 10px;
+  }
+  .list2{
+    font-weight: bold;
+    padding-left: 10px;
+  }
 }

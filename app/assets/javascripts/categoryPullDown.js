@@ -1,0 +1,66 @@
+$(document).on('turbolinks:load',function(){
+
+  function MbuildHTML(m_cate){
+    var html = `<div class="categoryPullDown-MContainerItem" data-id="${m_cate.id}">
+                  <a href="#">${m_cate.name}</a>
+                </div>`;
+    return html;
+  }
+  function SbuildHTML(s_cate){
+    var html = `<div class="categoryPullDown-SContainerItem" data-id="${s_cate.id}">
+                  <a href="#">${s_cate.name}</a>
+                </div>`;
+    return html;
+  }
+
+// プルダウン全体へのホバーアクション
+  $('.headerBottomLeftCategory, .categoryPullDown').on('mouseover', function(){
+    $('.categoryPullDown').addClass('toFlex');
+    $('.categoryPullDown-LContainer').fadeIn(200);
+  }).on('mouseout', function(){
+    $('.categoryPullDown').removeClass('toFlex');
+  });
+
+// Lカテゴリーへのホバーアクション
+  $('.categoryPullDown-LContainerItem').hover(function(){
+    $('.categoryPullDown-SContainer').fadeOut(200);
+    $('.categoryPullDown-MContainer').empty();
+    $('.categoryPullDown-MContainer').fadeIn(200);
+    $(this).addClass('redBack');
+    var lc_val = $(this).data('id');
+    $.each(gon.m_cate, function(i,m_cate) {
+      if( lc_val ===  m_cate.large_category_id ){
+        var html = MbuildHTML(m_cate);
+        $('.categoryPullDown-MContainer').append(html);
+      }
+    });
+
+      // Mカテゴリーへのホバーアクション
+        $('.categoryPullDown-MContainerItem').hover(function(e){
+          $('.categoryPullDown-SContainer').empty();
+          $('.categoryPullDown-SContainer').fadeIn(200);
+          $(this).addClass('grayBack');
+          var mc_val = $(this).data('id');
+          $.each(gon.s_cate, function(i,s_cate) {
+            if( mc_val ===  s_cate.middle_category_id ){
+              var html = SbuildHTML(s_cate);
+              $('.categoryPullDown-SContainer').append(html);
+            }
+          });
+
+              // Sカテゴリーへのホバーアクション
+                $('.categoryPullDown-SContainerItem').hover(function(e){
+                  $(this).addClass('grayBack');
+                },function(){
+                  $(this).removeClass('grayBack');
+                });
+
+        },function(){
+          $(this).removeClass('grayBack');
+        });
+
+  },function(){
+    $(this).removeClass('redBack');
+  });
+
+});

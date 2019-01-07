@@ -1,0 +1,18 @@
+.itemPurchaseWrapper
+  .itemPurchaseBodyWrapper
+    .itemPurchaseHeader
+      %h3.itemPurchaseHeaderTitle お支払いが完了しました
+    .itemPurchaseMain
+      .itemPurchaseMainItem
+        = image_tag @images.item_images
+        .itemPurchaseMainItemName
+          = @item.name
+        .itemPurchaseMainItemPrice
+          = @item.price
+          %span.itemPurchaseMainItemPriceTaxin 送料込み
+      .itemPurchaseMainPurchase
+        .itemPurchaseMainPurchasePoint
+          ポイントはありません
+        .itemPurchaseMainPurchaseTotal.clearfix
+        .itemPurchaseMainPurchaseSoldBtn
+          売り切れ

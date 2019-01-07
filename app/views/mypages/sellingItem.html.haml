@@ -6,7 +6,7 @@
     .wrapperSellingItemSetting
       .wrapperSellingItemSettingEdit
         .wrapperSellingItemSettingEditBtn
-          =link_to mypages_info_path, class: "wrapperSellingItemSettingEditBtn" do
+          =link_to "/mypages/sellingItem/#{@item.id}/edit", data: {"turbolinks" => false}, class: "wrapperSellingItemSettingEditBtn" do
             商品の編集
       .wrapperSellingItemSettingOr
         %p.wrapperSellingItemSettingOrText or
@@ -14,11 +14,23 @@
       .wrapperSellingItemSettingStop
         .wrapperSellingItemSettingStopBtn
           =link_to mypages_info_path, class: "wrapperSellingItemSettingStopBtn" do
-            出品を一旦定時する
+            出品を一旦停止する
       .wrapperSellingItemSettingDelete
-        .wrapperSellingItemSettingDeleteBtn
-          =link_to item_path(@item), method: :delete, class: "wrapperSellingItemSettingDeleteBtn" do
-            この商品を削除する
+        .wrapperSellingItemSettingDeleteBtn#open
+          この商品を削除する
 
     .wrapperSellingItemCommet
       = render partial: "itemCommentForm", locals: { item: @items }
+  #mask.hidden
+  #modal.hidden
+    .deleteModal
+      .deleteModalTop
+        %h5.deleteModalTopTitle 確認
+        %p 削除すると二度と復活できません。
+        %p 削除する代わりに停止することもできます。
+        %p.deleteModalTopConfirm 本当に削除しますか？
+      .deleteModalBottom
+        .deleteModalBottomCancel#cancel
+          キャンセル
+        =link_to item_path(@item), method: :delete, class: "deleteModalBottomDelete" do
+          削除する

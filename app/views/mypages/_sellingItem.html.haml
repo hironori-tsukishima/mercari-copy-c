@@ -3,7 +3,7 @@
     =link_to "/mypages/sellingItem/#{item.id}", data: {"turbolinks" => false}, class: "exhibitionItemBodyLink" do
       %li.exhibitionItemBodyContainerItem
         .exhibitionItemBodyContainerItemImage
-          = image_tag item.item_images.first.image
+          = image_tag item.item_images.first.item_images
         .exhibitionItemBodyContainerItemName
           = item.name
           .exhibitionItemBodyContainerItemNameBottom

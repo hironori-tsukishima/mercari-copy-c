@@ -1,0 +1,77 @@
+.categoryIndex {
+  background: lighten($back-gray, 1%);
+  padding: 50px 0;
+  .categoryIndexWrapper {
+    width: 700px;
+    margin: 0 auto;
+    .categoryIndexWrapperHeader {
+      min-height: 150px;
+      padding: 10px 120px 0 0;
+      background: lighten($back-gray, 1%);
+      &Title {
+        font-size: 22px;
+        font-weight: bold;
+      }
+      &Lcates {
+        display: flex;
+        flex-wrap: wrap;
+        text-decoration: none;
+        margin-top: 10px;
+      }
+      &Lcate {
+        min-width: 80px;
+        background: white;
+        margin: 10px 10px 0 0;
+        padding: 3px 30px;
+        line-height: 40px;
+        color: black;
+        text-align: center;
+        border-radius: 5px;
+        box-shadow: 1px 1px 1px 1px rgba(14,14,14,0.0580392);
+      }
+    }
+    .categoryIndexWrapperMain {
+      &Categories {
+      }
+      &Category {
+        margin-top: 50px;
+        background: white;
+        &Lcate {
+          width: 676px;
+          height: 40px;
+          background: $button-red;
+          color: $white;
+          line-height: 40px;
+          font-size: 20px;
+          font-weight: bold;
+          padding-left: 25px;
+        }
+        &Inner {
+          padding: 20px;
+          &L-All {
+            text-decoration: none;
+            color: $button-blue;
+          }
+          &Mcate {
+            font-size: 18px;
+            margin-top: 10px;
+          }
+          &Scate {
+            display: flex;
+            flex-wrap: wrap;
+            text-decoration: none;
+            margin-left: 15px;
+            &S {
+              min-width: 250px;
+              max-width: 250px;
+              padding: 0 10px;
+              margin-top: 10px;
+              overflow: scroll;
+              color: $button-blue;
+            }
+          }
+        }
+      }
+    }
+  }
+}

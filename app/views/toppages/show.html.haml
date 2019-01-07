@@ -1,3 +1,15 @@
+.breadCrumbShowBorder
+.breadCrumbShow
+  %ul.breadcrumb
+  %li.list1{:itemscope => "itemscope", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+    %a{:href => "http://localhost:3000", :itemprop => "url"}
+      %span{:itemprop => "title"} メルカリ
+  %p >
+  %li.list2{:itemscope => "itemscope", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+    %a{:href => "http://localhost:3000/toppages/#{@item.id}", :itemprop => "url"}
+      %span{:itemprop => "title"}
+        = "#{ @item.name}"
+
 .wrapperShow
   .wrapperShowItem
     %h1.wrapperShowItemName
@@ -7,11 +19,11 @@
         .wrapperShowItemDetailLeft
           - @images.each do |photo|
             .wrapperShowItemDetailLeftThumbnail
-              = image_tag(photo.image)
+              = image_tag(photo.item_images)
         .wrapperShowItemDetailLeftimages
           - @images.each do |photo|
             .wrapperShowItemDetailLeftimagesImage
-              = image_tag(photo.image)
+              = image_tag(photo.item_images)
       .wrapperShowItemDetailRight
         .wrapperShowItemDetailRightTable
           %table{:border => "1"}
@@ -70,7 +82,8 @@
       .wrapperShowItemFare 送料込み
     .wrapperShowItemPoint 売上金4,300円をお持ちです
     .wrapperShowItemBuy
-      .wrapperShowItemBuyText 購入画面に進む
+      .wrapperShowItemBuyText
+        = link_to "購入画面に進む", "/items/purchase/#{@item.id}"
     .wrapperShowItemDescription
       =@item.explaination
     .wrapperShowItemLinks
@@ -134,7 +147,7 @@
       - @anotheritems.each do |item|
         .wrapperShowUsersItem
           .wrapperShowUsersItemImage
-            = image_tag item.item_images.first.image
+            = image_tag item.item_images.first.item_images
           .wrapperShowUsersItemBody
             .wrapperShowUsersItemBodyTitle
               = item.name

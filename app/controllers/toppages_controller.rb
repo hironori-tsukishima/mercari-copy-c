@@ -10,4 +10,8 @@ class ToppagesController < ApplicationController
     @images = @item.item_images
     @anotheritems = Item.where(seller: @item.seller).where.not(id: @item)
   end
+
+  def category_index
+  end
+
 end

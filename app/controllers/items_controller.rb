@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    4.times { @item.item_images.build }
+    @item.item_images.build
     @lc = LargeCategory.all
     @mc = MiddleCategory.all
     @sc = SmallCategory.all
@@ -11,21 +11,29 @@ class ItemsController < ApplicationController
     gon.m_cate = MiddleCategory.all
     gon.s_cate = SmallCategory.all
 
-    respond_to do |format|
-
-      format.html
-      format.json
-
-    end
   end
 
   def create
     @item = Item.new(create_params)
     if @item.save
       redirect_to root_path, notice:"商品を出品しました"
+      # render json: {message: 'success', itemId: @item.id}, status: 200
     else
+      # render json: { error: @item.errors.full_messages.join(", ")}, status: 400
       render :purchase, alert:"商品が出品できませんでした。"
     end
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    if  @item.seller_id != current_user.id
+      flash[:notice] = "権限がありません"
+    elsif @item.update(create_params)
+      flash[:notice] = "商品を編集しました"
+    else
+      alert:"商品が編集できませんでした。"
+    end
+    redirect_to mypages_exhibitionItemSelling_path
   end
 
   def purchase
@@ -57,8 +65,14 @@ class ItemsController < ApplicationController
 
   def destroy
     @item = Item.find(params[:id])
-    @item.destroy
-    redirect_to root_path
+    if @item.seller_id != current_user.id
+      flash[:notice] = "権限がありません"
+    elsif @item.destroy
+      flash[:notice] = "商品を削除しました"
+    else
+      flash[:notice] = "削除できませんでした"
+    end
+    redirect_to mypages_exhibitionItemSelling_path
   end
 
   private

@@ -1,5 +1,6 @@
 .itemPurchaseWrapper {
   background: $back-gray;
+  padding: 40px 0;
   .itemPurchaseBodyWrapper {
     width: 700px;
     background: white;
@@ -20,10 +21,10 @@
   .itemPurchaseMain {
     &Item {
       text-align: center;
-      &Image {
+      img {
         padding-top: 20px;
-        max-width: 500px;
-        max-height: 300px;
+        width: 148px;
+        height: 148px;
       }
       &Name {
         font-size: 16px;
@@ -70,15 +71,17 @@
         font-size: 13px;
       }
       &Btn {
-        width: 300px;
-        height: 50px;
-        line-height: 50px;
-        font-weight: bold;
-        background: darken($gray, 40%);
-        margin: 10px auto 50px;
-        color: $white;
-        text-decoration: none;
-        display: block;
+        #payjp_checkout_box{
+          input{
+            background-image: none;
+            background: darken($red, 5%);
+            border: 1px solid darken($red, 5%);
+            width: 300px;
+            height: 50px;
+            font-weight: bold;
+            margin: 10px auto 50px;
+          }
+        }
       }
     }
   }
@@ -102,4 +105,17 @@
       color: $button-blue;
     }
   }
+}
+
+.itemPurchaseMainPurchaseSoldBtn{
+  background: darken($red, 5%);
+  border: 1px solid darken($red, 5%);
+  width: 300px;
+  height: 50px;
+  font-weight: bold;
+  margin: 10px auto 50px;
+  color: $white;
+  font-size: 20px;
+  padding-top:10px;
+  box-sizing: border-box;
 }

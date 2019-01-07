@@ -11,7 +11,8 @@
         / = binding.pry
   .headerBottom
     .headerBottomLeft
-      .headerBottomLeftCategory カテゴリーから探す
+      = link_to toppages_category_index_path ,class: "headerBottomLeftCategory" do
+        カテゴリーから探す
       .headerBottomLeftBrand ブランドから探す
     -if user_signed_in?
       .headerBottomRight
@@ -31,3 +32,12 @@
           ログイン
         = link_to mypages_sign_up_path, class: "headerBottomRight2SignUp" do
           新規会員登録
+  / カテゴリープルダウン
+  .categoryPullDown
+    .categoryPullDown-LContainer
+      -@large_categories.each do |category|
+        = link_to "#", class: "categoryPullDown-LContainerLink" do
+          .categoryPullDown-LContainerItem{data: {id: category.id}}
+            =category.name
+    .categoryPullDown-MContainer
+    .categoryPullDown-SContainer

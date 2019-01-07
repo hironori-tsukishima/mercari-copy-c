@@ -61,7 +61,7 @@
       }
     }
   }
-
+  }
 
   .wrapperSellingItemInfoPriceBox{
     display:flex;
@@ -86,8 +86,14 @@
   }
   .wrapperSellingItemInfoDescription {
     margin: 25px;
+    width: 500px;
     font-size: 15px;
     color: 424242;
     text-align: left;
   }
-}
+
+  pre {
+      overflow: auto;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+  }

@@ -1,0 +1,71 @@
+.categoryPullDown {
+  display: none;
+  position: absolute;
+  left: 100px;
+  z-index: 2;
+  font-size: 14px;
+  &-LContainer {
+    display: none;
+    width: 250px;
+    border: 1px solid darken($back-gray, 20%);
+    background: white;
+    padding-bottom: 30px;
+    &Link {
+      text-decoration: none;
+      color: black;
+    }
+    &Item {
+      padding: 5px 15px;
+      overflow: scroll;
+      height: 35px;
+      line-height: 35px;
+    }
+  }
+  &-MContainer {
+    display: none;
+    width: 250px;
+    background: white;
+    padding-bottom: 30px;
+    border: 1px solid darken($back-gray, 20%);
+    &Item {
+      padding: 5px 15px;
+      overflow: scroll;
+      height: 30px;
+      line-height: 30px;
+      a {
+        text-decoration: none;
+        color: black;
+        display: block;
+      }
+    }
+  }
+  &-SContainer {
+    display: none;
+    width: 250px;
+    background: white;
+    border: 1px solid darken($back-gray, 20%);
+    padding-bottom: 30px;
+    &Item {
+      padding: 5px 15px;
+      overflow: scroll;
+      height: 30px;
+      line-height: 30px;
+      a {
+        text-decoration: none;
+        color: black;
+        display: block;
+      }
+    }
+  }
+}
+
+.toFlex {
+  display: flex;
+}
+.redBack {
+  background: $button-red;
+  color: white;
+}
+.grayBack{
+  background: #EEEEEE;
+}

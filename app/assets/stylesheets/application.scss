@@ -1,4 +1,6 @@
 @import "reset";
+// *= require dropzone/basic;
+// *= require dropzone/dropzone;
 @import "colors";
 @import "deliver_address";
 @import "signin";
@@ -38,4 +40,6 @@
 @import 'exhibitionItemSold';
 @import 'profile';
 @import 'search';
-@import 'searchNav'
+@import 'searchNav';
+@import 'cagegory_index';
+@import 'categoryPullDown';

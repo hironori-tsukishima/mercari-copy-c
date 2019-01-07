@@ -1,0 +1,21 @@
+.categoryIndex
+  .categoryIndexWrapper
+    .categoryIndexWrapperHeader
+      .categoryIndexWrapperHeaderTitle
+        カテゴリー一覧
+      = link_to"#", class: "categoryIndexWrapperHeaderLcates" do
+        - @large_categories.each do |large_category|
+          %span.categoryIndexWrapperHeaderLcate=large_category.name
+    .categoryIndexWrapperMain
+      .categoryIndexWrapperMainCategories
+        - @large_categories.each do |large_category|
+          .categoryIndexWrapperMainCategory
+            .categoryIndexWrapperMainCategoryLcate
+              = large_category.name
+            .categoryIndexWrapperMainCategoryInner
+              = link_to "すべて", "#", class: "categoryIndexWrapperMainCategoryInnerL-All"
+              - @middle_categories.where(large_category_id: large_category.id).each do |middle_category|
+                .categoryIndexWrapperMainCategoryInnerMcate=middle_category.name
+                = link_to "#", class: "categoryIndexWrapperMainCategoryInnerScate" do
+                  - @small_categories.where(middle_category_id: middle_category.id).each do |small_category|
+                    .categoryIndexWrapperMainCategoryInnerScateS=small_category.name

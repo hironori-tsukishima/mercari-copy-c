@@ -1,5 +1,5 @@
 .itemEntryWrapper
-  =form_for @item  do |f|
+  =form_for @item do |f|
     .itemEntryBodyWrapper
       .itemEntryHeader
         %h3.itemEntryHeaderTitle
@@ -61,6 +61,11 @@
               .itemEntryMainUpperDeliveryRightSelect
                 = f.select :shipping_fare,[["---", "---"],["送料込み(出品者負担)", "送料込み(出品者負担)"], ["着払い（購入者負担）", "着払い（購入者負担）"]]
               .itemEntryMainUpperDeliveryRightTitle
+                配送の方法
+                %span.itemEntryMainUpperDeliveryRightTitleRequire 必須
+              .itemEntryMainUpperDeliveryRightSelect
+                = f.select :shipping_method,[["---", "---"],["未定", "未定"], ["らくらくメルカリ便", "らくらくメルカリ便"], ["ゆうメール", "ゆうメール"], ["レターパック", "レターパック"], ["普通郵便(定形、定形外)", "普通郵便(定形、定形外)"], ["クロネコヤマト", "クロネコヤマト"], ["ゆうパック", "ゆうパック"], ["クリックポスト", "クリックポスト"], ["ゆうパケット", "ゆうパケット"]]
+              .itemEntryMainUpperDeliveryRightTitle
                 配送元の地域
                 %span.itemEntryMainUpperDeliveryRightTitleRequire 必須
               .itemEntryMainUpperDeliveryRightSelect
@@ -80,7 +85,7 @@
             .itemEntryMainUpperPriceRight
               .itemEntryMainUpperPriceRightTop.clearfix
                 .itemEntryMainUpperPriceRightTopLeft
-                  価格
+                  価格 
                   %span.itemEntryMainUpperPriceRightTopLeftRequire 必須
                 .itemEntryMainUpperPriceRightTopRight
                   .itemEntryMainUpperPriceRightTopRightYen
@@ -116,5 +121,5 @@
                 加盟店規約
             に同意したことになります。
         .itemEntryFooterBtn
-        = f.submit "出品する", class: "itemEntryFooterBtnEntry"
+        = f.submit "編集する", class: "itemEntryFooterBtnEntry"
         = link_to "もどる", :back, class: "itemEntryFooterBtnBack"
