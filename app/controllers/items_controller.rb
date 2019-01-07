@@ -50,7 +50,10 @@ class ItemsController < ApplicationController
     gon.largeCategory_id = LargeCategory.where(params[:id])
     gon.middleCategory_id = MiddleCategory.where(params[:id])
     gon.smallCategory_id = SmallCategory.where(params[:id])
-    # gon.suitSize = suit.all
+    gon.suit = Suit.where(params[:id])
+    gon.menShoes = MenShoe.where(params[:id])
+    gon.ladyShoes = LadyShoe.where(params[:id])
+    # binding.pry
     if params[:sort] == 'priceDown'
       @items = @itemSearch.order(price: "ASC")
     elsif params[:sort] == 'priceUp'

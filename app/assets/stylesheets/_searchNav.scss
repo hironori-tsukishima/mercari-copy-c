@@ -125,23 +125,18 @@
         border: 1px solid #ccc;
         background-color: white;
         }
-        .suitSize{
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          section{
-            width: 119px;
-            padding: 20px, 0;
-            input{
-              width: 12px;
-              height: 12px;
-            }
-            label{
-              font-size: 12px;
-              font-weight: 400;
-              vertical-align: middle;
-              cursor: pointer;
-            }
+        .searchSize{
+          width: 119px;
+          padding: 20px, 0;
+          input{
+            width: 12px;
+            height: 12px;
+          }
+          label{
+            font-size: 12px;
+            font-weight: 400;
+            vertical-align: middle;
+            cursor: pointer;
           }
         }
       }

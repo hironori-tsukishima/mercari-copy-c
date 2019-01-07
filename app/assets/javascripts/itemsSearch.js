@@ -57,27 +57,42 @@ $(function() {
 // サイズ選択時、サイズ表示
   $('.searchNavListsSearchSizeBox').change(function() {
     var searchSize_val = $(this).val();
-    beginning = `<div class = "searchSize" id= "searchSizeId">`
-    end = `</div>`
+    $("#searchSizeId").empty();
+    $(".searchSize").remove();
 
-    if(val == 0){
+    if(searchSize_val == 0){
       $("#searchSizeId").empty();
-      $(".suitSize").remove();
+      $(".searchSize").remove();
     }
 
-    if(val == 1){
-      $.each(gon.suitSize, function(i,suitSize){
-        var suitSize_name = suitSize.name
-        string += `<section>
-                <input type = "checkbox", class = "">
-                <label class=>${suitSize.name}</label>
-                </section>`
-        html = beginning + string + end
-        $(".searchNavListsSearchSizeBox").append(html)
+    if(searchSize_val == 1){
+      $.each(gon.suit, function(i,suit){
+        var suit_name = suit.sizec
+        var html = `<div class = "searchSize" id= "searchSizeId">
+                <input type = "checkbox", name=${suit.sizec} >
+                <label class=>${suit.sizec}</label></div>`
+        $(".searchNavListsSearchSize").append(html);
       })
     }
 
-    if(val == 2){
+    if(searchSize_val == 2){
+      $.each(gon.menShoes, function(i,menShoes){
+        var menShoes_name = menShoes.size
+        var html = `<div class = "searchSize" id= "searchSizeId">
+                <input type = "checkbox", name=${menShoes.size} >
+                <label class=>${menShoes.size}</label></div>`
+        $(".searchNavListsSearchSize").append(html);
+      })
+    }
+
+    if(searchSize_val == 3){
+      $.each(gon.ladyShoes, function(i,ladyShoes){
+        var ladyShoes_name = ladyShoes.size
+        var html = `<div class = "searchSize" id= "searchSizeId">
+                <input type = "checkbox", name=${ladyShoes.size} >
+                <label class=>${ladyShoes.size}</label></div>`
+        $(".searchNavListsSearchSize").append(html);
+      })
     }
   })
 })
