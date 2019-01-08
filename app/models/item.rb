@@ -20,7 +20,6 @@ class Item < ApplicationRecord
   }
 
 
-
   scope :with_keywords, -> keywords {
   if keywords.present?
     columns = [:name, :price]

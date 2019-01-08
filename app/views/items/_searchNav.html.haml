@@ -32,8 +32,6 @@
           %label
             = fa_icon 'fa-plus', class: 'fa-plus'
             ブランド名から探す
-            = f.fields_for :items do |i|
-              = m.text_field :nickname
           / = f.search_field :brand_eq, class: "searchBrand", placeholder: "例）ジャンル", class: "searchNavListsSearchBrandBox"
         .searchNavListsSearchSize
           %label
@@ -132,6 +130,5 @@
         .searchNavListsSearchBtn
           = f.submit "クリア", type: :reset, class: 'searchNavListsSearchBtnClear'
           = f.submit "完了", class: 'searchNavListsSearchBtnComplete', id: 'searchSubmit'
-          / - binding.pry
 
 
