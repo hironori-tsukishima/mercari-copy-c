@@ -46,6 +46,8 @@ class ItemsController < ApplicationController
     @items = Item.where('name LIKE(?) OR price LIKE(?) OR explaination LIKE(?)', "%#{params[:keyword]}%", "%#{params[:keyword]}%", "%#{params[:keyword]}%").limit(20)
     @q = Item.ransack(params[:q])
     @itemSearch = @q.result.page(params[:page])
+
+
     @largeCategory_id = LargeCategory.where(params[:id])
     @middleCategory_id = MiddleCategory.where(params[:id])
     @smallCategory_id = SmallCategory.where(params[:id])

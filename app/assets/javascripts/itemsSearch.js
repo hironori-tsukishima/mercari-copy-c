@@ -69,7 +69,7 @@ $(function() {
       $.each(gon.suit, function(i,suit){
         var suit_name = suit.sizec
         var html = `<div class = "searchSize" id= "searchSizeId">
-                <input type = "checkbox", name=${suit.sizec} >
+                <input type = "checkbox", name=${suit.sizec}, ,checked_value = "${suit.id}", unchecked_value = "" >
                 <label class=>${suit.sizec}</label></div>`
         $(".searchNavListsSearchSize").append(html);
       })
@@ -79,7 +79,7 @@ $(function() {
       $.each(gon.menShoes, function(i,menShoes){
         var menShoes_name = menShoes.size
         var html = `<div class = "searchSize" id= "searchSizeId">
-                <input type = "checkbox", name=${menShoes.size} >
+                <input type = "checkbox", name=${menShoes.size}, checked_value = "${suit.id}", unchecked_value = "" >
                 <label class=>${menShoes.size}</label></div>`
         $(".searchNavListsSearchSize").append(html);
       })
@@ -89,7 +89,7 @@ $(function() {
       $.each(gon.ladyShoes, function(i,ladyShoes){
         var ladyShoes_name = ladyShoes.size
         var html = `<div class = "searchSize" id= "searchSizeId">
-                <input type = "checkbox", name=${ladyShoes.size} >
+                <input type = "checkbox", name=${ladyShoes.size}, checked_value = "${suit.id}", unchecked_value = "" >
                 <label class=>${ladyShoes.size}</label></div>`
         $(".searchNavListsSearchSize").append(html);
       })

@@ -32,6 +32,8 @@
           %label
             = fa_icon 'fa-plus', class: 'fa-plus'
             ブランド名から探す
+            = f.fields_for :items do |i|
+              = m.text_field :nickname
           / = f.search_field :brand_eq, class: "searchBrand", placeholder: "例）ジャンル", class: "searchNavListsSearchBrandBox"
         .searchNavListsSearchSize
           %label
@@ -81,22 +83,22 @@
                 %input{type: "checkbox", class: "searchState"}
                 %label すべて
               .searchNavListsSearchStateCheckBoxNew
-                = f.check_box :status_eq_any, {multiple: true},"新品、未使用",""
+                = f.check_box :status_eq_any, {multiple: true},1,""
                 新品、未使用
               .searchNavListsSearchStateCheckBoxCloseToUnused
-                = f.check_box :status_eq_any, {multiple: true},"未使用に近い",""
+                = f.check_box :status_eq_any, {multiple: true},2,""
                 未使用に近い
               .searchNavListsSearchStateCheckBoxScratchLight
-                = f.check_box :status_eq_any, {multiple: true},"目立った傷や汚れなし",""
+                = f.check_box :status_eq_any, {multiple: true},3,""
                 目立った傷や汚れなし
               .searchNavListsSearchStateCheckBoxScratchHeavy
-                = f.check_box :status_eq_any, {multiple: true},"やや傷や汚れあり",""
+                = f.check_box :status_eq_any, {multiple: true},4,""
                 やや傷や汚れあり
               .searchNavListsSearchStateCheckBoxScratch
-                = f.check_box :status_eq_any, {multiple: true},"傷や汚れあり",""
+                = f.check_box :status_eq_any, {multiple: true},5,""
                 傷や汚れあり
               .searchNavListsSearchStateCheckBoxBed
-                = f.check_box :status_eq_any, {multiple: true},"全体的に状態が悪い",""
+                = f.check_box :status_eq_any, {multiple: true},6  ,""
                 全体的に状態が悪い
         .searchNavListsSearchBurden
           %label
@@ -107,10 +109,10 @@
                 %input{type: "checkbox", class: "searchBurden"}
                 %label すべて
               .searchNavListsSearchBurdenCheckBoxNoFreight
-                = f.check_box :shipping_method_eq_any, {multiple: true},"着払い(購入者負担)",""
+                = f.check_box :shipping_method_eq_any, {multiple: true},"2",""
                 着払い(購入者負担)
               .searchNavListsSearchBurdenCheckBoxIncludeFreight
-                = f.check_box :shipping_method_eq_any, {multiple: true},"送料込み(出品者負担)",""
+                = f.check_box :shipping_method_eq_any, {multiple: true},"1",""
                 送料込み(出品者負担)
         .searchNavListsSearchSchedule
           %label
@@ -130,7 +132,6 @@
         .searchNavListsSearchBtn
           = f.submit "クリア", type: :reset, class: 'searchNavListsSearchBtnClear'
           = f.submit "完了", class: 'searchNavListsSearchBtnComplete', id: 'searchSubmit'
-          / = binding.pry
-
+          / - binding.pry
 
 
