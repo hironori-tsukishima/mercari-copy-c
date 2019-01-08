@@ -38,6 +38,8 @@ class ItemsController < ApplicationController
 
   def purchase
     render :layout => 'simpleLayout'
+    @item = Item.find(params[:id])
+    @images = @item.item_images.first
   end
 
   def search
