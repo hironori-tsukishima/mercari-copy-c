@@ -1,27 +1,28 @@
-.salesWrapper
-  .salesNav
-    = render 'mypages/mainNav'
-  .salesMainWrapper
-    .salesHeader
-      %h3.salesHeaderTitle
-        売上・振込申請
-    .salesLinks
-      = link_to "https://www.youtube.com/", class: "salesLinksLink" do
-        現在の売上金
-        %span.yourCurrentSales ¥ 0
-      = link_to "#", class: "salesLinksLink" do
-        売上履歴
-        %span >
-      = link_to "#", class: "salesLinksLink" do
-        売上金の振込申請期限
-        %span >
-      .salesLinksSpace
-      = link_to "#", class: "salesLinksLink" do
-        振込申請して現金を受け取る
-        %span >
-      = link_to "#", class: "salesLinksLink" do
-        振込申請履歴
-        %span >
-      = link_to "#", class: "salesLinksLink" do
-        振込申請スケジュール
-        %span >
+.salesWhole
+  .salesWrapper.clearfix
+    .salesMainWrapper
+      .salesHeader
+        %h3.salesHeaderTitle
+          売上・振込申請
+      .salesLinks
+        = link_to "https://www.youtube.com/", class: "salesLinksLink" do
+          現在の売上金
+          %span.yourCurrentSales ¥ 0
+        = link_to "#", class: "salesLinksLink" do
+          売上履歴
+          %span >
+        = link_to "#", class: "salesLinksLink" do
+          売上金の振込申請期限
+          %span >
+        .salesLinksSpace
+        = link_to "#", class: "salesLinksLink" do
+          振込申請して現金を受け取る
+          %span >
+        = link_to "#", class: "salesLinksLink" do
+          振込申請履歴
+          %span >
+        = link_to "#", class: "salesLinksLink" do
+          振込申請スケジュール
+          %span >
+    .lSide
+      = render 'mypages/mainNav'

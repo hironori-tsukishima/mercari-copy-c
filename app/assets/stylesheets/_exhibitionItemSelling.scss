@@ -1,170 +1,177 @@
-.exhibitionItemSellingWrapper {
+.exhibitionItemSellingWhole{
+  overflow: hidden;
   background: $back-gray;
-  display: flex;
-  justify-content: center;
-  padding: 40px;
-  margin: 0 auto;
-  .notificationNav {
-  }
-  .exhibitionItemMain {
-    width: 700px;
-    display: flex;
-    flex-direction: column;
-    padding-left: 50px;
-    .exhibitionItemTitle {
-      background-color: white;
-      display: flex;
+  .exhibitionItemSellingWrapper {
+    width: 1020px;
+    justify-content: center;
+    padding-bottom: 40px;
+    margin: 40px auto 0;
+    .exhibitionItemMain {
+      width: 700px;
       flex-direction: column;
-      h1 {
-        height: 72px;
-        margin-left: 20px;
-        line-height: 72px;
-        font-weight: bold;
-        text-align: left;
-      }
-
-      .exhibitionItemHeader {
+      float: right;
+      .exhibitionItemTitle {
+        background-color: white;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        background: $white;
-        &List{
-          float: left;
-          width: 33%;
+        flex-direction: column;
+        h1 {
           height: 72px;
+          margin-left: 20px;
+          line-height: 72px;
+          font-weight: bold;
+          text-align: left;
         }
-        &Left{
-            border-top: 2px solid $button-red;
+
+        .exhibitionItemHeader {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          background: $white;
+          &List{
+            float: left;
+            width: 33.3%;
+            height: 72px;
+          }
+          &Left{
+              border-top: 2px solid $button-red;
+          }
+          &Mid{
+            background: #eee;
+          }
+          &Right{
+            background: #eee;
+          }
         }
-        &Mid{
-          background: #eee;
-        }
-        &Right{
-          background: #eee;
-        }
-      }
-      .exhibitionItemBody {
-        background-position: center 40px;
-        background-size: cover;
-        &Link {
-          text-decoration: none;
-          color: darken($gray, 70%);
-        }
-        &Container {
-          &Item {
-            display: flex;
-            border: 1px solid $back-gray;
-            padding: 10px 20px 10px;
-            position: relative;
-            &Image {
-              width: 50px;
-              height: 50px;
-              img {
+        .exhibitionItemBody {
+          text-align: center;
+          min-height: 250px;
+          justify-content: center;
+          align-items: center;
+          background-color: $white;
+          &Link {
+            text-decoration: none;
+            color: darken($gray, 70%);
+          }
+          &Container {
+            &Item {
+              display: flex;
+              border: 1px solid $back-gray;
+              padding: 10px 20px 10px;
+              position: relative;
+              &Image {
                 width: 50px;
                 height: 50px;
-              }
-            }
-            &Name {
-              width: 500px;
-              margin-left: 20px;
-              line-height: 30px;
-              &Bottom {
-                font-size: 14px;
-                &Alert {
-                  margin-left: 5px;
-                  background: $button-blue;
-                  color: white;
-                  font-size: 11px;
-                  padding: 5px;
-                  border-radius: 3px;
-                  font-weight: bold;
+                img {
+                  width: 50px;
+                  height: 50px;
                 }
-                &Tail {
-                  position: absolute;
-                  top: 25px;
-                  right: 20px;
-                  font-weight: bold;
+              }
+              &Name {
+                width: 500px;
+                margin-left: 20px;
+                line-height: 30px;
+                &Bottom {
+                  font-size: 14px;
+                  &Alert {
+                    margin-left: 5px;
+                    background: $button-blue;
+                    color: white;
+                    font-size: 11px;
+                    padding: 5px;
+                    border-radius: 3px;
+                    font-weight: bold;
+                  }
+                  &Tail {
+                    position: absolute;
+                    top: 25px;
+                    right: 20px;
+                    font-weight: bold;
+                  }
                 }
               }
             }
           }
-        }
-        &Nothing {
-          padding: 160px 0 60px;
-          text-align: center;
-          font-size: 16px;
-          font-weight: bold;
-          color: #ccc;
+          .empty{
+          width: 100px;
+            margin-top: 60px;
+            &Nothing {
+              padding: 160px 0 60px;
+              text-align: center;
+              font-size: 16px;
+              font-weight: bold;
+              color: #ccc;
+            }
+          }
         }
       }
-    }
 
 
-    .exhibitionItemPage {
-      margin-top: 40px;
-      .exhibitionItemPageFooter {
-        &List{
-          line-height: 42px;
-          width: 42px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          background-color: white;
-        }
-        &Left{
-          float: left;
-        }
-        &Right{
-          float: right;
+      .exhibitionItemPage {
+        margin-top: 40px;
+        .exhibitionItemPageFooter {
+          &List{
+            line-height: 42px;
+            width: 42px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: $white;
+          }
+          &Left{
+            float: left;
+          }
+          &Right{
+            float: right;
+          }
         }
       }
     }
   }
-}
 
-.exhibitionItemLeftLink {
-  line-height: 72px;
-  height: 72px;
-  color: black;
-  font-weight: bold;
-  display: block;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-}
-.exhibitionItemMidLink {
-  line-height: 72px;
-  height: 72px;
-  color: black;
-  font-weight: bold;
-  display: block;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-}
-.exhibitionItemRightLink {
-  line-height: 72px;
-  height: 72px;
-  color: black;
-  font-weight: bold;
-  display: block;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-}
-.exhibitionItemCheckBLeftBtn {
-  color: black;
-  font-weight: bold;
-  display: block;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-}
-.exhibitionItemCheckBRightBtn {
-  color: black;
-  font-weight: bold;
-  display: block;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
+  .exhibitionItemLeftLink {
+    line-height: 72px;
+    height: 72px;
+    color: $black;
+    font-weight: bold;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+  }
+  .exhibitionItemMidLink {
+    line-height: 72px;
+    height: 72px;
+    color: $black;
+    font-weight: bold;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+  }
+  .exhibitionItemRightLink {
+    line-height: 72px;
+    height: 72px;
+    color: black;
+    font-weight: bold;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+  }
+  .exhibitionItemCheckBLeftBtn {
+    color: $black;
+    font-weight: bold;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+  }
+  .exhibitionItemCheckBRightBtn {
+    color: $black;
+    font-weight: bold;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+  }
 }

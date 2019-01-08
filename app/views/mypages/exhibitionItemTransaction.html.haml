@@ -1,28 +1,28 @@
-.exhibitionItemTransactionWrapper
-  .notificationNav
-    = render 'mypages/mainNav'
-  .exhibitionItemMain
-    .exhibitionItemTitle
-      %h1 出品した商品
-
-      %ul.exhibitionItemHeader
-        %li.exhibitionItemHeaderList.exhibitionItemHeaderLeftA
-          = link_to mypages_exhibitionItemSelling_path, class: "exhibitionItemLeftLink" do
-            出品中
-        %li.exhibitionItemHeaderList.exhibitionItemHeaderMidA
-          = link_to mypages_exhibitionItemTransaction_path, class: "exhibitionItemMidLink" do
-            取引中
-        %li.exhibitionItemHeaderList.exhibitionItemHeaderRightA
-          = link_to mypages_exhibitionItemSold_path, class: "exhibitionItemRightLink" do
-            返却済み
-      %ul.exhibitionItemBody
-        %li.exhibitionItemBodyList 出品中の商品はありません
-
-    .exhibitionItemPage
-      %ul.exhibitionItemPageFooter
-        %li.exhibitionItemPageFooterList.exhibitionItemPageFooterLeft
-          =link_to "#", class: "exhibitionItemCheckBLeftBtn" do
-            = fa_icon 'fa-chevron-left', class: 'fa-chevron-left'
-        %li.exhibitionItemPageFooterList.exhibitionItemPageFooterRight
-          =link_to "#", class: "exhibitionItemCheckBRightBtn" do
-            = fa_icon 'fa-chevron-right', class: 'fa-chevron-right'
+.exhibitionItemTransactionWhole
+  .exhibitionItemTransactionWrapper.clearfix
+    .exhibitionItemMain
+      .exhibitionItemTitle
+        %h1 出品した商品
+        %ul.exhibitionItemHeader
+          %li.exhibitionItemHeaderList.exhibitionItemHeaderLeftA
+            = link_to mypages_exhibitionItemSelling_path, class: "exhibitionItemLeftLink" do
+              出品中
+          %li.exhibitionItemHeaderList.exhibitionItemHeaderMidA
+            = link_to mypages_exhibitionItemTransaction_path, class: "exhibitionItemMidLink" do
+              取引中
+          %li.exhibitionItemHeaderList.exhibitionItemHeaderRightA
+            = link_to mypages_exhibitionItemSold_path, class: "exhibitionItemRightLink" do
+              売却済み
+        %ul.exhibitionItemBody
+          %image.empty{:src => "https://www.mercari.com/jp/assets/img/common/common/logo-gray-icon.svg?27899896"}
+            %li.exhibitionItemBodyList 取引中の商品はありません
+      .exhibitionItemPage
+        %ul.exhibitionItemPageFooter
+          %li.exhibitionItemPageFooterList.exhibitionItemPageFooterLeft
+            =link_to "#", class: "exhibitionItemCheckBLeftBtn" do
+              = fa_icon 'fa-chevron-left', class: 'fa-chevron-left'
+          %li.exhibitionItemPageFooterList.exhibitionItemPageFooterRight
+            =link_to "#", class: "exhibitionItemCheckBRightBtn" do
+              = fa_icon 'fa-chevron-right', class: 'fa-chevron-right'
+    .lSide
+      = render 'mypages/mainNav'

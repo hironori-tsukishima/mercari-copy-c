@@ -13,9 +13,10 @@ class ItemsController < ApplicationController
 
   end
 
+# SIZEを外部キーにしたため、save時にエラる
   def create
     @item = Item.new(create_params)
-    if @item.save
+    if @item.save!
       redirect_to root_path, notice:"商品を出品しました"
       # render json: {message: 'success', itemId: @item.id}, status: 200
     else
@@ -31,9 +32,9 @@ class ItemsController < ApplicationController
     elsif @item.update(create_params)
       flash[:notice] = "商品を編集しました"
     else
-      alert:"商品が編集できませんでした。"
+      flash[:notice] = "編集できませんでした"
     end
-    redirect_to mypages_exhibitionItemSelling_path
+    redirect_to "/mypages/sellingItem/#{@item.id}"
   end
 
   def purchase
@@ -84,6 +85,6 @@ class ItemsController < ApplicationController
 
   private
   def create_params
-    params.require(:item).permit(:name, :explaination, :price, :status, :shipping_fare, :shipping_region, :shipping_schedule, :shipping_method, :size, :small_category_id, item_images_attributes: [:item_images]).merge(seller_id: current_user.id, buyer_id: 1)
+    params.require(:item).permit(:name, :explaination, :price, :status, :shipping_fare, :shipping_region, :shipping_shcedule, :shipping_method, :size, :small_category_id, item_images_attributes: [:item_images, :item_id, :id]).merge(seller_id: current_user.id, buyer_id: 1)
   end
 end

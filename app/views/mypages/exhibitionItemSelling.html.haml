@@ -1,26 +1,27 @@
-.exhibitionItemSellingWrapper
-  .notificationNav
-    = render 'mypages/mainNav'
-  .exhibitionItemMain
-    .exhibitionItemTitle
-      %h1 出品した商品
-      %ul.exhibitionItemHeader
-        %li.exhibitionItemHeaderList.exhibitionItemHeaderLeft
-          = link_to mypages_exhibitionItemSelling_path, class: "exhibitionItemLeftLink" do
-            出品中
-        %li.exhibitionItemHeaderList.exhibitionItemHeaderMid
-          = link_to mypages_exhibitionItemTransaction_path, class: "exhibitionItemMidLink" do
-            取引中
-        %li.exhibitionItemHeaderList.exhibitionItemHeaderRight
-          = link_to mypages_exhibitionItemSold_path, class: "exhibitionItemRightLink" do
-            返却済み
-      %ul.exhibitionItemBody
-        =render "mypages/sellingItem", items: @items
-    .exhibitionItemPage
-      %ul.exhibitionItemPageFooter
-        %li.exhibitionItemPageFooterList.exhibitionItemPageFooterLeft
-          =link_to "#", class: "exhibitionItemCheckBLeftBtn" do
-            = fa_icon 'fa-chevron-left', class: 'fa-chevron-left'
-        %li.exhibitionItemPageFooterList.exhibitionItemPageFooterRight
-          =link_to "#", class: "exhibitionItemCheckBRightBtn" do
-            = fa_icon 'fa-chevron-right', class: 'fa-chevron-right'
+.exhibitionItemSellingWhole
+  .exhibitionItemSellingWrapper.clearfix
+    .exhibitionItemMain
+      .exhibitionItemTitle
+        %h1 出品した商品
+        %ul.exhibitionItemHeader
+          %li.exhibitionItemHeaderList.exhibitionItemHeaderLeft
+            = link_to mypages_exhibitionItemSelling_path, class: "exhibitionItemLeftLink" do
+              出品中
+          %li.exhibitionItemHeaderList.exhibitionItemHeaderMid
+            = link_to mypages_exhibitionItemTransaction_path, class: "exhibitionItemMidLink" do
+              取引中
+          %li.exhibitionItemHeaderList.exhibitionItemHeaderRight
+            = link_to mypages_exhibitionItemSold_path, class: "exhibitionItemRightLink" do
+              売却済み
+        %ul.exhibitionItemBody
+          =render "mypages/sellingItem", items: @items
+      .exhibitionItemPage
+        %ul.exhibitionItemPageFooter
+          %li.exhibitionItemPageFooterList.exhibitionItemPageFooterLeft
+            =link_to "#", class: "exhibitionItemCheckBLeftBtn" do
+              = fa_icon 'fa-chevron-left', class: 'fa-chevron-left'
+          %li.exhibitionItemPageFooterList.exhibitionItemPageFooterRight
+            =link_to "#", class: "exhibitionItemCheckBRightBtn" do
+              = fa_icon 'fa-chevron-right', class: 'fa-chevron-right'
+    .lSide
+      = render 'mypages/mainNav'

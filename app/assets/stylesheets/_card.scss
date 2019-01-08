@@ -64,12 +64,19 @@
       height: 16px;
       float: right;
       margin-top: 40px;
+      a{
+        text-decoration: none;
+      }
       .creditCardPaymentMethodInnerSectionExplainText {
         width: 128px;
         height: 18px;
         font-size: 15px;
         color: #0099e8;
         margin-left: 400px;
+        text-decoration: none;
+      }
+      .fa-chevron-right{
+        color: $right-blue;
       }
     }
   }

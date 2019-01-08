@@ -1,95 +1,99 @@
-.identificaionWrapper {
+.identificaionWhole{
+  overflow: hidden;
   background: $back-gray;
-  padding: 40px 220px;
-  display: flex;
-  .identificaionNav {
-  }
-  .mainWrapper {
-    background: white;
-    width: 700px;
-    height: 1300px;
-    margin: 0 auto;
-    .header {
-      text-align: center;
-      margin: 0;
-      &Title {
-        padding: 5px 0;
-        width: 700px;
-        font-size: 24px;
-        font-weight: bold;
-      }
-      &Discription {
-        font-size: 13px;
-        width: 700px;
-        color: darken($line-gray, 60%);
-        border: 1px solid $line-gray;
-      }
-    }
-    .formSection {
-      padding: 44px 64px 0;
-      .formGroups {
-        background: white;
-      }
-      &Discription {
-        padding-top: 5px;
-        font-size: 14px;
-        color: gray;
-      }
-      &SendBtn {
-        width: 538px;
-        height: 50px;
-        margin: 40px auto;
-        line-height: 50px;
-        font-size: 15px;
-        text-align: center;
-        color: $white;
-        background: $button-red;
-      }
-    }
-    .footerLink {
+  padding-bottom: 40px;
+  .identificaionWrapper {
+    width: 1020px;
+    justify-content: center;
+    padding-bottom: 40px;
+    margin: 40px auto 0;
+    .mainWrapper {
+      background: white;
+      width: 700px;
+      height: 1300px;
+      margin: 0 auto;
       float: right;
-      padding-right: 40px;
-      padding-top: 10px;
-      font-size: 14px;
-      text-decoration: none;
-      color: $button-blue;
+      .header {
+        text-align: center;
+        margin: 0;
+        &Title {
+          padding: 5px 0;
+          width: 700px;
+          font-size: 24px;
+          font-weight: bold;
+        }
+        &Discription {
+          font-size: 13px;
+          width: 700px;
+          color: darken($line-gray, 60%);
+          border: 1px solid $line-gray;
+        }
+      }
+      .formSection {
+        padding: 44px 64px 0;
+        .formGroups {
+          background: white;
+        }
+        &Discription {
+          padding-top: 5px;
+          font-size: 14px;
+          color: gray;
+        }
+        &SendBtn {
+          width: 538px;
+          height: 50px;
+          margin: 40px auto;
+          line-height: 50px;
+          font-size: 15px;
+          text-align: center;
+          color: $white;
+          background: $button-red;
+        }
+      }
+      .footerLink {
+        float: right;
+        padding-right: 40px;
+        padding-top: 10px;
+        font-size: 14px;
+        text-decoration: none;
+        color: $button-blue;
+      }
+    }
+  }
+
+  .formGroupTitle {
+    padding-top: 30px;
+    font-size: 13px;
+    font-weight: bold;
+  }
+  .formGroupRequiare {
+    margin-left: 5px;
+    padding: 4px;
+    background: $button-red;
+    color: $white;
+    font-size: 10px;
+  }
+  .formGroupOptional {
+    margin-left: 5px;
+    padding: 4px;
+    background: darken($line-gray, 20%);
+    color: $white;
+    font-size: 10px;
+  }
+  .identificaionWrapper {
+    input {
+    width: 538px;
+    height: 28px;
+    padding: 10px 16px 8px;
+    border: 1px solid darken($line-gray, 30%);
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+  }
+  .identificaionWrapper {
+    select {
+    width: 140px;
+    height: 50px;
     }
   }
 }
-
-.formGroupTitle {
-  padding-top: 30px;
-  font-size: 13px;
-  font-weight: bold;
-}
-.formGroupRequiare {
-  margin-left: 5px;
-  padding: 4px;
-  background: $button-red;
-  color: $white;
-  font-size: 10px;
-}
-.formGroupOptional {
-  margin-left: 5px;
-  padding: 4px;
-  background: darken($line-gray, 20%);
-  color: $white;
-  font-size: 10px;
-}
-.identificaionWrapper {
-  input {
-  width: 538px;
-  height: 28px;
-  padding: 10px 16px 8px;
-  border: 1px solid darken($line-gray, 30%);
-  border-radius: 5px;
-  margin-top: 5px;
-}
-}
-.identificaionWrapper {
-  select {
-  width: 140px;
-  height: 50px;
-  }
-}
-

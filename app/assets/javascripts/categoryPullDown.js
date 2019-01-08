@@ -2,15 +2,15 @@ $(document).on('turbolinks:load',function(){
 
   function MbuildHTML(m_cate){
     var html = `<div class="categoryPullDown-MContainerItem" data-id="${m_cate.id}">
-                  <a href="#">${m_cate.name}</a>
+                  <a href="/toppages/middle_category_show/${m_cate.id}">${m_cate.name}</a>
                 </div>`;
     return html;
   }
   function SbuildHTML(s_cate){
     var html = `<div class="categoryPullDown-SContainerItem" data-id="${s_cate.id}">
-                  <a href="#">${s_cate.name}</a>
+                  <a href="/toppages/small_category_show/${s_cate.id}">${s_cate.name}</a>
                 </div>`;
-    return html;
+    return html; 
   }
 
 // プルダウン全体へのホバーアクション

@@ -1,3 +1,5 @@
+
+
 .mypageNav{
   background-color: $liteGray;
   .mypageNavLists{
@@ -8,7 +10,7 @@
       box-sizing: border-box;
       height: 48px;
       padding: 16px;
-      background-color: $white;
+      background-color: white;
     }
     li + li{
       border-top: solid 1px $liteGray;
@@ -17,12 +19,38 @@
       color: $black;
       text-decoration-line: none;
     }
+    li:hover > .fa-chevron-right{
+      color:black;
+      position:relative;
+      left:3%;
+    }
     .fa-chevron-right{
       float: right;
       color: $silver;
     }
   }
   .point,.setting{
-    margin: 40px 0 0;
+    padding: 40px 0 0;
   }
 }
+
+
+
+
+// a::after {
+//     position: absolute;
+//     top: 5px;
+//     right: -10px;
+//     left: auto;
+//     display: block;
+//     width: 4px;
+//     height: 4px;
+//     border-top: 2px solid blue;
+//     border-right: 2px solid blue;
+//     content: "";
+//     -webkit-transform: rotate(45deg);
+//     -ms-transform: rotate(45deg);
+//     transform: rotate(45deg);
+
+// }
+

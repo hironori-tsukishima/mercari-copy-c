@@ -1,102 +1,106 @@
-.deliverAddressWrapper {
+.deliverAddresWhole{
   background: $back-gray;
-  padding: 40px 220px;
-  display: flex;
-  .deliverAddressNav {
-  }
-  .mainWrapper {
-    width: 700px;
-    background: white;
-    margin: 0 auto;
-    .adChapterContainer {
-      background-color: $white;
-      h2 {
-        font-size: 22px;
-        text-align: center;
-        border-bottom: 0.5px solid #f5f5f5;
-        padding: 10px 0;
-        font-weight: bold;
-      }
-      .adSingleInner {
-        margin: 0 auto;
-        width: 572px;
-        .formGroups {
+  overflow: hidden;
+  .deliverAddressWrapper {
+    width: 1020px;
+    justify-content: center;
+    padding-bottom: 40px;
+    margin: 40px auto 0;
+    .mainWrapper {
+      width: 700px;
+      background: white;
+      margin: 0 auto;
+      float: right;
+      .adChapterContainer {
+        background-color: $white;
+        h2 {
+          font-size: 22px;
+          text-align: center;
+          border-bottom: 0.5px solid #f5f5f5;
+          padding: 10px 0;
+          font-weight: bold;
+        }
+        .adSingleInner {
           margin: 0 auto;
-          width: 320px;
-          padding: 0 63px;
-          .formGroup {
+          width: 572px;
+          .formGroups {
             margin: 0 auto;
-            &Name {
-              padding-top: 30px;
-            }
-            &Kana {
-              padding-top: 30px;
-            }
-            &PostalCodes {
-              padding-top: 30px;
-            }
-            &Region {
-              padding-top: 30px;
-            }
-            &City {
-              padding-top: 30px;
-            }
-            &Address {
-              padding-top: 30px;
-            }
-            &BuildingName {
-              padding-top: 30px;
-            }
-            &Tell {
-              padding-top: 30px;
+            width: 320px;
+            padding: 0 63px;
+            .formGroup {
+              margin: 0 auto;
+              &Name {
+                padding-top: 30px;
+              }
+              &Kana {
+                padding-top: 30px;
+              }
+              &PostalCodes {
+                padding-top: 30px;
+              }
+              &Region {
+                padding-top: 30px;
+              }
+              &City {
+                padding-top: 30px;
+              }
+              &Address {
+                padding-top: 30px;
+              }
+              &BuildingName {
+                padding-top: 30px;
+              }
+              &Tell {
+                padding-top: 30px;
+              }
             }
           }
         }
-      }
-      .adButton {
-        width: 320px;
-        height: 30px;
-        line-height: 30px;
-        background: #ea352d;
-        font-size: 14px;
-        font-weight: normal;
-        margin: 50px auto 70px;
-        color: $white;
-        text-decoration: none;
+        .adButton {
+          width: 320px;
+          height: 30px;
+          line-height: 30px;
+          background: #ea352d;
+          font-size: 14px;
+          font-weight: normal;
+          margin: 50px auto 70px;
+          color: $white;
+          text-decoration: none;
+        }
       }
     }
   }
-}
 
-.deliverAddressWrapper {
-  input {
-  width: 286px;
-  height: 26px;
-  padding: 10px;
-  margin-top: 5px;
-  border-radius: 3px;
-  border-style: ridge;
-  }
-  select {
-    width: 310px;
-    height: 48px;
+  .deliverAddressWrapper {
+    input {
+    width: 286px;
+    height: 26px;
     padding: 10px;
     margin-top: 5px;
+    border-radius: 3px;
+    border-style: ridge;
+    }
+    select {
+      width: 310px;
+      height: 48px;
+      padding: 10px;
+      margin-top: 5px;
+    }
   }
-}
-.formGroupTitle {
-  font-size: 14px;
-  font-weight: bold;
-}
-.formRequire {
-  background: $button-red;
-  color: white;
-  font-size: 11px;
-  padding: 3px;
-}
-.formOptional {
-  background: #ccc;
-  color: white;
-  font-size: 11px;
-  padding: 3px;
+  .formGroupTitle {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .formRequire {
+    background: $button-red;
+    color: white;
+    font-size: 11px;
+    padding: 3px;
+  }
+  .formOptional {
+    background: #ccc;
+    color: white;
+    font-size: 11px;
+    padding: 3px;
+  }
 }

@@ -1,72 +1,73 @@
-.identificaionWrapper
-  .identificaionNav
-    = render 'mypages/mainNav'
-  .mainWrapper
-    .header
-      %h3.headerTitle
-        本人情報の登録
-      %p.headerDiscription
-        お客さまのあんしん・あんぜんな取引のため、本人情報のご登録をお願いしております。
-    .formSection
-      .formGroups
-        .formGroup
-          %h6.formGroupTitle
-            お名前
-            %span.formGroupRequiare
-              必須
-          %input
-          %input
-        .formGroup
-          %h6.formGroupTitle
-            お名前カナ
-            %span.formGroupRequiare
-              必須
-          %input
-          %input
-        .formGroup
-          %h6.formGroupTitle
-            郵便番号
-            %span.formGroupOptional
-              任意
-          %input{placeholder: "例 1234567"}
-        .formGroup
-          %h6.formGroupTitle
-            都道府県
-            %span.formGroupRequiare
-              必須
-          %input
-        .formGroup
-          %h6.formGroupTitle
-            市区町村
-            %span.formGroupRequiare
-              必須
-          %input
-        .formGroup
-          %h6.formGroupTitle
-            番地
-            %span.formGroupRequiare
-              必須
-          %input
-        .formGroup
-          %h6.formGroupTitle
-            建物名
-            %span.formGroupOptional
-              任意
-          %input
-        .formGroup
-          %h6.formGroupTitle
-            生年月日
-            %span.formGroupRequiare
-              必須
-          %select
-          %span 年
-          %select
-          %span 月
-          %select
-          %span 日
-      %h6.formSectionDiscription ※出品されたことがある、本人情報未登録のお客さまもご対象となります。
-      %h3.formSectionSendBtn
-        登録する
-    .footerLink
-      =link_to "#",class: "footerLink" do
-        本人情報の登録について＞
+.identificaionWhole
+  .identificaionWrapper.cleatfix
+    .mainWrapper
+      .header
+        %h3.headerTitle
+          本人情報の登録
+        %p.headerDiscription
+          お客さまのあんしん・あんぜんな取引のため、本人情報のご登録をお願いしております。
+      .formSection
+        .formGroups
+          .formGroup
+            %h6.formGroupTitle
+              お名前
+              %span.formGroupRequiare
+                必須
+            %input
+            %input
+          .formGroup
+            %h6.formGroupTitle
+              お名前カナ
+              %span.formGroupRequiare
+                必須
+            %input
+            %input
+          .formGroup
+            %h6.formGroupTitle
+              郵便番号
+              %span.formGroupOptional
+                任意
+            %input{placeholder: "例 1234567"}
+          .formGroup
+            %h6.formGroupTitle
+              都道府県
+              %span.formGroupRequiare
+                必須
+            %input
+          .formGroup
+            %h6.formGroupTitle
+              市区町村
+              %span.formGroupRequiare
+                必須
+            %input
+          .formGroup
+            %h6.formGroupTitle
+              番地
+              %span.formGroupRequiare
+                必須
+            %input
+          .formGroup
+            %h6.formGroupTitle
+              建物名
+              %span.formGroupOptional
+                任意
+            %input
+          .formGroup
+            %h6.formGroupTitle
+              生年月日
+              %span.formGroupRequiare
+                必須
+            %select
+            %span 年
+            %select
+            %span 月
+            %select
+            %span 日
+        %h6.formSectionDiscription ※出品されたことがある、本人情報未登録のお客さまもご対象となります。
+        %h3.formSectionSendBtn
+          登録する
+      .footerLink
+        =link_to "#",class: "footerLink" do
+          本人情報の登録について＞
+    .lSide
+      = render 'mypages/mainNav'

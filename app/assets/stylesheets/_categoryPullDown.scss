@@ -28,10 +28,11 @@
     padding-bottom: 30px;
     border: 1px solid darken($back-gray, 20%);
     &Item {
-      padding: 5px 15px;
+      padding: 0 15px;
       overflow: scroll;
-      height: 30px;
-      line-height: 30px;
+      height: 40px;
+      line-height: 40px;
+      display: block;
       a {
         text-decoration: none;
         color: black;
@@ -46,10 +47,11 @@
     border: 1px solid darken($back-gray, 20%);
     padding-bottom: 30px;
     &Item {
-      padding: 5px 15px;
+      padding: 0 15px;
       overflow: scroll;
-      height: 30px;
-      line-height: 30px;
+      height: 40px;
+      line-height: 40px;
+      // display: block;
       a {
         text-decoration: none;
         color: black;

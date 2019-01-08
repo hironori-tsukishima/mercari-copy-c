@@ -15,11 +15,10 @@
       &Lcates {
         display: flex;
         flex-wrap: wrap;
-        text-decoration: none;
-        margin-top: 10px;
       }
       &Lcate {
-        min-width: 80px;
+        min-width: 70px;
+        display: inline-block;
         background: white;
         margin: 10px 10px 0 0;
         padding: 3px 30px;
@@ -28,6 +27,8 @@
         text-align: center;
         border-radius: 5px;
         box-shadow: 1px 1px 1px 1px rgba(14,14,14,0.0580392);
+        text-decoration: none;
+        margin-top: 10px;
       }
     }
     .categoryIndexWrapperMain {
@@ -55,20 +56,23 @@
           &Mcate {
             font-size: 18px;
             margin-top: 10px;
+            height: 30px;
+            overflow: scroll;
           }
-          &Scate {
+          &Scates {
             display: flex;
             flex-wrap: wrap;
+          }
+          &Scate {
             text-decoration: none;
             margin-left: 15px;
-            &S {
-              min-width: 250px;
-              max-width: 250px;
-              padding: 0 10px;
-              margin-top: 10px;
-              overflow: scroll;
-              color: $button-blue;
-            }
+            min-width: 250px;
+            max-width: 250px;
+            padding: 0 10px;
+            margin-top: 10px;
+            overflow: scroll;
+            color: $button-blue;
+            display: inline-block;
           }
         }
       }

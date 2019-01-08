@@ -1,0 +1,13 @@
+.categoryShowWrapper
+  .categoryShow
+    .categoryShowHeader
+      %ul.categoryShowHeaderList
+        - @related_Mcates.each do |cate|
+          = link_to "/toppages/middle_category_show/#{cate.id}", class: "categoryShowHeaderListItem" do
+            = cate.name
+    .categoryShowMain
+      .categoryShowMainTitle
+        = "#{@selected_Lcate.name}の商品一覧"
+      .categoryShowMainInner
+        .categoryShowMainInnerItems
+          = render partial: "categoryShow", collection: @selected_Lcate_items, as: :item

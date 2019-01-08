@@ -1,56 +1,57 @@
-.deliverAddressWrapper
-  .deliverAddressNav
-    = render 'mypages/mainNav'
-  .mainWrapper
-    .adChapterContainer
-      %h2.ad-chapter-head 住所変更
-      .adSingleInner
-        .formGroups
-          .formGroup
-            .formGroupName
-              %label.formGroupTitle お名前
-              %span.formRequire 必須
-              %br
-              %input
-              %br
-              %input
-            .formGroupKana
-              %label.formGroupTitle お名前カナ
-              %span.formRequire 必須
-              %br
-              %input
-              %br
-              %input
-            .formGroupPostalCodes
-              %label.formGroupTitle 郵便番号
-              %span.formRequire 必須
-              %br
-              %input
-            .formGroupRegion
-              %label.formGroupTitle 都道府県
-              %span.formRequire 必須
-              %br
-              %select
-            .formGroupCity
-              %label.formGroupTitle 市区町村
-              %span.formRequire 必須
-              %br
-              %input
-            .formGroupAddress
-              %label.formGroupTitle 番地
-              %span.formRequire 必須
-              %br
-              %input
-            .formGroupBuildingName
-              %label.formGroupTitle 建物
-              %span.formOptional 任意
-              %br
-              %input
-            .formGroupTell
-              %label.formGroupTitle 電話
-              %span.formOptional 任意
-              %br
-              %input
-      %h2.adButton
-        =link_to "#", class: "adButton" do
-          変更する
+.deliverAddresWhole
+  .deliverAddressWrapper
+    .mainWrapper
+      .adChapterContainer
+        %h2.ad-chapter-head 住所変更
+        .adSingleInner
+          .formGroups
+            .formGroup
+              .formGroupName
+                %label.formGroupTitle お名前
+                %span.formRequire 必須
+                %br
+                %input
+                %br
+                %input
+              .formGroupKana
+                %label.formGroupTitle お名前カナ
+                %span.formRequire 必須
+                %br
+                %input
+                %br
+                %input
+              .formGroupPostalCodes
+                %label.formGroupTitle 郵便番号
+                %span.formRequire 必須
+                %br
+                %input
+              .formGroupRegion
+                %label.formGroupTitle 都道府県
+                %span.formRequire 必須
+                %br
+                %select
+              .formGroupCity
+                %label.formGroupTitle 市区町村
+                %span.formRequire 必須
+                %br
+                %input
+              .formGroupAddress
+                %label.formGroupTitle 番地
+                %span.formRequire 必須
+                %br
+                %input
+              .formGroupBuildingName
+                %label.formGroupTitle 建物
+                %span.formOptional 任意
+                %br
+                %input
+              .formGroupTell
+                %label.formGroupTitle 電話
+                %span.formOptional 任意
+                %br
+                %input
+        %h2.adButton
+          =link_to "#", class: "adButton" do
+            変更する
+    .lSide
+      = render 'mypages/mainNav'

@@ -1,0 +1,9 @@
+.categoryShowWrapper
+  .categoryShow
+    .categoryShowHeader
+    .categoryShowMain
+      .categoryShowMainTitle
+        = "#{@selected_Scate.name}の商品一覧"
+      .categoryShowMainInner
+        .categoryShowMainInnerItems
+          = render partial: "categoryShow", collection: @selected_Scate_items, as: :item

@@ -1,28 +1,53 @@
-.notificationWrapper
-  .notificationNav
-    = render 'mypages/mainNav'
-  .notificationMain
-    %ul.notificationHeader
-      %li.notificationHeaderList.notificationHeaderLeft お知らせ
-      %li.notificationHeaderList.notificationHeaderRight やることリスト
-    %ul.notificationLinks
-      %li
-        = link_to "#", class: "notificationLinksLink" do
-          .notificationLinksLinkBody
-            .notificationLinksLinkBodyText
-              ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
-            .notificationLinksLinkBodyTime
-              =fa_icon 'fa-clock', class: 'fa-clock'
-              %span ３日前
-          %img.notificationLinksLinkImage{:src => "https://static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", width: 48, height: 48, :alt => "ロゴ"}/
-          .notificationLinksLinkTail
-            >
-      %li
-        = link_to "#", class: "notificationLinksLink" do
-          あああああああああああああああああああああああああああああああああああああああああああああああああああああ
-      %li
-        = link_to "#", class: "notificationLinksLink" do
-          あああああああああああああああ
-      %li
-        = link_to "#", class: "notificationLinksLink" do
-          あああああああああああああああ
+.notificationWhole
+  .notificationWrapper.clearfix
+    .notificationMain
+      %ul.notificationHeader
+        %li.notificationHeaderList.notificationHeaderLeft お知らせ
+        %li.notificationHeaderList.notificationHeaderRight やることリスト
+      %ul.notificationLinks
+        %li
+          = link_to "#", class: "notificationLinksLink" do
+            .notificationLinksLinkBody
+              .notificationLinksLinkBodyText
+                ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+              .notificationLinksLinkBodyTime
+                =fa_icon 'fa-clock', class: 'fa-clock'
+                %span 5日前
+            %img.notificationLinksLinkImage{:src => "https://static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", width: 48, height: 48, :alt => "ロゴ"}/
+            .notificationLinksLinkTail
+              = fa_icon"fa-chevron-right",class: "fa-chevron-right"
+        %li
+          = link_to "#", class: "notificationLinksLink" do
+            .notificationLinksLinkBody
+              .notificationLinksLinkBodyText
+                いいいいいいいいいいいいいいいいいいいいいいいいいいいいい
+              .notificationLinksLinkBodyTime
+                =fa_icon 'fa-clock', class: 'fa-clock'
+                %span 4日前
+            %img.notificationLinksLinkImage{:src => "https://static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", width: 48, height: 48, :alt => "ロゴ"}/
+            .notificationLinksLinkTail
+              = fa_icon"fa-chevron-right",class: "fa-chevron-right"
+        %li
+          = link_to "#", class: "notificationLinksLink" do
+            .notificationLinksLinkBody
+              .notificationLinksLinkBodyText
+                し-------------------------
+              .notificationLinksLinkBodyTime
+                =fa_icon 'fa-clock', class: 'fa-clock'
+                %span 2日前
+            %img.notificationLinksLinkImage{:src => "https://static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", width: 48, height: 48, :alt => "ロゴ"}/
+            .notificationLinksLinkTail
+              = fa_icon"fa-chevron-right",class: "fa-chevron-right"
+        %li
+          = link_to "#", class: "notificationLinksLink" do
+            .notificationLinksLinkBody
+              .notificationLinksLinkBodyText
+                す
+              .notificationLinksLinkBodyTime
+                =fa_icon 'fa-clock', class: 'fa-clock'
+                %span 1日前
+            %img.notificationLinksLinkImage{:src => "https://static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", width: 48, height: 48, :alt => "ロゴ"}/
+            .notificationLinksLinkTail
+              = fa_icon"fa-chevron-right",class: "fa-chevron-right"
+    .lSide
+      = render 'mypages/mainNav'

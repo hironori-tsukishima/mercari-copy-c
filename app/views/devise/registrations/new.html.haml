@@ -31,7 +31,7 @@
               %span.formRequire 必須
             = f.password_field :password_confirmation,class: "formGroupForm", autocomplete: "off", placeholder: "  6文字以上"
           .formGroupRecapcha
-            = recaptcha_tags
+            / = recaptcha_tags
           .formGroupButton
             = f.submit "登録する", class: "formGroupButton"
   .signup

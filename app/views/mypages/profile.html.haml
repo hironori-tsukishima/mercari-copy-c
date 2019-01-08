@@ -1,17 +1,18 @@
-.profileWrapper
-  .profileWrapperNav
-    = render 'mypages/mainNav'
-  .profileWrapperMain
-    .profileHeader
-      %h3.profileHeaderTitle
-        プロフィール
-    .profileInner
-      .profileInnerTop
-        =image_tag "https://static-mercari-jp-imgtr2.akamaized.net/thumb/members/503246329.jpg?1493355635", class: "profileInnerTopIcon"
-        .profileInnerTopName
-          %input.profileInnerTopName{placeholder: " Your Name"}
-      .profileInnerBottom
-        %textarea.profileInnerBottomForm{placeholder: " 例）こんにちは☆ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
-        .profileInnerBottomBtn
-          = link_to "#", class: "profileInnerBottomBtn" do
-            変更する
+.profileWhole
+  .profileWrapper.clearfix
+    .profileWrapperMain
+      .profileHeader
+        %h3.profileHeaderTitle
+          プロフィール
+      .profileInner
+        .profileInnerTop
+          =image_tag "https://static-mercari-jp-imgtr2.akamaized.net/thumb/members/503246329.jpg?1493355635", class: "profileInnerTopIcon"
+          .profileInnerTopName
+            %input.profileInnerTopName{placeholder: " Your Name"}
+        .profileInnerBottom
+          %textarea.profileInnerBottomForm{placeholder: " 例）こんにちは☆ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
+          .profileInnerBottomBtn
+            = link_to "#", class: "profileInnerBottomBtn" do
+              変更する
+    .lSide
+      = render 'mypages/mainNav'

@@ -14,7 +14,7 @@
       = link_to toppages_category_index_path ,class: "headerBottomLeftCategory" do
         カテゴリーから探す
       .headerBottomLeftBrand ブランドから探す
-    -if user_signed_in?
+    -if user_signed_in? 
       .headerBottomRight
         .headerBottomRightAvatar
         .headerBottomRightMypage
@@ -36,7 +36,7 @@
   .categoryPullDown
     .categoryPullDown-LContainer
       -@large_categories.each do |category|
-        = link_to "#", class: "categoryPullDown-LContainerLink" do
+        = link_to "/toppages/large_category_show/#{category.id}", class: "categoryPullDown-LContainerLink" do
           .categoryPullDown-LContainerItem{data: {id: category.id}}
             =category.name
     .categoryPullDown-MContainer

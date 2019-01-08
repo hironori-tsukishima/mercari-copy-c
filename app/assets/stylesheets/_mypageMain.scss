@@ -70,7 +70,10 @@
             }
           }
         }
-
+ min-height: 250px;
+          justify-content: center;
+          align-items: center;
+          background-color: $white;
       .mypageContent{
         text-align: center;
         min-height: 250px;
@@ -97,12 +100,6 @@
         }
       }
     }
-    .lSide{
-      width: 280px;
-      background-color: $white;
-      margin-right:40px;
-
-    }
   }
   .clearfix::after {
       content : " ";
@@ -111,9 +108,14 @@
   }
 }
 
+.lSide{
+  width: 280px;
+  background-color: $white;
+  margin-right:40px;
+}
 
 .clicked,.selected{
-  border-top: solid red 1px;
+  border-top: solid red 2px;
   list-style: none;
   height: 72px;
   width: 350px;

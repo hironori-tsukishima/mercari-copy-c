@@ -1,0 +1,14 @@
+= link_to toppage_path(item), class: "categoryShowLink" do
+  .categoryShowMainInnerItem
+    .categoryShowMainInnerItemImage
+      = image_tag item.item_images.first.item_images
+    .categoryShowMainInnerItemName
+      = item.name
+    .categoryShowMainInnerItemBottom
+      .categoryShowMainInnerItemBottomPrice
+        = "¥#{item.price.to_s(:delimited)}"
+        .categoryShowMainInnerItemBottomPriceTax
+          (税込)
+      .categoryShowMainInnerItemBottomLike
+        =fa_icon 'fa-heart', class: 'fa-heart-o'
+        %span 17

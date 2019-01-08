@@ -1,52 +1,55 @@
-.salesWrapper {
+.salesWhole{
   background: $back-gray;
-  padding: 40px 220px;
-  display: flex;
-  .salesNav {
-  }
-  .salesMainWrapper {
-    width: 700px;
-    height: 400px;
-    margin: 0 auto;
-    background: white;
-    .salesHeader {
-      &Title {
-        font-size: 23px;
-        text-align: center;
-        padding: 5px;
-        font-weight: bold;
-        border: 1px solid $line-gray;
+  overflow: hidden;
+  .salesWrapper {
+    width: 1020px;
+    justify-content: center;
+    padding-bottom: 40px;
+    margin: 40px auto 0;
+    .salesMainWrapper {
+      width: 700px;
+      height: 400px;
+      margin: 0 auto;
+      background: white;
+      float: right;
+      .salesHeader {
+        &Title {
+          font-size: 23px;
+          text-align: center;
+          padding: 5px;
+          font-weight: bold;
+        }
       }
     }
   }
-}
-.salesLinks {
-  &Link {
-  width: 688px;
-  height: 40px;
-  line-height: 40px;
-  border: 1px solid $line-gray;
-  font-size: 14px;
-  padding: 5px;
-  display: block;
-  color: darken($line-gray, 70%);
-  text-decoration: none;
-  }
-  span {
-    float: right;
-    padding-right: 5px;
-    font-size: 20px;
-    color: darken($line-gray, 40%);
-  }
-  .yourCurrentSales {
-    float: right;
-    padding-right: 5px;
-    font-size: 12px;
-    color: darken($line-gray, 90%);
-  }
-  &Space {
-    width: 700px;
+  .salesLinks {
+    &Link {
+    width: 688px;
     height: 40px;
-    background: $back-gray;
+    line-height: 40px;
+    border-top: 1px solid $line-gray;
+    font-size: 14px;
+    padding: 5px;
+    display: block;
+    color: darken($line-gray, 70%);
+    text-decoration: none;
+    }
+    span {
+      float: right;
+      padding-right: 5px;
+      font-size: 20px;
+      color: darken($line-gray, 40%);
+    }
+    .yourCurrentSales {
+      float: right;
+      padding-right: 5px;
+      font-size: 12px;
+      color: darken($line-gray, 90%);
+    }
+    &Space {
+      width: 700px;
+      height: 40px;
+      background: $back-gray;
+    }
   }
 }

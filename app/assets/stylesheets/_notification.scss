@@ -1,61 +1,73 @@
-.notificationWrapper {
+.notificationWhole{
   background: $back-gray;
-  padding: 40px 220px;
-  display: flex;
-  .notificationNav {
-  }
-  .notificationMain {
-    width: 700px;
-    min-height: 100vh;
-    background: white;
-    margin: 0 auto;
-    .notificationHeader {
-      height: 76px;
-      line-height: 74px;
-      text-align: center;
-      font-weight: bold;
-      font-size: 14px;
-      &List {
-        float: left;
-        width: 350px;
+  overflow:hidden;
+  .notificationWrapper {
+    margin: 40px auto;
+    width: 1020px;
+    padding-bottom:40px;
+    display: block;
+    .notificationMain {
+      width: 700px;
+      max-height: 100vh;
+      background: white;
+      float: right;
+      .notificationHeader {
+        height: 76px;
+        line-height: 74px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 14px;
+        &List {
+          float: left;
+          width: 350px;
+        }
+        &Left {
+          background: $white;
+          border-top: 2px solid $button-red;
+        }
+        &Right {
+          background: $line-gray;
+        }
       }
-      &Left {
-        background: $white;
-        border-top: 2px solid $button-red;
-      }
-      &Right {
-        background: $line-gray;
+      .notificationLinks {
+        &Link {
+          height: 70px;
+          float: left;
+          width: 578px;
+          border: 1px solid $line-gray;
+          text-decoration: none;
+          font-size: 13px;
+          padding: 10px 50px 10px 70px;
+          position: relative;
+          &Body {
+            &Text {
+              color: black;
+            }
+            &Time {
+              color: black;
+            }
+          }
+          &Image {
+            position: absolute;
+            top: 20px;
+            left: 15px;
+          }
+          &Tail {
+            position: absolute;
+            font-size: 20px;
+            top: 30px;
+            left: 670px;
+            .fa-chevron-right{
+              color: black;
+            }
+          }
+        }
       }
     }
-    .notificationLinks {
-      &Link {
-        height: 70px;
-        float: left;
-        width: 578px;
-        border: 1px solid $line-gray;
-        text-decoration: none;
-        font-size: 13px;
-        padding: 10px 50px 10px 70px;
-        position: relative;
-        &Body {
-          &Text {
-          }
-          &Time {
-          }
-        }
-        &Image {
-          position: absolute;
-          top: 20px;
-          left: 15px;
-        }
-        &Tail {
-          position: absolute;
-          font-size: 20px;
-          top: 25px;
-          left: 670px;
-          font-weight: bold;
-        }
-      }
+    .lSide{
+      width: 280px;
+      background-color: $white;
+      margin-right:40px;
     }
   }
 }
