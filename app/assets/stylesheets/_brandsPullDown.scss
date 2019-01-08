@@ -1,0 +1,25 @@
+.brandsPullDown{
+  display: none;
+  position: absolute;
+  left: 18%;
+  background-color: $background-white;
+  width:17vw;
+  margin-top:13px;
+  font-size: 15px;
+  z-index: 1;
+  box-shadow: 1px 1px 1px #E5E5E5;
+  &brand{
+    padding:10px 0 10px 25px;
+  }
+}
+
+
+.brandsPullDownbrand:hover{
+  background-color:$focus-red;
+  color: white;
+}
+
+.brandsPullDownLink{
+  text-decoration: none;
+  color:black;
+}

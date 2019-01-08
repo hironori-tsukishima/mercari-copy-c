@@ -1,7 +1,7 @@
 = link_to "/toppages/#{item.id}" ,class: "indexItems" do
   .bodyPickupContainersContainerBox
     .bodyPickupContainersContainerBoxTop
-      = image_tag item.item_images.first.item_images, size: '213x213'
+      = image_tag item.item_images.first.image, size: '213x213'
     .bodyPickupContainersContainerBoxBottom
       %h3.bodyPickupContainersContainerBoxBottomTop
         = item.name

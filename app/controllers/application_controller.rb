@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :setup_categoryPullDown
+  before_action :setup_brandPullDown
 
   protected
 
@@ -16,6 +17,10 @@ class ApplicationController < ActionController::Base
     gon.l_cate = LargeCategory.all
     gon.m_cate = MiddleCategory.all
     gon.s_cate = SmallCategory.all
+  end
+
+  def setup_brandPullDown
+    @brands = ["シャネル", "ナイキ", "ルイ ヴィトン", "シュプリーム", "アディダス", "ブランド一覧"]
   end
 
 end

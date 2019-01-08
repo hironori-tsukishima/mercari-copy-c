@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   get 'mypages/point'
   get 'mypages/sales'
   get 'mypages/profile'
-  get 'mypages/sellingItem' => 'mypages#sellingItem'
   get 'mypages/sellingItem/:id' => 'mypages#sellingItem'
   get 'mypages/sellingItem/:id/edit' => 'mypages#sellingItemEdit'
   get 'mypages/exhibitionItemSelling'

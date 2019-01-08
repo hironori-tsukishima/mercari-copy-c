@@ -22,7 +22,7 @@
       - if params[:keyword].present?
         - @items.each do |item|
           .searchItemMainBodyItemBox
-            = link_to "/items/purchase/#{item.id}", style: "color:black;", class: "ItemBoxLink" do
+            = link_to "/toppages/#{item.id}", style: "color:black;", class: "ItemBoxLink" do
               .searchItemMainBodyItemBoxImage
                 = image_tag item.item_images.first.image, size: '160x160'
               .searchItemMainBodyItemInfo
@@ -39,7 +39,7 @@
       - elsif @itemSearch.present?
         - @itemSearch.each do |item|
           .searchItemMainBodyItemBox
-            = link_to "/items/purchase/#{item.id}", style: "color:black;", class: "ItemBoxLink" do
+            = link_to "/toppages/#{item.id}", style: "color:black;", class: "ItemBoxLink" do
               .searchItemMainBodyItemBoxImage
                 = image_tag item.item_images.first.image, size: '160x160'
               .searchItemMainBodyItemInfo

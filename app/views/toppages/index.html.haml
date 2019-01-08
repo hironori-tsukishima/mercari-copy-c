@@ -9,9 +9,11 @@
           %p.bodyIcatchImageBoxLeftText 購入時も安心な独自システムのアプリです
           .bodyIcatchImageBoxLeftIcons
             .bodyIcatchImageBoxLeftIconApp
-              = image_tag("app-store.svg", class: "bodyIcatchImageBoxLeftIconsApp")
+              =link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8" do
+                = image_tag("app-store.svg", class: "bodyIcatchImageBoxLeftIconsApp")
             .bodyIcatchImageBoxLeftIconGoogle
-              = image_tag("google-play.svg", class: "bodyIcatchImageBoxLeftIconsGoogle")
+              =link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja" do
+                = image_tag("google-play.svg", class: "bodyIcatchImageBoxLeftIconsGoogle")
         = image_tag("icatch.png",class: "bodyIcatchImageBoxRightImage")
     .bodyIcatchImage2
     .bodyIcatchImage3

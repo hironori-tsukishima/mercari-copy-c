@@ -6,17 +6,17 @@
       .wrapperSellingItemInfolLeftHidden
         .wrapperSellingItemInfoLeftMainimage
           - @images.each do |image|
-            = image_tag image.item_images
+            = image_tag image.image
         .wrapperSellingItemInfoLeftSubimage
           - @images.each do |image|
-            = image_tag image.item_images,class: "wrapperSellingItemInfoLeftSubimages"
+            = image_tag image.image,class: "wrapperSellingItemInfoLeftSubimages"
     .wrapperSellingItemInfoRight
       .wrapperSellingItemInfoRightTable
         %table{:border => "1"}
           %tr
             %th.tableLeft 出品者
             %th.tableRight
-              = link_to "seller_name","#",class: "tableLinks"
+              = link_to "#{@item.seller.nickname}","#",class: "tableLinks"
           %tr
             %td.tableLeft カテゴリー
             %td.tableRight

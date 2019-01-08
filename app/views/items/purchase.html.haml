@@ -5,7 +5,7 @@
         購入を確定しますか？
     .itemPurchaseMain
       .itemPurchaseMainItem
-        = image_tag @images.item_images
+        = image_tag @images.images
         .itemPurchaseMainItemName
           = @item.name
         .itemPurchaseMainItemPrice
@@ -18,14 +18,14 @@
           .itemPurchaseMainPurchaseTotalLeft
             支払い金額
           .itemPurchaseMainPurchaseTotalRight
-            = @item.price
+            / = @item.price
         .itemPurchaseMainPurchaseAlert
           配送先と支払い方法の入力を完了してください。
         .itemPurchaseMainPurchaseBtn
           = form_tag settlement_create_path id: @item.id, method: :post do
             :plain
               <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key=ENV['PAYJP_APP_TEST'] data-text="購入する" data-payjp="" ></script>
-        //TODO  後でCDNを外した実装に取り組むこと
+        /TODO  後でCDNを外した実装に取り組むこと
     .itemPurchaseFooter
       .itemPurchaseFooterWrapper
         .itemPurchaseFooterWrapperTitle

@@ -5,8 +5,10 @@
       %p.footerImageBoxLeftText 今すぐ無料ダウンロード！
       .footerImageBoxLeftIcon
         = image_tag("mercari_icon.png", class: "footerImageBoxLeftIconLeft")
-        = image_tag("app-store.svg", class: "footerImageBoxLeftIconMiddle")
-        = image_tag("google-play.svg", class: "footerImageBoxLeftIconRight")
+        =link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8" do
+          = image_tag("app-store.svg", class: "footerImageBoxLeftIconMiddle")
+        =link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja" do
+          = image_tag("google-play.svg", class: "footerImageBoxLeftIconRight")
     .footerImageBoxRight
       = image_tag("footer_content.png",class: "footerImageBoxRightImage")
 .footer

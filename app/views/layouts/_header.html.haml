@@ -41,3 +41,10 @@
             =category.name
     .categoryPullDown-MContainer
     .categoryPullDown-SContainer
+
+  / ブランドプルダウン
+  .brandsPullDown
+    - @brands.each do |brand|
+      = link_to "#", class: "brandsPullDownLink" do
+        .brandsPullDownbrand
+          = brand

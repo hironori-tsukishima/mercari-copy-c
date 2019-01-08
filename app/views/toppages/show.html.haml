@@ -19,11 +19,11 @@
         .wrapperShowItemDetailLeft
           - @images.each do |photo|
             .wrapperShowItemDetailLeftThumbnail
-              = image_tag(photo.item_images)
+              = image_tag(photo.image)
         .wrapperShowItemDetailLeftimages
           - @images.each do |photo|
             .wrapperShowItemDetailLeftimagesImage
-              = image_tag(photo.item_images)
+              = image_tag(photo.image)
       .wrapperShowItemDetailRight
         .wrapperShowItemDetailRightTable
           %table{:border => "1"}
@@ -147,7 +147,7 @@
       - @anotheritems.each do |item|
         .wrapperShowUsersItem
           .wrapperShowUsersItemImage
-            = image_tag item.item_images.first.item_images
+            = image_tag item.item_images.first.image, size: '160x160'
           .wrapperShowUsersItemBody
             .wrapperShowUsersItemBodyTitle
               = item.name

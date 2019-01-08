@@ -112,6 +112,15 @@ require 'csv'
 #     name: row[0]
 #   )
 
+CSV.read("db/hobbybrands.csv", headers: false).each do |row|
+  HobbyBrand.create!(
+    name: row[0]
+  )
+end
+
+
+
+
 # メンズシューズのサイズ
 [
   '23.5cm以下',
@@ -161,11 +170,7 @@ require 'csv'
   end
 
 
-CSV.read("db/hobbybrands.csv", headers: false).each do |row|
-  HobbyBrand.create!(
-    name: row[0]
-  )
-end
+
 
 
 
