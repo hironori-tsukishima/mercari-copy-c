@@ -271,3 +271,26 @@
     }
   }
 }
+
+
+// アペンドされるサイズとブランドのcss
+
+.itemEntryMainUpperDescriptionRightTitle4{
+  padding-top: 30px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.itemEntryMainUpperDescriptionRightTitleRequire2{
+  background-color: #CCCCCC;
+  color: white;
+  font-size: 12px;
+  padding: 3px;
+}
+
+.itemBrand{
+  width: 370px;
+  height: 50px;
+  border: 1px solid $gray;
+  border-radius: 5px;
+}
