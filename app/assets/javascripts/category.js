@@ -90,16 +90,16 @@ $(document).on("change","#sc", function(){
   $(".itemBrand").remove()
 
 // スモールカテゴリーのidとサイズのidを取得して、一致したサイズの値を取得する
-  $.each(gon.s_cate, function(i,m_cate) {
-    if(sc_val == s_cate.name){
+  // $.each(gon.s_cate, function(i,m_cate) {
+  //   if(sc_val == s_cate.name){
 
-        $.each(gon.size, function(i,size) {
-          if(s_cate.id == size.small_category_id){
-            var size_name = size.name
-            str += `<option value=${size.id}>${size.name}</option>`
-            var sc_val = $(".itemEntryMainUpperDescriptionRightSelect3").val();
-          }
-        })
+  //       $.each(gon.size, function(i,size) {
+  //         if(s_cate.id == size.small_category_id){
+  //           var size_name = size.name
+  //           str += `<option value=${size.id}>${size.name}</option>`
+  //           var sc_val = $(".itemEntryMainUpperDescriptionRightSelect3").val();
+  //         }
+  //       })
   if(sc_val == "---"){
         $(".itemEntryMainUpperDescriptionRightSelect4").remove()
         $(".itemEntryMainUpperDescriptionRightTitle4").remove()
