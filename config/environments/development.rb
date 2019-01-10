@@ -29,6 +29,10 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+  logger           = ActiveSupport::Logger.new(STDOUT)
+  logger.formatter = config.log_formatter
+  config.logger = ActiveSupport::TaggedLogging.new(logger)
+
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 

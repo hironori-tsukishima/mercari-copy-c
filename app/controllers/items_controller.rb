@@ -12,6 +12,7 @@ class ItemsController < ApplicationController
     gon.s_cate = SmallCategory.all
     gon.shipping_method_arrive = ["---","未定","クロネコヤマト","ゆうパック","ゆうメール"]
     gon.shipping_method_pre = ["---","未定","らくらくメルカリ便","らくらくメルカリ便","ゆうメール","レターパック","普通郵便（定型・定形外）","クロネコヤマト","ゆうパック","ゆうパケット","クリックポスト","らくらくメルカリ便"]
+    gon.size = Size.where(params[:id])
 
     @hobby_brands = HobbyBrand.where('name LIKE(?)', "%#{params[:keyword]}%")
     @woman_brands = WomanBrand.where('name LIKE(?)', "%#{params[:keyword]}%")
@@ -54,11 +55,29 @@ class ItemsController < ApplicationController
 
   def search
     @items = Item.where('name LIKE(?) OR price LIKE(?) OR explaination LIKE(?)', "%#{params[:keyword]}%", "%#{params[:keyword]}%", "%#{params[:keyword]}%").limit(20)
+    @q = Item.ransack(params[:q])
+    @itemSearch = @q.result.page(params[:page])
+    @largeCategory_id = LargeCategory.where(params[:id])
+    @middleCategory_id = MiddleCategory.where(params[:id])
+    @smallCategory_id = SmallCategory.where(params[:id])
+    gon.largeCategory_id = LargeCategory.where(params[:id])
+    gon.middleCategory_id = MiddleCategory.where(params[:id])
+    gon.smallCategory_id = SmallCategory.where(params[:id])
+    #サイズ検索 DB一部のみ記入状態
+    gon.suit = Size.where(params[:id]).limit(10).offset(0)
+    gon.menShoes = Size.where(params[:id]).limit(4).offset(10)
+    # binding.pry
+    case params[:sort]
+    when 'priceDown' then
+      @items = @itemSearch.order(price: "ASC")
+    when 'priceUp' then
+      @items = @itemSearch.order(price: "DESC")
+    when 'old' then
+      @items = @itemSearch.order(created_at: "ASC")
+    when 'new' then
+      @items = @itemSearch.order(created_at: "DESC")
+    end
 
-    # @items = Item.page(params[:page]).per(5).order("created_at DESC")
-    # @keyword = params[:keyword]
-    # @search = Item.ransack(params[:q])  #追加
-    # @result = @search.result
   end
 
   def destroy

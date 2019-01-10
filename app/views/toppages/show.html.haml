@@ -19,11 +19,11 @@
         .wrapperShowItemDetailLeft
           - @images.each do |photo|
             .wrapperShowItemDetailLeftThumbnail
-              = image_tag(photo.item_images)
+              = image_tag(photo.image)
         .wrapperShowItemDetailLeftimages
           - @images.each do |photo|
             .wrapperShowItemDetailLeftimagesImage
-              = image_tag(photo.item_images)
+              = image_tag(photo.image)
       .wrapperShowItemDetailRight
         .wrapperShowItemDetailRightTable
           %table{:border => "1"}
@@ -148,7 +148,7 @@
         .wrapperShowUsersItem
           = link_to toppage_path(item), class: "wrapperShowUsersItemLink" do
             .wrapperShowUsersItemImage
-              = image_tag item.item_images.first.item_images
+              = image_tag item.item_images.first.item_images #imageをitem_imagesに変更
             .wrapperShowUsersItemBody
               .wrapperShowUsersItemBodyTitle
                 = item.name

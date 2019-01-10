@@ -1,34 +1,57 @@
 %nav.searchItem
   %ul.searchItemList
-    %li.searchItemListToppageLink 
+    %li.searchItemListToppageLink
       = link_to "メルカリ", toppages_path, class: "searchItemLinkToppage",style: "text-decoration: none;"
       = fa_icon 'fa-angle-right', class: 'fa-angle-right'
     %li.searchItemListKeyword
       = @keyword
 .searchItemWrapper
   .searchItemNav
-    = render 'searchNav'
+    = render partial: 'searchNav', locals: { item: @itemSearch, largecategory_id: @largeCategory_id}
   .searchItemMain
     .searchItemMainHeader
-      - if @items.any?
+      - if params[:keyword].present?
         %h2.searchItemMainHeaderText 検索結果〇〇件
-      - if @items.nil?
+      - elsif @itemSearch.present?
+        %h2.searchItemMainHeaderText 検索結果〇〇件
+      -else
         %h2.searchItemMainHeaderText 検索結果 0件
         %p 該当する商品が見つかりません。商品は毎日増えていますので、これからの出品に期待してください。
-        %h3 新着商品
+        / %h3 新着商品
     .searchItemMainBody
-      - @items.each do |item|
-        .searchItemMainBodyItemBox
-          .searchItemMainBodyItemBoxImage
-            = image_tag item.item_images.first.item_images, size: '160x160'
-          .searchItemMainBodyItemInfo
-            %h3
-              = item.name
-            .searchItemMainBodyItemInfoBottom
-              .searchItemMainBodyItemInfoBottomPrice
-                .searchItemMainBodyItemInfoBottomPriceProduct
-                  = "¥ #{item.price}"
-                %p (税込)
-              .searchItemMainBodyItemInfoBottomLike
-                = fa_icon 'fa-heart', class: 'fa-heart'
-                3
+      - if params[:keyword].present?
+        - @items.each do |item|
+          .searchItemMainBodyItemBox
+            = link_to "/toppages/#{item.id}", style: "color:black;", class: "ItemBoxLink" do
+              .searchItemMainBodyItemBoxImage
+                = image_tag item.item_images.first.item_images, size: '160x160'
+              .searchItemMainBodyItemInfo
+                %h3
+                  = item.name
+                .searchItemMainBodyItemInfoBottom
+                  .searchItemMainBodyItemInfoBottomPrice
+                    %span.searchItemMainBodyItemInfoBottomPriceProduct
+                      = "¥ #{item.price}"
+                    %p (税込)
+                  .searchItemMainBodyItemInfoBottomLike
+                    = fa_icon 'fa-heart', class: 'fa-heart'
+                    3
+      - elsif @itemSearch.present?
+        - @itemSearch.each do |item|
+          .searchItemMainBodyItemBox
+            = link_to "/toppages/#{item.id}", style: "color:black;", class: "ItemBoxLink" do
+              .searchItemMainBodyItemBoxImage
+                = image_tag item.item_images.first.item_images, size: '160x160'
+              .searchItemMainBodyItemInfo
+                %h3
+                  = item.name
+                .searchItemMainBodyItemInfoBottom
+                  .searchItemMainBodyItemInfoBottomPrice
+                    %span.searchItemMainBodyItemInfoBottomPriceProduct
+                      = "¥ #{item.price}"
+                    %p (税込)
+                  .searchItemMainBodyItemInfoBottomLike
+                    = fa_icon 'fa-heart', class: 'fa-heart'
+                    3
+    .searchItemPage
+      / = paginate(@itemsPages)

@@ -69,6 +69,7 @@ $(document).on("change","#mc", function(){
   })
 })
 
+
 // サイズとブランドの出現
 $(document).on("change","#sc", function(){
   var sc_val = $(this).val();
@@ -89,13 +90,13 @@ $(document).on("change","#sc", function(){
   $(".itemBrand").remove()
 
 // スモールカテゴリーのidとサイズのidを取得して、一致したサイズの値を取得する
-  // $.each(gon.m_cate, function(i,m_cate) {
+  // $.each(gon.s_cate, function(i,m_cate) {
   //   if(sc_val == s_cate.name){
 
-  //       $.each(gon.s_cate, function(i,s_cate) {
-  //         if(m_cate.id == s_cate.middle_category_id){
-  //           var s_cate_name = s_cate.name
-  //           str += `<option value=${s_cate.id}>${s_cate.name}</option>`
+  //       $.each(gon.size, function(i,size) {
+  //         if(s_cate.id == size.small_category_id){
+  //           var size_name = size.name
+  //           str += `<option value=${size.id}>${size.name}</option>`
   //           var sc_val = $(".itemEntryMainUpperDescriptionRightSelect3").val();
   //         }
   //       })
@@ -110,8 +111,8 @@ $(document).on("change","#sc", function(){
       var html2 = brand_beginning + brand_str + brand_end;
       $(".itemEntryMainUpperDescriptionRightSelect").append(html2);
   }
-    // }
-  // })
+    }
+  })
 })
 
 

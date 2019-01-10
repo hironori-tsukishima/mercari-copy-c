@@ -8,7 +8,7 @@
         %input.searchBox{name: "keyword", placeholder: "キーワードから探す", type: "text", value: ""}/
         %button.searchBoxBtn{type: "submit"}
           = fa_icon 'fa-search', class: 'fa-search'
-
+        / = binding.pry
   .headerBottom
     .headerBottomLeft
       = link_to toppages_category_index_path ,class: "headerBottomLeftCategory" do

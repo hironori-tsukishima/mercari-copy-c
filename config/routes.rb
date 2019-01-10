@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'toppages/middle_category_show/:id' => 'toppages#middle_category_show'
   get 'toppages/large_category_show/:id' => 'toppages#large_category_show'
   resources :toppages , only: [:index, :show]
+  # resources :items, only: %w(index search)
   get 'mypages/main' => 'mypages#main'
   get 'mypages/logout' => 'mypages#logout'
   get 'mypages/card' => 'mypages#card'
@@ -20,7 +21,6 @@ Rails.application.routes.draw do
   get 'mypages/point'
   get 'mypages/sales'
   get 'mypages/profile'
-  get 'mypages/sellingItem' => 'mypages#sellingItem'
   get 'mypages/sellingItem/:id' => 'mypages#sellingItem'
   get 'mypages/sellingItem/:id/edit' => 'mypages#sellingItemEdit'
   get 'mypages/exhibitionItemSelling'
@@ -35,4 +35,5 @@ Rails.application.routes.draw do
   get 'brands/wemens' => 'brands#wemens'
   get 'brands/kids' => 'brands#kids'
   get 'brands/hobby' => 'brands#hobby'
+
 end

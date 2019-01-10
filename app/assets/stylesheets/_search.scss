@@ -25,32 +25,36 @@
         height: 270px;
         background-color: white;
         margin: 15px 15px 0 0;
-        .searchItemMainBodyItemBoxImage{
-          background-size: contain;
-        }
-        .searchItemMainBodyItemInfo{
-          width: 128px;
-          height: 78px;
-          padding: 16px;
-          h3{
-            width: 128px;
-            height: 48px;
+        .ItemBoxLink{
+          cursor: pointer;
+          text-decoration: none;
+          .searchItemMainBodyItemBoxImage{
+            background-size: contain;
           }
-          &Bottom{
-            display: flex;
-            &Price{
-              display: flex;
-              flex-direction: column;
-              &Product{
-                font-weight: bold;
-              }
-              p{
-                font-size: 5px;
-              }
+          .searchItemMainBodyItemInfo{
+            width: 128px;
+            height: 78px;
+            padding: 16px;
+            h3{
+              width: 128px;
+              height: 48px;
             }
-            &Like{
-            position: relative;
-            left: 30px;
+            &Bottom{
+              display: flex;
+              &Price{
+                display: flex;
+                flex-direction: column;
+                &Product{
+                  font-weight: bold;
+                }
+                p{
+                  font-size: 5px;
+                }
+              }
+              &Like{
+              position: relative;
+              left: 30px;
+              }
             }
           }
         }

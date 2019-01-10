@@ -54,18 +54,43 @@
         label{
           font-weight: 550;
         }
-
-        select{
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        width: 248px;
-        height: 48px;
-        padding: 0 16px;
-        border-style: solid;
-        border-width: 0;
-        border: 1px solid #ccc;
-        background-color: white;
+        .searchNavListsSearchLargeCategory{
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          width: 248px;
+          height: 48px;
+          padding: 0 16px;
+          border-style: solid;
+          border-width: 0;
+          border: 1px solid #ccc;
+          background-color: white;
+        }
+        .searchNavListsSearchMiddleCategory{
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          margin-top: 10px;
+          appearance: none;
+          width: 248px;
+          height: 48px;
+          padding: 0 16px;
+          border-style: solid;
+          border-width: 0;
+          border: 1px solid #ccc;
+          background-color: white;
+        }
+        .searchNavListsSearchSmallCategory{
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          font-size: 12px;
+          font-weight: 400;
+          vertical-align: middle;
+          cursor: pointer;
+          margin-top: 10px;
+          .smallCategoryCheckbox{
+            margin-top: 5px;
+          }
         }
       }
       .searchNavListsSearchBrand{
@@ -73,9 +98,9 @@
         label{
           font-weight: 550;
         }
-        input{
-          width: 214px;
-          height: 28px;
+        .searchNavListsSearchBrandBox{
+          width: 248px;
+          height: 48px;
           padding: 10px 16px 8px;
           margin-top: 8px;
           border-radius: 4px;
@@ -100,6 +125,20 @@
         border: 1px solid #ccc;
         background-color: white;
         }
+        .searchSize{
+          width: 119px;
+          padding: 20px, 0;
+          input{
+            width: 12px;
+            height: 12px;
+          }
+          label{
+            font-size: 12px;
+            font-weight: 400;
+            vertical-align: middle;
+            cursor: pointer;
+          }
+        }
       }
 
       .searchNavListsSearchPrice{
@@ -122,23 +161,26 @@
         .searchNavListsSearchPriceInput{
           display: flex;
           flex-direction: row;
-          justify-content: center;
-          input{
-          width: 77px;
-          height: 28px;
-          padding: 10px 16px 8px;
-          margin-top: 8px;
-          border-radius: 4px;
-          border: 1px solid #ccc;
-          }
-          span{
-            width:24px;
-            height:14px;
-            display: inline-block;
-            width: 10%;
+          .searchNavListsSearchPriceInputBox{
+
+            .searchPrice{
+            width: 110px;
+            height: 40px;
+            margin-top: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
             font-size: 14px;
             text-align: center;
-            padding-top: 20px;
+            }
+            .searchNavListsSearchPriceInputLine{
+              width:24px;
+              height:14px;
+              width: 10%;
+              font-size: 17px;
+              text-align: center;
+              padding-top: 10px;
+              margin: 0 10px;
+            }
           }
         }
       }
@@ -154,8 +196,8 @@
             &All{
               width: 119px;
               input{
-                width: 16px;
-                height: 16px;
+                width: 12px;
+                height: 12px;
               }
               label{
                 font-size: 14px;
@@ -166,81 +208,45 @@
             }
             &New{
               width: 119px;
-              input{
-                width: 16px;
-                height: 16px;
+              font-size: 14px;
+              font-weight: 400;
+              vertical-align: middle;
+              cursor: pointer;
               }
-              label{
-                font-size: 14px;
-                font-weight: 400;
-                vertical-align: middle;
-                cursor: pointer;
-              }
-            }
             &CloseToUnused{
               width: 119px;
-              input{
-                width: 16px;
-                height: 16px;
+              font-size: 14px;
+              font-weight: 400;
+              vertical-align: middle;
+              cursor: pointer;
               }
-              label{
-                font-size: 14px;
-                font-weight: 400;
-                vertical-align: middle;
-                cursor: pointer;
-              }
-            }
             &ScratchLight{
               width: 119px;
-              input{
-                width: 16px;
-                height: 16px;
+              font-size: 14px;
+              font-weight: 400;
+              vertical-align: middle;
+              cursor: pointer;
               }
-              label{
-                font-size: 14px;
-                font-weight: 400;
-                vertical-align: middle;
-                cursor: pointer;
-              }
-            }
             &ScratchHeavy{
               width: 119px;
-              input{
-                width: 16px;
-                height: 16px;
+              font-size: 14px;
+              font-weight: 400;
+              vertical-align: middle;
+              cursor: pointer;
               }
-              label{
-                font-size: 14px;
-                font-weight: 400;
-                vertical-align: middle;
-                cursor: pointer;
-              }
-            }
             &Scratch{
               width: 119px;
-              input{
-                width: 16px;
-                height: 16px;
+              font-size: 14px;
+              font-weight: 400;
+              vertical-align: middle;
+              cursor: pointer;
               }
-              label{
-                font-size: 14px;
-                font-weight: 400;
-                vertical-align: middle;
-                cursor: pointer;
-              }
-            }
             &Bed{
               width: 119px;
-              input{
-                width: 16px;
-                height: 16px;
-              }
-              label{
-                font-size: 14px;
-                font-weight: 400;
-                vertical-align: middle;
-                cursor: pointer;
-              }
+              font-size: 14px;
+              font-weight: 400;
+              vertical-align: middle;
+              cursor: pointer;
             }
           }
         }
@@ -250,13 +256,77 @@
         margin-top: 40px;
         label{
           font-weight: 550;
+          .searchNavListsSearchBurdenCheckBox{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            &All{
+              width: 119px;
+              input{
+                width: 12px;
+                height: 12px;
+              }
+              label{
+                font-size: 14px;
+                font-weight: 400;
+                vertical-align: middle;
+                cursor: pointer;
+              }
+            }
+            &NoFreight{
+              width: 119px;
+              font-size: 14px;
+              font-weight: 400;
+              vertical-align: middle;
+              cursor: pointer;
+            }
+            &IncludeFreight{
+              width: 119px;
+              font-size: 14px;
+              font-weight: 400;
+              vertical-align: middle;
+              cursor: pointer;
+            }
+          }
         }
       }
 
-      .searchNavListsSearchStatus{
+      .searchNavListsSearchSchedule{
         margin-top: 40px;
         label{
           font-weight: 550;
+          .searchNavListsSearchScheduleCheckBox{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            &All{
+              width: 119px;
+              input{
+                width: 12px;
+                height: 12px;
+              }
+              label{
+                font-size: 14px;
+                font-weight: 400;
+                vertical-align: middle;
+                cursor: pointer;
+              }
+            }
+            &Sale{
+              width: 119px;
+              font-size: 14px;
+              font-weight: 400;
+              vertical-align: middle;
+              cursor: pointer;
+            }
+            &Sold{
+              width: 119px;
+              font-size: 14px;
+              font-weight: 400;
+              vertical-align: middle;
+              cursor: pointer;
+            }
+          }
         }
       }
       .searchNavListsSearchBtn{
