@@ -85,44 +85,6 @@ $(function() {
     $('[id^=q_shipping_shcedule_eq_any]').prop('checked', this.checked);
   });
 
-// ブランドインクリメンタルサーチ
-
-//   function appendBrand(item) {
-//     var html = `<div class="brandResult clearfix">
-//                    <p class="brandResultName">${ item.brand }</p>
-//                    <a class="brandResultNameAdd" data-brandName=${ item.brand }>追加</a>
-//                 </div>`
-//     $(".searchNavListsSearchBrand").append(html)
-//   }
-
-// $(".searchBrand").on('keyup', function(){
-//   var input = $(this).val();
-//   console.log(input);
-
-//     $.ajax({
-//     type: 'GET',
-//     url: '/items/search',
-//     data: { keyword: input },
-//     dataType: 'json'
-//     })
-
-//     .done(function(item) {
-//       $(".brandResult").empty();
-//         if(item.length !== 0) {
-//           user.forEach(function(item){
-//             appendUser(item);
-//           });
-//         } else {
-//             appendNoUser("一致するユーザーはいません");
-//         }
-//       })
-
-//     .fail(function() {
-//       alert('ユーザー検索に失敗しました');
-//     })
-//  })
-
-
 // サイズ選択時、サイズ表示
   $('.searchNavListsSearchSizeBox').change(function() {
     var searchSize_val = $(this).val();
