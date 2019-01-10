@@ -3,6 +3,37 @@ $(function() {
   $('.searchNavListsSearchPriceSelect').change(function() {
     var val = $(this).val();
 
+    // switch (val) {
+    //   case 0:
+    //     $('.minLimit').val("");
+    //     $('.maxLimit').val("");
+    //     break;
+    //   case 1:
+    //     $('.minLimit').val(300);
+    //     $('.maxLimit').val(1000);
+    //     break;
+    //   case 2:
+    //   $('.minLimit').val(1000);
+    //   $('.maxLimit').val(5000);
+    //   break;
+    //   case 3:
+    //   $('.minLimit').val(5000);
+    //   $('.maxLimit').val(10000);
+    //   break;
+    //   case 4:
+    //   $('.minLimit').val(10000);
+    //   $('.maxLimit').val(30000);
+    //   break;
+    //   case 5:
+    //   $('.minLimit').val(30000);
+    //   $('.maxLimit').val(50000);
+    //   break;
+    //   case 6:
+    //   $('.minLimit').val(50000);
+    //   $('.maxLimit').val("");
+    //   break;
+    // }
+
     if( val == 0) {
       $('.minLimit').val("");
       $('.maxLimit').val("");
@@ -67,7 +98,7 @@ $(function() {
 
     if(searchSize_val == 1){
       $.each(gon.suit, function(i,suit){
-        var suit_name = suit.sizec
+        var suitName = suit.size
         var html = `<div class = "searchSize" id= "searchSizeId">
                 <input type = "checkbox", name="${suit.size}", ,checked_value = "${suit.id}", unchecked_value = "" >
                 <label class=>${suit.sizec}</label></div>`
@@ -77,7 +108,7 @@ $(function() {
 
     if(searchSize_val == 2){
       $.each(gon.menShoes, function(i,menShoes){
-        var menShoes_name = menShoes.size
+        var menShoesName = menShoes.size
         var html = `<div class = "searchSize" id= "searchSizeId">
                 <input type = "checkbox", name=${menShoes.size}, checked_value = "${suit.id}", unchecked_value = "" >
                 <label class=>${menShoes.size}</label></div>`
@@ -87,7 +118,7 @@ $(function() {
 
     if(searchSize_val == 3){
       $.each(gon.ladyShoes, function(i,ladyShoes){
-        var ladyShoes_name = ladyShoes.size
+        var ladyShoesName = ladyShoes.size
         var html = `<div class = "searchSize" id= "searchSizeId">
                 <input type = "checkbox", name=${ladyShoes.size}, checked_value = "${suit.id}", unchecked_value = "" >
                 <label class=>${ladyShoes.size}</label></div>`

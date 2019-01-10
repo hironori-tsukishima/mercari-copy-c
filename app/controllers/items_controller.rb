@@ -57,13 +57,14 @@ class ItemsController < ApplicationController
     gon.menShoes = MenShoe.where(params[:id])
     gon.ladyShoes = LadyShoe.where(params[:id])
     # binding.pry
-    if params[:sort] == 'priceDown'
+    case params[:sort]
+    when 'priceDown' then
       @items = @itemSearch.order(price: "ASC")
-    elsif params[:sort] == 'priceUp'
+    when 'priceUp' then
       @items = @itemSearch.order(price: "DESC")
-    elsif params[:sort] == 'old'
+    when 'old' then
       @items = @itemSearch.order(created_at: "ASC")
-    elsif params[:sort] == 'new'
+    when 'new' then
       @items = @itemSearch.order(created_at: "DESC")
     end
 
