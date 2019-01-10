@@ -6,10 +6,10 @@
       .wrapperSellingItemInfolLeftHidden
         .wrapperSellingItemInfoLeftMainimage
           - @images.each do |image|
-            = image_tag image.image
+            = image_tag image.item_images
         .wrapperSellingItemInfoLeftSubimage
           - @images.each do |image|
-            = image_tag image.image,class: "wrapperSellingItemInfoLeftSubimages"
+            = image_tag image.item_images,class: "wrapperSellingItemInfoLeftSubimages"
     .wrapperSellingItemInfoRight
       .wrapperSellingItemInfoRightTable
         %table{:border => "1"}

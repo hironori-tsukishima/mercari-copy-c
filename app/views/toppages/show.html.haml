@@ -19,11 +19,11 @@
         .wrapperShowItemDetailLeft
           - @images.each do |photo|
             .wrapperShowItemDetailLeftThumbnail
-              = image_tag(photo.image)
+              = image_tag(photo.item_images)
         .wrapperShowItemDetailLeftimages
           - @images.each do |photo|
             .wrapperShowItemDetailLeftimagesImage
-              = image_tag(photo.image)
+              = image_tag(photo.item_images)
       .wrapperShowItemDetailRight
         .wrapperShowItemDetailRightTable
           %table{:border => "1"}
