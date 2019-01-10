@@ -50,7 +50,6 @@ $(document).on("change","#middlecategory", function(){
               var small_category_name = smallcategory_id.name
               string +=
               `<div class="smallCategoryCheckbox"><input type="checkbox">${smallcategory_id.name}</div>`
-              // `<%= f.check_box :status_eq_any, {multiple: true},"${smallcategory_id.name}","" %>`
             }
           })
         var html = beginning + string + end;

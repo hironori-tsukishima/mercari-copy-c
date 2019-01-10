@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190109085151) do
+ActiveRecord::Schema.define(version: 20190110075715) do
 
   create_table "hobby_brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -77,6 +77,8 @@ ActiveRecord::Schema.define(version: 20190109085151) do
     t.string "size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "small_category_id"
+    t.index ["small_category_id"], name: "index_sizes_on_small_category_id"
   end
 
   create_table "small_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -121,6 +123,7 @@ ActiveRecord::Schema.define(version: 20190109085151) do
   add_foreign_key "item_images", "items"
   add_foreign_key "items", "small_categories"
   add_foreign_key "middle_categories", "large_categories"
+  add_foreign_key "sizes", "small_categories"
   add_foreign_key "small_categories", "middle_categories"
   add_foreign_key "sns_credentials", "users"
 end
