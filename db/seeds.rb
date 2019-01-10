@@ -80,26 +80,8 @@
 #   )
 # end
 
-# 洋服のサイズ
-# [
-#   'XXS以下',
-#   'XS(SS)',
-#   'S',
-#   'M',
-#   'L',
-#   'XL(LL)',
-#   '2XL(3L)',
-#   '3XL(4L)',
-#   '4XL(5L)以上',
-#   'FREE SIZE'
-#   ].each do |size|
-#     Suit.create!(
-#       { size: size }
-#       )
-#   end
 
-
-require 'csv'
+# require 'csv'
 
 # CSV.read("db/womanbrands.csv", headers: false).each do |row|
 #   WomanBrand.create!(
@@ -111,18 +93,29 @@ require 'csv'
 #   KidsBrand.create!(
 #     name: row[0]
 #   )
+# end
 
-CSV.read("db/hobbybrands.csv", headers: false).each do |row|
-  HobbyBrand.create!(
-    name: row[0]
-  )
-end
+# CSV.read("db/hobbybrands.csv", headers: false).each do |row|
+#   HobbyBrand.create!(
+#     name: row[0]
+#   )
+# end
 
 
-
-
-# メンズシューズのサイズ
+#サイズ
 # [
+#   '洋服',
+#   'XXS以下',
+#   'XS(SS)',
+#   'S',
+#   'M',
+#   'L',
+#   'XL(LL)',
+#   '2XL(3L)',
+#   '3XL(4L)',
+#   '4XL(5L)以上',
+#   'FREE SIZE',
+#   'メンズシューズ',
 #   '23.5cm以下',
 #   '24cm',
 #   '24.5cm',
@@ -138,15 +131,8 @@ end
 #   '29.5cm',
 #   '30cm',
 #   '30.5cm',
-#   '31cm以上'
-#   ].each do |size|
-#     MenShoe.create!(
-#       { size: size }
-#       )
-#   end
-
-# # レディースシューズのサイズ
-# [
+#   '31cm以上',
+#   'レディースシューズ',
 #   '20cm以下',
 #   '20.5cm',
 #   '21cm',
@@ -164,7 +150,7 @@ end
 #   '27cm',
 #   '27.5cm以上'
 #   ].each do |size|
-#     LadyShoe.create!(
+#     Size.create!(
 #       { size: size }
 #       )
 #   end

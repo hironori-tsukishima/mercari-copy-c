@@ -1,5 +1,4 @@
-
-$(function(){
+$(document).on('turbolinks:load',function(){
 // photoSlide
   $(".wrapperSellingItemInfoLeftSubimages").mouseenter(function(){
     var index = $(".wrapperSellingItemInfoLeftSubimages").index(this);

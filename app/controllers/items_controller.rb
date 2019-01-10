@@ -10,6 +10,8 @@ class ItemsController < ApplicationController
     gon.l_cate = LargeCategory.all
     gon.m_cate = MiddleCategory.all
     gon.s_cate = SmallCategory.all
+    gon.shipping_method_arrive = ["---","未定","クロネコヤマト","ゆうパック","ゆうメール"]
+    gon.shipping_method_pre = ["---","未定","らくらくメルカリ便","らくらくメルカリ便","ゆうメール","レターパック","普通郵便（定型・定形外）","クロネコヤマト","ゆうパック","ゆうパケット","クリックポスト","らくらくメルカリ便"]
 
   end
 
@@ -38,7 +40,6 @@ class ItemsController < ApplicationController
   end
 
   def purchase
-    render :layout => 'simpleLayout'
     @item = Item.find(params[:id])
     @images = @item.item_images.first
   end
@@ -83,6 +84,6 @@ class ItemsController < ApplicationController
 
   private
   def create_params
-    params.require(:item).permit(:name, :explaination, :price, :status, :shipping_fare, :shipping_region, :shipping_shcedule, :shipping_method, :size, :small_category_id, item_images_attributes: [:item_images, :item_id, :id]).merge(seller_id: current_user.id, buyer_id: 1)
+    params.require(:item).permit(:name, :explaination, :price, :status, :shipping_fare, :shipping_region, :shipping_shcedule, :shipping_method, :size, :small_category_id, :brand, item_images_attributes: [:item_images, :item_id, :id]).merge(seller_id: current_user.id, buyer_id: 1)
   end
 end

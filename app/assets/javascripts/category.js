@@ -80,7 +80,7 @@ $(document).on("change","#sc", function(){
 
   var brand_beginning = `<div class="itemEntryMainUpperDescriptionRightTitle4">ブランド
                     <span class="itemEntryMainUpperDescriptionRightTitleRequire2">任意</span></div>
-                   <input class="itemBrand" id="brands" placeholder=" 例) シャネル" name="item[brand]">`;
+                   <input class="itemBrand" id="brands" type="text" placeholder=" 例) シャネル" name="item[brand]">`;
   var brand_str = "";
   var brand_end = "</select>";
 
@@ -113,3 +113,40 @@ $(document).on("change","#sc", function(){
     // }
   // })
 })
+
+
+// 商品のシッピング方法のappend
+
+$(function(){
+  $("#item_shipping_fare").on("change", function(){
+    var fare_val = $(this).val();
+    console.log(fare_val)
+    var beginning = `<div class="itemShippingMethodTitle4">配送方法
+                    <span class="itemEntryMainUpperDescriptionRightTitleRequire">必須</span></div><select class="itemEntryMainUpperDeliveryRightSelect5" id="shipping_method", , name="item[shipping_method]">`;
+    var string = "";
+    var end = "</select>";
+      $(".itemShippingMethodTitle4").remove();
+      $(".itemEntryMainUpperDeliveryRightSelect5").remove();
+
+    var result = "";
+    result += $(".itemEntryMainUpperDeliveryRightSelect5").val()
+      if(fare_val == "送料込み(出品者負担)"){
+        $.each(gon.shipping_method_pre, function(i,pre) {
+          string += `<option>${pre}</option>`
+        })
+      }
+
+      if(fare_val == "着払い（購入者負担）"){
+        $.each(gon.shipping_method_arrive, function(i,arrive) {
+          string += `<option>${arrive}</option>`
+        })
+      }
+
+    var html = beginning + string + end;
+    $(".itemEntryMainUpperDeliveryRightSelect2").append(html);
+      if(fare_val == "---"){
+        $(".itemShippingMethodTitle4").remove();
+        $(".itemEntryMainUpperDeliveryRightSelect5").remove();
+      }
+  });
+});

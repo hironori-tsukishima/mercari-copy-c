@@ -10,7 +10,7 @@ $(document).on('turbolinks:load',function(){
     var html = `<div class="categoryPullDown-SContainerItem" data-id="${s_cate.id}">
                   <a href="/toppages/small_category_show/${s_cate.id}">${s_cate.name}</a>
                 </div>`;
-    return html; 
+    return html;
   }
 
 // プルダウン全体へのホバーアクション
@@ -35,29 +35,29 @@ $(document).on('turbolinks:load',function(){
       }
     });
 
-      // Mカテゴリーへのホバーアクション
-        $('.categoryPullDown-MContainerItem').hover(function(e){
-          $('.categoryPullDown-SContainer').empty();
-          $('.categoryPullDown-SContainer').fadeIn(200);
+  // Mカテゴリーへのホバーアクション
+    $('.categoryPullDown-MContainerItem').hover(function(e){
+      $('.categoryPullDown-SContainer').empty();
+      $('.categoryPullDown-SContainer').fadeIn(200);
+      $(this).addClass('grayBack');
+      var mc_val = $(this).data('id');
+      $.each(gon.s_cate, function(i,s_cate) {
+        if( mc_val ===  s_cate.middle_category_id ){
+          var html = SbuildHTML(s_cate);
+          $('.categoryPullDown-SContainer').append(html);
+        }
+      });
+
+      // Sカテゴリーへのホバーアクション
+        $('.categoryPullDown-SContainerItem').hover(function(e){
           $(this).addClass('grayBack');
-          var mc_val = $(this).data('id');
-          $.each(gon.s_cate, function(i,s_cate) {
-            if( mc_val ===  s_cate.middle_category_id ){
-              var html = SbuildHTML(s_cate);
-              $('.categoryPullDown-SContainer').append(html);
-            }
-          });
-
-              // Sカテゴリーへのホバーアクション
-                $('.categoryPullDown-SContainerItem').hover(function(e){
-                  $(this).addClass('grayBack');
-                },function(){
-                  $(this).removeClass('grayBack');
-                });
-
         },function(){
           $(this).removeClass('grayBack');
         });
+
+      },function(){
+        $(this).removeClass('grayBack');
+      });
 
   },function(){
     $(this).removeClass('redBack');

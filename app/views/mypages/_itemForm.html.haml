@@ -16,15 +16,15 @@
           %tr
             %th.tableLeft 出品者
             %th.tableRight
-              = link_to "#{@item.seller.nickname}","#",class: "tableLinks"
+              = link_to "#{@item.seller.nickname}","/mypages/users/#{@item.seller.id}",class: "tableLinks"
           %tr
             %td.tableLeft カテゴリー
             %td.tableRight
-              = link_to "category_top","#",class: "tableLinks"
+              = link_to "#{@item.small_category.middle_category.large_category.name}","/toppages/large_category_show/#{@item.small_category.middle_category.large_category.id}",class: "tableLinks"
               %br
-              = link_to "> category_mid","#",class: "tableLinks"
+              = link_to "> #{@item.small_category.middle_category.name}","/toppages/middle_category_show/#{@item.small_category.middle_category.id}",class: "tableLinks"
               %br
-              = link_to "> category_bottom","#",class: "tableLinks"
+              = link_to "> #{@item.small_category.name}","/toppages/small_category_show/#{@item.small_category.id}",class: "tableLinks"
           %tr
             %td.tableLeft ブランド
             %td.tableRight

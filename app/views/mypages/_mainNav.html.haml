@@ -13,7 +13,7 @@
       = link_to "いいね！一覧","#", class: "mypageNavList"
       = fa_icon"fa-chevron-right",class: "fa-chevron-right"
     %li.mypagelist
-      = link_to "出品する", new_item_path, class: "mypageNavList"
+      = link_to "出品する", new_item_path, data:{"turbolinks" => false}, class: "mypageNavList"
       = fa_icon"fa-chevron-right",class: "fa-chevron-right"
     %li.mypagelist
       = link_to "出品した商品-出品中", mypages_exhibitionItemSelling_path, class: "mypageNavList"

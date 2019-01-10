@@ -1,3 +1,18 @@
+.breadCrumbShowBorder
+.breadCrumbShow
+  %ul.breadcrumb
+  %li.list1{:itemscope => "itemscope", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+    %a{:href => "http://52.199.209.215", :itemprop => "url"}
+      %span{:itemprop => "title"} メルカリ
+  %p >
+  %li.list2{:itemscope => "itemscope", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+    %a{:href => "http://52.199.209.215/mypages/main", :itemprop => "url"}
+      %span{:itemprop => "title"} マイページ
+  %p >
+  %li.list3.last{:itemscope => "itemscope", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+    %a{:href => "http://52.199.209.215/mypages/sales", :itemprop => "url"}
+      %span{:itemprop => "title"} 売上・振込申請
+
 .salesWhole
   .salesWrapper.clearfix
     .salesMainWrapper

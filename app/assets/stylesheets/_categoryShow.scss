@@ -43,6 +43,10 @@
           background: white;
           &Image {
             height: 195px;
+            img {
+              height: 195px;
+              width: 195px;
+            }
           }
           &Name {
             height: 53px;

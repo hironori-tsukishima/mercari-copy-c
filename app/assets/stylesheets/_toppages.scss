@@ -592,6 +592,7 @@ th{
   &container{
     width:700px;
     max-height: 700px;
+    overflow: scroll;
   }
   .wrapperShowUsersItem{
     width:220px;
@@ -656,6 +657,10 @@ th{
   margin-bottom: 20px;
   margin-left: 0;
 }
+.wrapperShowUsersItemLink {
+  text-decoration: none;
+  color: black;
+}
 .fa-clock-o{
   color:#BDBDBD;
   font-size: 22px;
@@ -689,7 +694,22 @@ th{
     padding-right: 10px;
   }
   .list2{
-    font-weight: bold;
     padding-left: 10px;
+    padding-right: 10px;
+  }
+  .list3{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .list4{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .list5{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .last{
+    font-weight: bold;
   }
 }

@@ -2,11 +2,11 @@
 .breadCrumbShow
   %ul.breadcrumb
   %li.list1{:itemscope => "itemscope", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
-    %a{:href => "http://localhost:3000", :itemprop => "url"}
+    %a{:href => "http://52.199.209.215", :itemprop => "url"}
       %span{:itemprop => "title"} メルカリ
   %p >
   %li.list2{:itemscope => "itemscope", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
-    %a{:href => "http://localhost:3000/toppages/#{@item.id}", :itemprop => "url"}
+    %a{:href => "http://52.199.209.215/toppages/#{@item.id}", :itemprop => "url"}
       %span{:itemprop => "title"}
         = "#{ @item.name}"
 
@@ -30,7 +30,7 @@
             %tr
               %th.tableLeft 出品者
               %th.tableRight
-                = link_to root_path,class: "tableLinks" do
+                = link_to "/mypages/users/#{@item.seller.id}",class: "tableLinks" do
                   = @item.seller.nickname
                 %br
                 = fa_icon "fa-smile-o ",class: "fa-smile-o"
@@ -42,15 +42,15 @@
             %tr
               %td.tableLeft カテゴリー
               %td.tableRight
-                = link_to "メンズ","#",class: "tableLinks"
+                = link_to "#{@item.small_category.middle_category.large_category.name}","/toppages/large_category_show/#{@item.small_category.middle_category.large_category.id}",class: "tableLinks"
                 %br
-                = link_to ">トップス","#",class: "tableLinks"
+                = link_to "> #{@item.small_category.middle_category.name}","/toppages/middle_category_show/#{@item.small_category.middle_category.id}",class: "tableLinks"
                 %br
-                = link_to ">パーカー","#",class: "tableLinks"
+                = link_to "> #{@item.small_category.name}","/toppages/small_category_show/#{@item.small_category.id}",class: "tableLinks"
             %tr
               %td.tableLeft ブランド
               %td.tableRight
-                = link_to "チャンピオン","#",class: "tableLinks"
+                = link_to "#{@item.brand}","#",class: "tableLinks"
             %tr
               %td.tableLeft 商品のサイズ
               %td.tableRight
@@ -146,15 +146,16 @@
     .wrapperShowUsersItemscontainer
       - @anotheritems.each do |item|
         .wrapperShowUsersItem
-          .wrapperShowUsersItemImage
-            = image_tag item.item_images.first.image, size: '160x160'
-          .wrapperShowUsersItemBody
-            .wrapperShowUsersItemBodyTitle
-              = item.name
-            .wrapperShowUsersItemBodyDetails
-              .wrapperShowUsersItemBodyDetailsPrice
-                = item.price
-              .wrapperShowUsersItemBodyDetailsLikes
-                .wrapperShowUsersItemLikesIcon.far.fa-heart
-                .wrapperShowUsersItemLikesCount 100
-              .wrapperShowUsersItemBodyDetailsTax (税込)
+          = link_to toppage_path(item), class: "wrapperShowUsersItemLink" do
+            .wrapperShowUsersItemImage
+              = image_tag item.item_images.first.image #iamgeをitem_imagesに変える
+            .wrapperShowUsersItemBody
+              .wrapperShowUsersItemBodyTitle
+                = item.name
+              .wrapperShowUsersItemBodyDetails
+                .wrapperShowUsersItemBodyDetailsPrice
+                  = item.price
+                .wrapperShowUsersItemBodyDetailsLikes
+                  .wrapperShowUsersItemLikesIcon.far.fa-heart
+                  .wrapperShowUsersItemLikesCount 100
+                .wrapperShowUsersItemBodyDetailsTax (税込)

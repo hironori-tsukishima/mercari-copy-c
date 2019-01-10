@@ -2,11 +2,11 @@
 .breadCrumbShow
   %ul.breadcrumb
   %li.list1{:itemscope => "itemscope", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
-    %a{:href => "http://localhost:3000", :itemprop => "url"}
+    %a{:href => "http://52.199.209.215", :itemprop => "url"}
       %span{:itemprop => "title"} メルカリ
   %p >
   %li.list2{:itemscope => "itemscope", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
-    %a{:href => "http://localhost:3000/brands/kids", :itemprop => "url"}
+    %a{:href => "http://52.199.209.215/brands/kids", :itemprop => "url"}
       %span{:itemprop => "title"}
         = "ブランド一覧"
 
@@ -14,9 +14,12 @@
   .brandWrapper
     %h2.brandTitle ブランド一覧
     .brandWrapperContainer
-      .brandWrapperContainerBoxWemens#box レディース
-      .brandWrapperContainerBoxKids#box-main ベビー・キッズ
-      .brandWrapperContainerBoxHobby#box テレビゲーム
+      = link_to brands_wemens_path, class: "brands_links" do
+        .brandWrapperContainerBoxWemens#box レディース
+      = link_to brands_kids_path, class: "brands_links" do
+        .brandWrapperContainerBoxKids#box-main ベビー・キッズ
+      = link_to brands_hobby_path, class: "brands_links" do
+        .brandWrapperContainerBoxHobby#box テレビゲーム
       .brandWrapperContainerBoxWemens#box インテリア・住まい・雑貨
       .brandWrapperContainerBoxKids#box スポーツ・レジャー
       .brandWrapperContainerBoxHobby#box スマートフォン・携帯電話
@@ -24,306 +27,306 @@
       .brandWrapperContainerBoxKids#box キッチン・食器
       .brandWrapperContainerBoxHobby#box 時計
     .brandWrapperScroll
-      - @initial.each do |initial|
-        .brandWrapperScrollCell
+      - @initial.each_with_index do|initial,i|
+        %div{class: "brandWrapperScrollCell", id: "cell#{i}"}
           = initial + " | "
     %h3.brandWrapperJanre キッズ・ベビー
     %h4.brandWrapperInitials
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial0
         ア
       .brandWrapperInitialsInitialbrands
         -@brands_a.each do |a|
           .brandWrapperInitialsInitialbrandsbrand
             = a.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial1
         イ
       .brandWrapperInitialsInitialbrands
         -@brands_i.each do |i|
           .brandWrapperInitialsInitialbrandsbrand
             = i.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial2
         ウ
       .brandWrapperInitialsInitialbrands
         -@brands_u.each do |u|
           .brandWrapperInitialsInitialbrandsbrand
             = u.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial3
         エ
       .brandWrapperInitialsInitialbrands
         -@brands_e.each do |e|
           .brandWrapperInitialsInitialbrandsbrand
             = e.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial4
         オ
       .brandWrapperInitialsInitialbrands
         -@brands_o.each do |o|
           .brandWrapperInitialsInitialbrandsbrand
             = o.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial5
         カ
       .brandWrapperInitialsInitialbrands
         -@brands_ka.each do |ka|
           .brandWrapperInitialsInitialbrandsbrand
             = ka.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial6
         キ
       .brandWrapperInitialsInitialbrands
         -@brands_ki.each do |ki|
           .brandWrapperInitialsInitialbrandsbrand
             = ki.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial7
         ク
       .brandWrapperInitialsInitialbrands
         -@brands_ku.each do |ku|
           .brandWrapperInitialsInitialbrandsbrand
             = ku.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial8
         ケ
       .brandWrapperInitialsInitialbrands
         -@brands_ke.each do |ke|
           .brandWrapperInitialsInitialbrandsbrand
             = ke.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial9
         コ
       .brandWrapperInitialsInitialbrands
         -@brands_ko.each do |ko|
           .brandWrapperInitialsInitialbrandsbrand
             = ko.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial10
         サ
       .brandWrapperInitialsInitialbrands
         -@brands_sa.each do |sa|
           .brandWrapperInitialsInitialbrandsbrand
             = sa.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial11
         シ
       .brandWrapperInitialsInitialbrands
         -@brands_si.each do |si|
           .brandWrapperInitialsInitialbrandsbrand
             = si.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial12
         ジ
       .brandWrapperInitialsInitialbrands
         -@brands_ji.each do |ji|
           .brandWrapperInitialsInitialbrandsbrand
             = ji.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial13
         ス
       .brandWrapperInitialsInitialbrands
         -@brands_su.each do |su|
           .brandWrapperInitialsInitialbrandsbrand
             = su.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial14
         セ
       .brandWrapperInitialsInitialbrands
         -@brands_se.each do |se|
           .brandWrapperInitialsInitialbrandsbrand
             = se.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial15
         ソ
       .brandWrapperInitialsInitialbrands
         -@brands_so.each do |so|
           .brandWrapperInitialsInitialbrandsbrand
             = so.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial16
         タ
       .brandWrapperInitialsInitialbrands
         -@brands_ta.each do |ta|
           .brandWrapperInitialsInitialbrandsbrand
             = ta.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial17
         チ
       .brandWrapperInitialsInitialbrands
         -@brands_ti.each do |ti|
           .brandWrapperInitialsInitialbrandsbrand
             = ti.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial18
         ツ
       .brandWrapperInitialsInitialbrands
         -@brands_tu.each do |tu|
           .brandWrapperInitialsInitialbrandsbrand
             = tu.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial19
         テ
       .brandWrapperInitialsInitialbrands
         -@brands_te.each do |te|
           .brandWrapperInitialsInitialbrandsbrand
             = te.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial20
         デ
       .brandWrapperInitialsInitialbrands
         -@brands_de.each do |de|
           .brandWrapperInitialsInitialbrandsbrand
             = de.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial21
         ト
       .brandWrapperInitialsInitialbrands
         -@brands_to.each do |to|
           .brandWrapperInitialsInitialbrandsbrand
             = to.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial22
         ナ
       .brandWrapperInitialsInitialbrands
         -@brands_na.each do |na|
           .brandWrapperInitialsInitialbrandsbrand
             = na.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial23
         ニ
       .brandWrapperInitialsInitialbrands
         -@brands_ni.each do |ni|
           .brandWrapperInitialsInitialbrandsbrand
             = ni.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial24
         ヌ
       .brandWrapperInitialsInitialbrands
         -@brands_nu.each do |nu|
           .brandWrapperInitialsInitialbrandsbrand
             = nu.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial25
         ネ
       .brandWrapperInitialsInitialbrands
         -@brands_ne.each do |ne|
           .brandWrapperInitialsInitialbrandsbrand
             = ne.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial26
         ノ
       .brandWrapperInitialsInitialbrands
         -@brands_no.each do |no|
           .brandWrapperInitialsInitialbrandsbrand
             = no.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial27
         ハ
       .brandWrapperInitialsInitialbrands
         -@brands_ha.each do |ha|
           .brandWrapperInitialsInitialbrandsbrand
             = ha.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial28
         パ
       .brandWrapperInitialsInitialbrands
         -@brands_pa.each do |pa|
           .brandWrapperInitialsInitialbrandsbrand
             = pa.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial29
         ヒ
       .brandWrapperInitialsInitialbrands
         -@brands_hi.each do |hi|
           .brandWrapperInitialsInitialbrandsbrand
             = hi.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial30
         ビ
       .brandWrapperInitialsInitialbrands
         -@brands_bi.each do |bi|
           .brandWrapperInitialsInitialbrandsbrand
             = bi.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial31
         フ
       .brandWrapperInitialsInitialbrands
         -@brands_hu.each do |hu|
           .brandWrapperInitialsInitialbrandsbrand
             = hu.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial32
         ヘ
       .brandWrapperInitialsInitialbrands
         -@brands_he.each do |he|
           .brandWrapperInitialsInitialbrandsbrand
             = he.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial33
         ホ
       .brandWrapperInitialsInitialbrands
         -@brands_ho.each do |ho|
           .brandWrapperInitialsInitialbrandsbrand
             = ho.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial34
         ボ
       .brandWrapperInitialsInitialbrands
         -@brands_bo.each do |bo|
           .brandWrapperInitialsInitialbrandsbrand
             = bo.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial35
         マ
       .brandWrapperInitialsInitialbrands
         -@brands_ma.each do |ma|
           .brandWrapperInitialsInitialbrandsbrand
             = ma.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial36
         ミ
       .brandWrapperInitialsInitialbrands
         -@brands_mi.each do |mi|
           .brandWrapperInitialsInitialbrandsbrand
             = mi.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial37
         ム
       .brandWrapperInitialsInitialbrands
         -@brands_mu.each do |mu|
           .brandWrapperInitialsInitialbrandsbrand
             = mu.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial38
         メ
       .brandWrapperInitialsInitialbrands
         -@brands_me.each do |me|
           .brandWrapperInitialsInitialbrandsbrand
             = me.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial39
         モ
       .brandWrapperInitialsInitialbrands
         -@brands_mo.each do |mo|
           .brandWrapperInitialsInitialbrandsbrand
             = mo.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial40
         ヤ
       .brandWrapperInitialsInitialbrands
         -@brands_ya.each do |ya|
           .brandWrapperInitialsInitialbrandsbrand
             = ya.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial41
         ユ
       .brandWrapperInitialsInitialbrands
         -@brands_yu.each do |yu|
           .brandWrapperInitialsInitialbrandsbrand
             = yu.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial42
         ヨ
       .brandWrapperInitialsInitialbrands
         -@brands_yo.each do |yo|
           .brandWrapperInitialsInitialbrandsbrand
             = yo.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial43
         ラ
       .brandWrapperInitialsInitialbrands
         -@brands_ra.each do |ra|
           .brandWrapperInitialsInitialbrandsbrand
             = ra.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial44
         リ
       .brandWrapperInitialsInitialbrands
         -@brands_ri.each do |ri|
           .brandWrapperInitialsInitialbrandsbrand
             = ri.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial45
         ル
       .brandWrapperInitialsInitialbrands
         -@brands_ru.each do |ru|
           .brandWrapperInitialsInitialbrandsbrand
             = ru.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial46
         レ
       .brandWrapperInitialsInitialbrands
         -@brands_re.each do |re|
           .brandWrapperInitialsInitialbrandsbrand
             = re.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial47
         ロ
       .brandWrapperInitialsInitialbrands
         -@brands_ro.each do |ro|
           .brandWrapperInitialsInitialbrandsbrand
             = ro.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial48
         ワ
       .brandWrapperInitialsInitialbrands
         -@brands_wa.each do |wa|
           .brandWrapperInitialsInitialbrandsbrand
             = wa.name
-      .brandWrapperInitialsInitial
+      .brandWrapperInitialsInitial.brandWrapperInitialsInitial49
         3
       #last.brandWrapperInitialsInitialbrands
         -@brands_3.each do |san|

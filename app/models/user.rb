@@ -6,7 +6,6 @@ class User < ApplicationRecord
   validates :nickname, presence: true, length: { maximum: 20 }
 
   has_many :sns_credential
-  has_many :items
 
   def self.find_for_oauth(auth)
     snscredential = SnsCredential.where(uid: auth.uid, provider: auth.provider).first
