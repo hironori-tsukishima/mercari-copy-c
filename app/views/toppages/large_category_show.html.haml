@@ -1,3 +1,20 @@
+.breadCrumbShowBorder
+.breadCrumbShow
+  %ul.breadcrumb
+  %li.list1{:itemscope => "itemscope", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+    %a{:href => "http://52.199.209.215", :itemprop => "url"}
+      %span{:itemprop => "title"} メルカリ
+  %p >
+  %li.list2{:itemscope => "itemscope", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+    %a{:href => "http://52.199.209.215/toppages/category_index", :itemprop => "url"}
+      %span{:itemprop => "title"} カテゴリー一覧
+  %p >
+  %li.list3.last{:itemscope => "itemscope", :itemtype => "http://data-vocabulary.org/Breadcrumb"}
+    %a{:href => "http://52.199.209.215/toppages/large_category_show/#{@selected_Lcate}", :itemprop => "url"}
+      %span{:itemprop => "title"}
+        = @selected_Lcate.name
+
+
 .categoryShowWrapper
   .categoryShow
     .categoryShowHeader

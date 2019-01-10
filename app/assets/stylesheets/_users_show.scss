@@ -1,0 +1,93 @@
+.usersShow {
+  background: $back-gray;
+  padding: 50px 0;
+  &Wrapper {
+    width: 800px;
+    margin: 0 auto;
+    background: $white;
+    &User {
+      &Upper {
+        background-image: url("https://www.mercari.com/jp/assets/img/user/user_bg.jpg?93542744");
+        background-size: cover;
+        position: relative;
+        text-align: center;
+        font-size: 17px;
+        font-weight: bold;
+        &Circle {
+          background-image: url("https://static-mercari-jp-imgtr2.akamaized.net/members/193363489.jpg?1512889453");
+          background-size: cover;
+          height: 170px;
+          width: 170px;
+          border-radius: 50%;
+          position: absolute;
+          top: 75px;
+          left: 315px;
+        }
+        &Name {
+          padding-top: 250px;
+          margin-bottom: 5px;
+        }
+        &Bottom {
+          padding-bottom: 30px;
+          font-size: 13px;
+        }
+        &Social {
+          height: 250px;
+          background-image: url("users.png");
+          background-size: cover;
+        }
+      }
+      &Bottom {
+        &Title {
+          font-size: 21px;
+          font-weight: bold;
+          padding: 5px 0 5px 15px; ;
+        }
+        &Items {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        &Item {
+          width: 230px;
+          height:290px;
+          margin: 0 17px 20px 17px;
+          &Image {
+            height: 180px;
+            img {
+              width: 230px;
+              height: 180px;
+            }
+          }
+          &Name {
+            height: 50px;
+            background:white;
+            padding: 5px 10px;
+            overflow: scroll;
+          }
+          &Bottom {
+            display: flex;
+            font-size: 14px;
+            font-weight: bold;
+            &Right {
+              width: 130px;
+              padding-left: 10px;
+              &Price {
+                padding-top: 5px;
+              }
+              &Tax {
+                font-size: 10px;
+              }
+            }
+            &Like {
+              line-height: 50px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.usersShowWrapperUserBottomItemsLink {
+  text-decoration: none;
+  color: black;
+}

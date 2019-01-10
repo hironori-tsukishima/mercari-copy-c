@@ -76,6 +76,10 @@
       }
       &Info{
         padding-left: 16px;
+        &Link {
+          text-decoration: none;
+          color: black;
+        }
       }
       &Todo{
         // padding-left: 16px;

@@ -14,7 +14,7 @@
       = link_to toppages_category_index_path ,class: "headerBottomLeftCategory" do
         カテゴリーから探す
       .headerBottomLeftBrand ブランドから探す
-    -if user_signed_in? 
+    -if user_signed_in?
       .headerBottomRight
         .headerBottomRightAvatar
         .headerBottomRightMypage
@@ -22,7 +22,9 @@
             マイページ
         .bottomHeaderRightInfo
           = fa_icon "bell-o",class: "fa-bell-o",id: "Info"
-          お知らせ
+          %span
+            = link_to mypages_notification_path, class: "headerBottomRightInfoLink" do
+              お知らせ
         .headerBottomRightTodo
           = fa_icon "fa-check",class: "fa-check",id: "Info"
           やることリスト

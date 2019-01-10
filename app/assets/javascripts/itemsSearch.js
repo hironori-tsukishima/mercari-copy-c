@@ -72,6 +72,7 @@ $(function() {
   })
 })
 
+
 // すべてcheckbox選択時、全選択
 $(function() {
   $('.searchState').on('click', function() {
@@ -83,6 +84,43 @@ $(function() {
   $('.searchSchedule').on('click', function() {
     $('[id^=q_shipping_shcedule_eq_any]').prop('checked', this.checked);
   });
+
+// ブランドインクリメンタルサーチ
+
+//   function appendBrand(item) {
+//     var html = `<div class="brandResult clearfix">
+//                    <p class="brandResultName">${ item.brand }</p>
+//                    <a class="brandResultNameAdd" data-brandName=${ item.brand }>追加</a>
+//                 </div>`
+//     $(".searchNavListsSearchBrand").append(html)
+//   }
+
+// $(".searchBrand").on('keyup', function(){
+//   var input = $(this).val();
+//   console.log(input);
+
+//     $.ajax({
+//     type: 'GET',
+//     url: '/items/search',
+//     data: { keyword: input },
+//     dataType: 'json'
+//     })
+
+//     .done(function(item) {
+//       $(".brandResult").empty();
+//         if(item.length !== 0) {
+//           user.forEach(function(item){
+//             appendUser(item);
+//           });
+//         } else {
+//             appendNoUser("一致するユーザーはいません");
+//         }
+//       })
+
+//     .fail(function() {
+//       alert('ユーザー検索に失敗しました');
+//     })
+//  })
 
 
 // サイズ選択時、サイズ表示
@@ -98,30 +136,21 @@ $(function() {
 
     if(searchSize_val == 1){
       $.each(gon.suit, function(i,suit){
-        var suitName = suit.size
+        var suit = suit
+        console.log(suit);
         var html = `<div class = "searchSize" id= "searchSizeId">
                 <input type = "checkbox", name="${suit.size}", ,checked_value = "${suit.id}", unchecked_value = "" >
-                <label class=>${suit.sizec}</label></div>`
+                <label class=>${suit.size}</label></div>`
         $(".searchNavListsSearchSize").append(html);
       })
     }
 
     if(searchSize_val == 2){
       $.each(gon.menShoes, function(i,menShoes){
-        var menShoesName = menShoes.size
+        var menShoesName = menShoes
         var html = `<div class = "searchSize" id= "searchSizeId">
-                <input type = "checkbox", name=${menShoes.size}, checked_value = "${suit.id}", unchecked_value = "" >
+                <input type = "checkbox", name=${menShoes.size}, checked_value = "${menShoes.id}", unchecked_value = "" >
                 <label class=>${menShoes.size}</label></div>`
-        $(".searchNavListsSearchSize").append(html);
-      })
-    }
-
-    if(searchSize_val == 3){
-      $.each(gon.ladyShoes, function(i,ladyShoes){
-        var ladyShoesName = ladyShoes.size
-        var html = `<div class = "searchSize" id= "searchSizeId">
-                <input type = "checkbox", name=${ladyShoes.size}, checked_value = "${suit.id}", unchecked_value = "" >
-                <label class=>${ladyShoes.size}</label></div>`
         $(".searchNavListsSearchSize").append(html);
       })
     }
