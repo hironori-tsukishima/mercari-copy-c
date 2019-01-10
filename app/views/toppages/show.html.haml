@@ -148,7 +148,7 @@
         .wrapperShowUsersItem
           = link_to toppage_path(item), class: "wrapperShowUsersItemLink" do
             .wrapperShowUsersItemImage
-              = image_tag item.item_images.first.image #imageをitem_imagesに変更
+              = image_tag item.item_images.first.item_images #imageをitem_imagesに変更
             .wrapperShowUsersItemBody
               .wrapperShowUsersItemBodyTitle
                 = item.name

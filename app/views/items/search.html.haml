@@ -24,7 +24,7 @@
           .searchItemMainBodyItemBox
             = link_to "/toppages/#{item.id}", style: "color:black;", class: "ItemBoxLink" do
               .searchItemMainBodyItemBoxImage
-                = image_tag item.item_images.first.image, size: '160x160'
+                = image_tag item.item_images.first.item_images, size: '160x160'
               .searchItemMainBodyItemInfo
                 %h3
                   = item.name
@@ -41,7 +41,7 @@
           .searchItemMainBodyItemBox
             = link_to "/toppages/#{item.id}", style: "color:black;", class: "ItemBoxLink" do
               .searchItemMainBodyItemBoxImage
-                = image_tag item.item_images.first.image, size: '160x160'
+                = image_tag item.item_images.first.item_images, size: '160x160'
               .searchItemMainBodyItemInfo
                 %h3
                   = item.name
