@@ -13,7 +13,9 @@
     .headerBottomLeft
       = link_to toppages_category_index_path ,class: "headerBottomLeftCategory" do
         カテゴリーから探す
-      .headerBottomLeftBrand ブランドから探す
+      .headerBottomLeftBrand
+        = link_to brands_wemens_path, class: "headerBottomLeftBrand" do
+          ブランドから探す
     -if user_signed_in?
       .headerBottomRight
         .headerBottomRightAvatar

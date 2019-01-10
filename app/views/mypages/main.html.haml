@@ -15,7 +15,8 @@
       .mypageUserIcon
         .mypageContainer
           %image.profileIcon{:src => "https://static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png"}
-          %h2.userName USER
+          %h2.userName
+            = current_user.nickname
           .userStatus
             .userReview
               %p.noun 評価

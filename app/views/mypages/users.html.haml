@@ -12,17 +12,17 @@
         この出品者の商品
       .usersShowWrapperUserBottomItems
         - @items.each do |item|
-          = link_to toppage_path(item), class: "usersShowWrapperUserBottomItemsLink" do
-            .usersShowWrapperUserBottomItem
+          .usersShowWrapperUserBottomItem
+            = link_to toppage_path(item), class: "usersShowWrapperUserBottomItemsLink" do
               .usersShowWrapperUserBottomItemImage
                 = image_tag item.item_images.first.item_images
               .usersShowWrapperUserBottomItemName
                 = item.name
               .usersShowWrapperUserBottomItemBottom
-                .usersShowWrapperUserBottomItemBottomRight
-                  .usersShowWrapperUserBottomItemBottomRightPrice
-                    = "¥#{item.price}"
-                  .usersShowWrapperUserBottomItemBottomRightTax
+                .usersShowWrapperUserBottomItemBottomLeft
+                  .usersShowWrapperUserBottomItemBottomLeftPrice
+                    = "¥#{item.price.to_s(:delimited)}"
+                  .usersShowWrapperUserBottomItemBottomLeftTax
                     (税込)
                 .usersShowWrapperUserBottomItemBottomLike
                   =fa_icon 'fa-heart', class: 'fa-heart-o'

@@ -79,11 +79,11 @@ $(document).on("change","#sc", function(){
   var str = "";
   var end = "</select>";
 
-  var brand_beginning = `<div class="itemEntryMainUpperDescriptionRightTitle4">ブランド
-                    <span class="itemEntryMainUpperDescriptionRightTitleRequire2">任意</span></div>
-                   <input class="itemBrand" id="brands" type="text" placeholder=" 例) シャネル" name="item[brand]">`;
+  var brand_beginning = `<div class ="brandbox"><div class="itemEntryMainUpperDescriptionRightTitle4">ブランド
+                          <span class="itemEntryMainUpperDescriptionRightTitleRequire2">任意</span></div>
+                         <input class="itemBrand" id="brands" type="text" placeholder=" 例) シャネル" name="item[brand]">`;
   var brand_str = "";
-  var brand_end = "</select>";
+  var brand_end = "</input></div>";
 
   $(".itemEntryMainUpperDescriptionRightSelect4").remove();
   $(".itemEntryMainUpperDescriptionRightTitle4").remove()
@@ -114,6 +114,101 @@ $(document).on("change","#sc", function(){
     }
   })
 })
+
+
+// ブランドのインクリメンタルサーチ
+
+$(document).on("keyup","#brands", function(e){
+  var input = $(this).val();
+
+  function appendBrandList(brand,index) {
+      console.log(index)
+       var beggining = `<div class= brandSearchBox id=${index}>`
+       var string = `<ul><li class="brandSearchBoxResults" data-brand-id="${ brand.id }" data-brand-name="${ brand.name }">${brand.name}<li></ul>`
+       var end = `</div>`
+
+       var html = string + end
+       if ($("#1").length < 1) {
+       $(".brandbox").append(beggining);
+       $(".brandSearchBox").append(html);
+       }
+       else{
+        console.log("guaaa")
+        $(".brandSearchBox").append(html);
+       }
+
+       if ($(".brandSearchBoxResults") == null) {
+       $(this).remove();
+       }
+
+
+       if ( index => 1  ){
+        $(".brandSearchBox").not('#1').remove();
+       }
+  }
+
+
+  function appendNoBrandList(brand) {
+       var beggining = `<div class= brandSearchBox >`
+       var string = `<ul><li class=brandSearchBoxResults>${brand}"<li></ul>`
+       var end = `</div>`
+       var html = beggining + string + end
+       $(".brandbox").append(beggining);
+       $(".brandSearchBox").append(html);
+      }
+
+      if (input.length !== 0){
+        $.ajax({
+          type: 'GET',
+          url: '/items/new',
+          data: { keyword: input },
+          dataType: 'json'
+         })
+          .done(function(brands) {
+            $(".brandSearchBoxResults").remove();
+             if (brands.length !== 0) {
+               brands.forEach(function(brand,index){
+                appendBrandList(brand,index);
+               });
+             }
+             else{
+             appendNoBrandList("検索結果にはありません");
+             }
+          })
+          .fail(function(brands) {
+            $(".brandbox").remove()
+            $(".brandSearchBox").remove()
+          })
+      } else {
+        // $(".brandbox").empty()
+        $(".brandSearchBox").empty()
+      }
+
+    $(".itemEntryMainUpperDescriptionRightSelect").on("click",".brandSearchBoxResults",function(){
+      let brand_id = $(this).attr('data-brand-id');
+      let brand_name = $(this).attr('data-brand-name');
+      console.log(brand_id)
+      console.log(brand_name)
+      $(".brandbox").html(`<div class ="brandbox"><div class="itemEntryMainUpperDescriptionRightTitle4">ブランド
+                          <span class="itemEntryMainUpperDescriptionRightTitleRequire2">任意</span></div><input class="itemBrand" id="brands" type="text" placeholder=" 例) シャネル" name="item[brand]" value=${brand_name}></input></div>
+                          <div class= brandSearchBox id=1></div>`)
+
+      // $(".brandSearchBox").remove();
+    });
+})
+
+
+
+// インクリメンタルサーチのマウスエンターでの色変更
+$(function(){
+  $(".itemEntryMainUpperDescriptionRightSelect").on("mouseenter",".brandSearchBoxResults",function(){
+    $(this).css({'background-color':'#75BAFF' , 'color':'white' })})
+  $(".itemEntryMainUpperDescriptionRightSelect").on("mouseleave",".brandSearchBoxResults",function(){
+    $(this).css({'background-color':'white' , 'color':'black'})})
+})
+
+
+
 
 
 // 商品のシッピング方法のappend

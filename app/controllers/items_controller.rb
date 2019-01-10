@@ -14,6 +14,14 @@ class ItemsController < ApplicationController
     gon.shipping_method_pre = ["---","未定","らくらくメルカリ便","らくらくメルカリ便","ゆうメール","レターパック","普通郵便（定型・定形外）","クロネコヤマト","ゆうパック","ゆうパケット","クリックポスト","らくらくメルカリ便"]
     gon.size = Size.where(params[:id])
 
+    @hobby_brands = HobbyBrand.where('name LIKE(?)', "%#{params[:keyword]}%")
+    @woman_brands = WomanBrand.where('name LIKE(?)', "%#{params[:keyword]}%")
+    @kids_brands = KidsBrand.where('name LIKE(?)', "%#{params[:keyword]}%")
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
 # SIZEを外部キーにしたため、save時にエラる

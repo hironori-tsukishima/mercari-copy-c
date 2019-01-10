@@ -12,5 +12,5 @@
           .bodyPickupContainersContainerBoxBottomBottomLikeIcon
             = fa_icon "fa-heart-o",class: "fa-heart-o"
         .bodyPickupContainersContainerBoxBottomBottomPrice
-          = "¥ #{item.price}"
+          = "¥ #{item.price.to_s(:delimited)}"
         .bodyPickupContainersContainerBoxBottomBottomTax (税込)

@@ -46,6 +46,9 @@
         &Items {
           display: flex;
           flex-wrap: wrap;
+          overflow: scroll;
+          height: 600px;
+
         }
         &Item {
           width: 230px;
@@ -59,7 +62,7 @@
             }
           }
           &Name {
-            height: 50px;
+            height: 45px;
             background:white;
             padding: 5px 10px;
             overflow: scroll;
@@ -68,7 +71,7 @@
             display: flex;
             font-size: 14px;
             font-weight: bold;
-            &Right {
+            &Left {
               width: 130px;
               padding-left: 10px;
               &Price {
@@ -90,4 +93,5 @@
 .usersShowWrapperUserBottomItemsLink {
   text-decoration: none;
   color: black;
+  height: 290px;
 }

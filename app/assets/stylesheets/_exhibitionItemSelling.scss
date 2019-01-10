@@ -68,9 +68,12 @@
                 }
               }
               &Name {
+                font-size: 14px;
+                text-align: left;
                 width: 500px;
-                margin-left: 20px;
+                margin-left: 30px;
                 line-height: 30px;
+                overflow: scroll;
                 &Bottom {
                   font-size: 14px;
                   &Alert {

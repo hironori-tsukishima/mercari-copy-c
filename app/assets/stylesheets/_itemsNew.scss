@@ -129,7 +129,7 @@
             font-size: 12px;
             font-weight: bold;
             color: darken($gray, 40%);
-            .fa-question-circle {
+            .fa-question-circle-o {
               color: $button-blue;
               font-size: 15px;
               margin: 0;
@@ -170,7 +170,7 @@
             font-size: 12px;
             font-weight: bold;
             color: darken($gray, 40%);
-            .fa-question-circle {
+            .fa-question-circle-o {
               color: $button-blue;
               font-size: 15px;
               margin: 0;
@@ -304,3 +304,14 @@
   font-weight: bold;
 }
 
+// ブランドインクリメンタルサーチ
+.brandSearchBox{
+  width: 370px;
+  height:200px;
+  overflow: scroll;
+  border: 1px solid $gray;
+  // display: none;
+  .brandSearchBoxResults{
+  padding:10px 0 10px 10px;
+  }
+}

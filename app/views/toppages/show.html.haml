@@ -77,7 +77,7 @@
                 = "#{@item.shipping_shcedule}で発送"
     .wrapperShowItemPriceBox
       .wrapperShowItemPrice
-        = "¥ #{@item.price}"
+        = "¥ #{@item.price.to_s(:delimited)}"
       .wrapperShowItemTax (税込)
       .wrapperShowItemFare 送料込み
     .wrapperShowItemPoint 売上金4,300円をお持ちです

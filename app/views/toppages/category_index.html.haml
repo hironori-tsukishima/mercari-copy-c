@@ -16,12 +16,12 @@
         カテゴリー一覧
       .categoryIndexWrapperHeaderLcates
       - @large_categories.each do |large_category|
-        = link_to "/toppages/large_category_show/#{large_category.id}", class: "categoryIndexWrapperHeaderLcate" do
+        = link_to "/toppages/large_category_show/#{large_category.id}", class: "categoryIndexWrapperHeaderLcate", data: {btn: large_category.id} do
           =large_category.name
     .categoryIndexWrapperMain
       .categoryIndexWrapperMainCategories
         - @large_categories.each do |large_category|
-          .categoryIndexWrapperMainCategory
+          .categoryIndexWrapperMainCategory{data: {target: large_category.id}}
             .categoryIndexWrapperMainCategoryLcate
               = large_category.name
             .categoryIndexWrapperMainCategoryInner
