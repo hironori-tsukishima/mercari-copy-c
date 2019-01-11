@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load',function(){
   $(".mypagelist").on("mouseenter", function(){
     $(this).css({'background-color':'#e9e9e9'})
   })
