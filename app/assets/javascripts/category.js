@@ -111,8 +111,8 @@ $(document).on("change","#sc", function(){
       var html2 = brand_beginning + brand_str + brand_end;
       $(".itemEntryMainUpperDescriptionRightSelect").append(html2);
   }
-    }
-  })
+    // }
+  // })
 })
 
 
